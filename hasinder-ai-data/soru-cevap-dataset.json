@@ -1,0 +1,416 @@
+{
+  "dataset": [
+    {
+      "soru": "Merhaba",
+      "cevap": "Merhaba! Turquoise AI olarak size yardımcı olmaktan mutluluk duyarım. Gayrimenkul, gümrük, B2B ticaret veya diğer konularda sorularınızı yanıtlayabilirim. Size nasıl yardımcı olabilirim?"
+    },
+    {
+      "soru": "Arazi fiyatlari ne durumda?",
+      "cevap": "Arazi fiyatlari bolgeden bolgeye degismektedir. Istanbul'da ortalama 500-2000 TL/m2, Mugla'da 1000-10000 TL/m2, Edirne'de 100-500 TL/m2 seviyelerindedir. En uygun fiyatli araziler Edirne, Artvin ve Mersin bolgelerinde bulunmaktadir. Detayli bilgi icin belirli bir sehir veya bolge belirtir misiniz?"
+    },
+    {
+      "soru": "Fethiye'de arsa fiyatlari ne kadar?",
+      "cevap": "Fethiye'de arsa fiyatlari konuma gore 1.500-8.000 TL/m2 arasinda degismektedir. Ovacik ve Hisaronu bolgeleri daha uygun (1.500-3.000 TL/m2), Oludeniz ve Calis Plaji yakinlari ise premium fiyatli (4.000-8.000 TL/m2). Yatirim icin Ovacik bolgesi hizla deger kazaniyor. Belirli bir butce ve amaciniz var mi?"
+    },
+    {
+      "soru": "Tapu islemleri nasil yapiliyor?",
+      "cevap": "Tapu islemleri su adimlardan olusur: 1) Tapu Sicil Mudurlugu'nden randevu alinir, 2) Alici ve satici kimlikleri ile birlikte gelir, 3) Veraset ve intikal vergisi odenir, 4) Tapu harci (%4 - alici ve satici yarim yarim) odenir, 5) Degerleme raporu hazirlanir (banka kredisi icin), 6) Tapu devri gerceklesir. Tumu icin ortalama 1-2 hafta surer. Turquoise AI olarak tum bu surecte sizin yaninizdayiz!"
+    },
+    {
+      "soru": "KAKS nedir?",
+      "cevap": "KAKS (Kat Alma Katsayisi), bir arsaya insa edilebilecek toplam insaat alaninin arsa alanina oranidir. Ornegin KAKS: 2.00 ise 1000 m2 arsaya 2000 m2 insaat yapilabilir. Emsal degeri ne kadar yuksekse, o parselde daha fazla yapi hakki demektir. Yatirim yaparken KAKS degeri yuksek arsalar her zaman daha degerlidir."
+    },
+    {
+      "soru": "Villa almak istiyorum, nereleri onerirsiniz?",
+      "cevap": "Villa yatirimi icin su bolgeleri onerebilirim: 1) Mugla-Fethiye: Deniz manzarali, imarli arsalar 2.5-12.5 milyon TL, 2) Antalya-Kas: Denize sifir, turizm imarli 5-20 milyon TL, 3) Izmir-Cesme: Alacati yakinlari, havuzlu villalar 8-20 milyon TL. Butcenize ve amaciniza (yazlik/yatirim) gore daha detayli oneriler sunabilirim."
+    },
+    {
+      "soru": "Yatirim icin hangi bolgeyi onerirsiniz?",
+      "cevap": "2024-2025 yatirim onerilerim: 1) Edirne-Meric: Yeni otoyol ve havalimani projeleriyle deger artiyor (100-500 TL/m2), 2) Mersin-Erdemli: Akdeniz'de narenciye ve seracilik potansiyeli yuksek (300-1500 TL/m2), 3) Artvin: Havalimani ve turizm projeleriyle firsat bolgesi (100-600 TL/m2). Bu bolgelerde yillik ortalama %20-30 deger artisi bekleniyor."
+    },
+    {
+      "soru": "Imarli arsa nedir?",
+      "cevap": "Imarli arsa, belediye imar planinda belirli bir kullanim amaci (konut, ticaret, turizm vb.) olan arsadir. Imarsiz araziye gore cok daha degerlidir cunku yapilanma hakki vardir. Imarli arsa alirken KAKS, TAKS, emsal degerlerini kontrol etmelisiniz. Turquoise AI olarak tum imar durum sorgulamalarini sizin adiniza yapiyoruz."
+    },
+    {
+      "soru": "Zeytinlik almayi dusunuyorum, neye dikkat etmeliyim?",
+      "cevap": "Zeytinlik alirken su kriterlere dikkat edin: 1) Agac yasi ve verimliligi (10 yas ustu tam verim), 2) Zeytin cesidi (gemlik, ayvalik, domat gibi), 3) Yillik zeytinyağı uretim miktari, 4) Su kuyusu veya sulama sistemi, 5) Elektrik altyapisi. Edirne, Aydin, Balikesir ve Mugla'da cok uygun zeytinlikler var. Yillik getirisi yuksek, guvenli bir yatirimdir."
+    },
+    {
+      "soru": "Kira geliri olan arazi var mi?",
+      "cevap": "Evet, portfoyumuzde yillik kira geliri olan tarla ve ciftlikler mevcut. Ornegin: Mersin-Erdemli'de 50 donum narenciye bahcesi (yillik 100-150 bin TL kira), Balikesir'de 15 donum ceviz bahcesi (yillik 80-120 bin TL kira), Aydin'de 20 donum zeytinlik (yillik 60-100 bin TL kira). Bu tur yatirimlar hem deger kazandirir hem duzenli gelir saglar."
+    },
+    {
+      "soru": "Ciftlik almak istiyorum, butcem 5 milyon TL",
+      "cevap": "5 milyon TL butceyle cok iyi secenekler var: 1) Aydin-Didim: 25 donum ciftlik + 200 baslik ahIr (5.6 milyon TL), 2) Edirne-Meric: 50 donum ciftlik arazisi + modern tesis (3-4 milyon TL), 3) Mersin-Erdemli: 30 donum ciftlik + sera tesisleri (4-5 milyon TL). Hayvancilik, organik tarim veya seracilik icin hazir tesisler mevcut. Detayli bilgi icin randevu alabilirsiniz."
+    },
+    {
+      "soru": "Deniz manzarali arsa fiyatlari ne kadar?",
+      "cevap": "Deniz manzarali arsa fiyatlari bolgeye gore: 1) Mugla-Bodrum: 5.000-20.000 TL/m2, 2) Antalya-Kas: 3.000-15.000 TL/m2, 3) Izmir-Cesme: 2.500-10.000 TL/m2, 4) Aydin-Didim: 1.000-3.000 TL/m2. Denize sifir arsalar her zaman premium fiyatlidir. Yatirim icin Kas ve Datca yariadasi en yuksek getiri potansiyelini sunar."
+    },
+    {
+      "soru": "Hisseli tapu riskli mi?",
+      "cevap": "Hisseli tapu yatirim olarak riskli olabilir. Dikkat edilmesi gerekenler: 1) Diger hissedarlarla anlasmazlik riski, 2) Satista diger hissedarlarin onayi gerekebilir, 3) Kullanim haklarinda sinirlamalar olabilir. Ancak cok uygun fiyatli olabilir. Turquoise AI olarak hisseli tapulu gayrimenkul aliminda tum risk analizini sizin adiniza yapiyor ve guvence altina aliyoruz."
+    },
+    {
+      "soru": "Kac donum arazi yeterli?",
+      "cevap": "Amacina gore degisir: Hobi bahcesi icin 1-2 donum yeterli, zeytinlik/uzum yetistiriciligi icin 5-10 donum ideal, ciftlik ve hayvancilik icin 20+ donum gerekli, villa insasi icin 1-3 donum yeterli, turizm tesisi icin 10+ donum onerilir. Butcenize ve amaciniza gore en uygun secenegi birlikte bulabiliriz."
+    },
+    {
+      "soru": "Kredi ile arazi alabilir miyim?",
+      "cevap": "Evet, tarim ve konut kredisi secenekleri mevcut: 1) Ziraat Bankasi: Tarimsal kredi (dusuk faizli), 2) Halkbank: Esnaf ve tarim kredisi, 3) Ozel bankalar: ipotekli gayrimenkul kredisi. Genellikle tapu degerinin %50-70'i kadar kredi verilir. Turquoise AI olarak banka kredi surecinde de sizin yaninizdayiz."
+    },
+    {
+      "soru": "Emlak komisyonu ne kadar?",
+      "cevap": "Turquoise AI olarak satis fiyatinin uzerine %10 komisyon ekliyoruz. Bu komisyon pazarlik, tapu takibi, dokumantasyon ve danismanlik hizmetlerini kapsar. Ornegin 500.000 TL'lik araziyi sizden 500.000 TL'ye alip, 550.000 TL'ye musteriye sunuyoruz. Bu sekilde tum taraflar icin adil ve seffaf bir sistem sagliyoruz."
+    },
+    {
+      "soru": "Tarim arazisi icin elektrik ve su nasil olur?",
+      "cevap": "Tarim arazilerinde elektrik ve su: 1) Elektrik: TEDAS'a basvuru ile trafo baglanti bedeli odenerek alinir (15-50 bin TL), 2) Su: DSI'dan tarimsal su izni veya yeralti suyu (kuyu) acilabilir. Kuyu maliyeti 20-80 bin TL arasindadir. Bazi ilanlarimizda elektrik ve su hazir, bu tur ilanlari oncelikli olarak sunuyoruz."
+    },
+    {
+      "soru": "Tarihi konak almak mantikli mi?",
+      "cevap": "Tarihi konak yatirimi karli olabilir ama dikkatli degerlendirilmeli: Artilari: Butik otel, pansiyon veya muzeye donusturulebilir, turistik cazibe merkezi olur, UNESCO bolgelerinde (Safranbolu vb.) cok degerli. Eksileri: Restore maliyeti yuksek, koruma kurallari var, uzun sureli yatirim. 1-3 milyon TL arasi butceyle guzel tarihi konaklar bulunabilir."
+    },
+    {
+      "soru": "Bag evi yapabilir miyim?",
+      "cevap": "Evet, imarli arsalarda bag evi yapilabilir. Turizm imarli arsalarda 50-100 m2 bag evi izni genellikle vardir. Tarla nitelikli arazilerde ise 50 m2 altyapi (depo, sera vb.) yapilabilir. Detayli bilgi icin arsanin imar durumunu kontrol etmemiz gerekir. Turquoise AI olarak bu kontrolleri sizin adiniza yapariz."
+    },
+    {
+      "soru": "Arazi alirken dolandirilmaktan nasil korunurum?",
+      "cevap": "Guvvenli alim icin: 1) Tapu kaydini sorgulayin (sahiplik, ipotek, serhler), 2) Imar durumunu belediyeden kontrol ettirin, 3) Yerde gercekten var mi yerinde gorun, 4) Kadastro paftasindaki sinirlari kontrol edin, 5) Profesyonel destek alin. Turquoise AI olarak tum bu kontrolleri sizin adiniza yapar, tapu takibinden imar sorgulamaya kadar tam hizmet sunariz."
+    },
+    {
+      "soru": "Tarla almak istiyorum, nelere dikkat etmeliyim?",
+      "cevap": "Tarla alirken su kriterlere bakin: 1) Toprak analizi (verimlilik, PH degeri), 2) Su kaynagi ve sulama imkani, 3) Yol cephesi ve ulasim, 4) Iklim kosullari ve don riski, 5) Cevre kullanim (organik tarim icin onemli), 6) Tapu durumu (hisseli mi, ipotek var mi). Edirne, Mersin ve Aydin'da verimli tarlalarimiz mevcut. Butcenizi ve yetistirmek istediginiz urunu belirtirseniz size ozel secenekler sunarim."
+    },
+    {
+      "soru": "Arsa ve tarla arasindaki fark nedir?",
+      "cevap": "Temel fark imar durumudur: Arsa, belediye imar plani icinde yapi yapilabilen parseldir (konut, ticaret, turizm imarli olabilir). Tarla ise imar plani disinda, sadece tarimsal uretim icin kullanilabilen arazidir. Fiyat olarak arsa cok daha degerlidir cunku yapilasma hakki vardir. Yatirim amaciniza gore: kisa vadede deger artisi icin imarli arsa, uzun vadeli guvenli yatirim icin verimli tarla oneririm."
+    },
+    {
+      "soru": "Tapu harci ne kadar, kim oder?",
+      "cevap": "Tapu harci satis bedelinin %4'udur ve yasal olarak alici-satici yarim yarim (%2 + %2) oder. Pratikte genellikle alicinin tamamini ustlendigi pazarliklar da yaygindir. Ayrica doner sermaye ucreti (2024 icin yaklasik 400-500 TL) odenir. Ornek: 1 milyon TL'lik gayrimenkulde toplam harc 40.000 TL'dir. Turquoise AI olarak harc hesaplamanizi onceden yapip size net maliyet tablosu sunariz."
+    },
+    {
+      "soru": "Emlak vergisi ne kadar?",
+      "cevap": "Emlak vergisi gayrimenkulun rayic bedeli uzerinden yillik odenir: Konutlar binde 1, isyerleri binde 2, arsalar binde 3, araziler binde 1 oraninda. Buyuksehir sinirlarinda bu oranlar 2 katina cikar. Odeme yilda 2 taksit halinde (Mart-Mayıs ve Kasim) belediyeye yapilir. Yeni alimlarda vergi, alim yilini takip eden yildan itibaren baslar."
+    },
+    {
+      "soru": "Deger artis kazanci vergisi var mi?",
+      "cevap": "Evet, gayrimenkulu aldiktan sonra 5 yil icinde satarsaniz elde ettiginiz kar 'deger artis kazanci' sayilir ve gelir vergisine tabidir. 5 yildan sonra satarsaniz vergi yoktur. Her yil icin belirlenen istisna tutari (2024 icin yaklasik 87.000 TL) dusulduktan sonra kalan kisim vergilendirilir. Miras kalan veya bagis yoluyla edinilen gayrimenkullerde sure sinirlamasi yoktur."
+    },
+    {
+      "soru": "Yabancilar Turkiye'de gayrimenkul alabilir mi?",
+      "cevap": "Evet, cogu ulke vatandasi Turkiye'de gayrimenkul alabilir. Kosullar: 1) Kisi basina en fazla 30 hektar, 2) Askeri bolgeler ve ozel guvenlik bolgeleri haric, 3) Ilce yuzolcumunun %10'unu asamaz. 400.000 USD uzeri alimlarla Turk vatandasligina basvuru imkani da vardir. Turquoise AI olarak yabanci alicilara ozel danismanlik ve tum yasal surec destegi sunuyoruz."
+    },
+    {
+      "soru": "Gayrimenkul alirken pazarlik payi ne kadar olur?",
+      "cevap": "Turkiye'de emlak piyasasinda pazarlik orani genellikle %5-15 arasindadir. uygun fiyatli ilanlarda bu oran %20-25'e cikabilir. Pazarlik gucunuzu artiran faktorler: pesin odeme, hizli karar, ekspertiz raporundaki tespitler, uzun suredir satilamayan ilanlar. Turquoise AI olarak pazarlik surecini sizin adiniza profesyonelce yonetiyoruz."
+    },
+    {
+      "soru": "Ekspertiz raporu nedir, gerekli mi?",
+      "cevap": "Ekspertiz (degerleme) raporu, gayrimenkulun gercek piyasa degerini belirleyen bagimsiz SPK lisansli uzman raporudur. Banka kredisi kullanacaksaniz zorunludur, nakit alimlarda ise opsiyonel ama onerilir. Maliyeti 3.000-10.000 TL arasinda degisir. Ozellikle ilanlarda gercek degeri bilmek buyuk avantajdir. Anlasmali ekspertiz firmalarimizla hizli rapor aliyoruz."
+    },
+    {
+      "soru": "Hobi bahcesi almak mantikli mi?",
+      "cevap": "Hobi bahceleri dusuk butceyle toprak sahibi olmanin en kolay yoludur. Avantajlari: uygun fiyat (50-300 bin TL), sehre yakin konum, kendi sebzenizi yetistirme, hafta sonu kacisi. Dikkat edilecekler: kooperatif hissesi mi mustakil tapu mu, su-elektrik durumu, yapi yasagi sinirlari. Izmir, Balikesir ve Tekirdag cevresinde populer hobi bahcesi projelerimiz var."
+    },
+    {
+      "soru": "Muzeyyen takyidat nedir?",
+      "cevap": "Takyidat, gayrimenkul uzerindeki kisitlamalardir: ipotek, haciz, intifa hakki, serhler, irtifak haklari gibi. Tapu senedinde 'muzeYYen' degil dogru ifadeyle 'takyidatli' denir. Almadan once tapu mudurlugune veya e-devlet uzerinden takyidat sorgulamasi yapilmalidir. Turquoise AI olarak sattigimiz her gayrimenkulun takyidat raporunu onceden hazirlariz."
+    },
+    {
+      "soru": "Kadastro sorgulama nasil yapilir?",
+      "cevap": "Kadastro sorgulama icin: 1) e-devlet > Tapu ve Kadastro Genel Mudurlugu > Tasinmaz Sorgulama, 2) parselsorgu.tkgm.gov.tr adresinden il, ilce, mahalle, ada ve parsel numarasiyla, 3) Yerinde aplikasyon (sinir belirleme) icin lisansli harita burosu. Ada-parsel bilgilerini bilmediginiz gayrimenkul icin tapu sahibi veya belediyeden ogrenebilirsiniz."
+    },
+    {
+      "soru": "Imar durumu nasil ogrenilir?",
+      "cevap": "Imar durumu ogrenmek icin: 1) Ilgili belediyenin imar isleri mudurlugune ada-parsel bilgisiyle basvuru (belge ucreti 100-500 TL), 2) Cogu belediyenin e-imar sistemi uzerinden online sorgulama, 3) e-plan.csb.gov.tr uzerinden ulusal imar planlari. Imar durum belgesinde KAKS, TAKS, kullanim amaci ve yapi kosullari yazar. Turquoise AI olarak bu sorgulamayi musterilerimiz icin ucretsiz yapiyoruz."
+    },
+    {
+      "soru": "Yazlik ev icin hangi bolgeler uygun?",
+      "cevap": "Butceye gore yazlik onerileri: 1) 1-3 milyon TL: Aydin-Didim, Mersin-Erdemli, Balikesir-Akcay (denize yakin site ici), 2) 3-7 milyon TL: Mugla-Dalaman, Antalya-Alanya, Izmir-Urla, 3) 7+ milyon TL: Fethiye, Kas, Cesme, Bodrum (deniz manzarali villa). Kiralama potansiyeli dusunuyorsaniz turizm bolgeleri yillik %5-8 kira getirisi saglar."
+    },
+    {
+      "soru": "Ciftci olmadan tarla alabilir miyim?",
+      "cevap": "Evet, ciftci olmayanlar da tarla alabilir; ciftci kaydi sarti yoktur. Ancak su kurallar var: 1) Tarim arazileri 5.000 m2'den kucuk parsellere bolunemez, 2) Tarlada konut yapilamaz (belirli kosullarda 50 m2 tarimsal yapi haric), 3) Yabancilar icin bazi sinirlamalar olabilir. Tarlayi kendiniz isleyebilir, kiraya verebilir veya anlasmali ciftciye ektirebilirsiniz."
+    },
+    {
+      "soru": "Organik tarim icin arazi ariyorum",
+      "cevap": "Organik tarim icin ideal arazi kriterleri: 1) Sanayi ve otoyollardan uzak (kirlilik riski yok), 2) Temiz su kaynagi, 3) En az 3 yildir kimyasal kullanilmamis toprak, 4) Sertifikasyon icin uygun konum. Onerilerim: Artvin-Borcka (temiz dag havasi), Izmir-Bergama, Balikesir-Edremit kirsali. Organik urunlerde kar marji geleneksel tarima gore %40-60 daha yuksektir."
+    },
+    {
+      "soru": "Sera yatirimi karli mi?",
+      "cevap": "Modern seracilik en yuksek gelir/getiri oranina sahip tarim turudur: 1 donum modern sera yillik 300-600 bin TL net kar saglayabilir (urune gore). Maliyetler: sera kurulumu donum basina 1-3 milyon TL. En uygun bolgeler: Antalya (sera baskenti), Mersin-Erdemli, Aydin. Devlet destekli Ziraat Bankasi dusuk faizli sera kredileri mevcut. Hazir serali ciftlik ilanlarimiz icin arayin."
+    },
+    {
+      "soru": "Mustakil tapu ile hisseli tapu farki nedir?",
+      "cevap": "Mustakil tapu: Gayrimenkulun tamamina tek sahip olursunuz, satis ve kullanim tamamen sizdedir - en guvenli tapu turudur. Hisseli tapu: Gayrimenkule birden fazla kisi ortaktir, herkesin hissesi tapuda yazar. Hisseli tapuda satis ve kullanim kararlari icin diger hissedarlarin onayi gerekebilir, ileride sorun cikma riski yuksektir. Yatirim icin her zaman mustakil tapu oneririm."
+    },
+    {
+      "soru": "Arazimi degerlendirmek istiyorum, seceneklerim neler?",
+      "cevap": "Arazinizi degerlendirme secenekleri: 1) Tarimsal uretim (meyvecilik, sebze, narenciye), 2) Kiraya verme (tarla kirasi donum basina yillik 3-15 bin TL), 3) Anlasmali ciftcilik (urun ortakligi), 4) Sera veya mantar tesisi kiralama, 5) GES (gunes enerjisi) arazisi kiralama (donum basina yillik 15-30 bin TL), 6) Imara acilma potansiyeli varsa bekleme. Arazinizin konumunu soylerseniz en uygun secenegi analiz ederim."
+    },
+    {
+      "soru": "Gunes enerjisi (GES) icin arazi kiralanir mi?",
+      "cevap": "Evet, GES firmalari uygun arazileri 20-30 yilligina kiraliyor. Kosullar: 1) Imarsiz, tarim vasfini kaybetmis veya bozkir arazi, 2) Trafoya ve iletim hattina yakinlik, 3) Guneslenme suresi yuksek bolge, 4) Egimsiz veya guneye egimli arazi. Kira bedeli donum basina yillik 15-30 bin TL. Konya, Karaman, Nigde, Usak gibi bolgelerdeki arazileriniz varsa GES firmalariyla baglanti kurdurabiliriz."
+    },
+    {
+      "soru": "Kat irtifaki ile kat mulkiyeti arasindaki fark nedir?",
+      "cevap": "Kat irtifaki: Insaati devam eden binada arsa payina bagli alinan gecici tapu turudur; bina tamamlanip iskan alininca kat mulkiyetine donusur. Kat mulkiyeti: Binanin tamamlanip oturma izni (iskan) alindiktan sonra verilen nihai tapu turudur. Alimda kat mulkiyetli tapu daha guvenlidir; kat irtifakli alimda insaatin tamamlanma riskini degerlendirmek gerekir."
+    },
+    {
+      "soru": "Iskan (oturma izni) nedir?",
+      "cevap": "Iskan (yapi kullanma izin belgesi), belediyenin binanin projesine uygun tamamlandigini onayladigi resmi belgedir. Iskansiz binalarda: elektrik-su aboneligi zor, kredi kullanilamaz, kat mulkiyeti tapusu alinmaz, yikim riski vardir. Iskanli gayrimenkul her zaman daha degerlidir. Alim oncesi belediyeden iskan sorgulamasi mutlaka yapilmalidir."
+    },
+    {
+      "soru": "Devletin tarim destekleri nelerdir?",
+      "cevap": "2024-2025 tarim destekleri: 1) Mazot ve gubre destegi (donum basina nakit), 2) Ciftci Kayit Sistemi (CKS) destekleri, 3) Genc ciftci hibeleri, 4) KKYDP kirsal kalkinma hibeleri (%50 hibe), 5) Ziraat Bankasi dusuk faizli tarim kredileri, 6) Sertifikali tohum ve fide destegi, 7) Hayvancilik destekleri (anaç koyun basina vb.). Tarla alim sonrasi destek basvurularinizda rehberlik ediyoruz."
+    },
+    {
+      "soru": "Randevu almak istiyorum",
+      "cevap": "Memnuniyetle! Size ozel gayrimenkul danismanligi icin randevu olusturabiliriz. Randevu sirasinda: 1) Butcenize ve amaciniza uygun ilanlar hazirlanir, 2) Yer gorme turu planlanir, 3) Fiyat analizi ve yatirim raporu sunulur. Bize ulasmak icin web sitemizdeki iletisim formunu doldurun veya ilan sayfasindaki 'Randevu Al' butonunu kullanin. Turquoise AI olarak haftanin 7 gunu hizmetinizdeyiz!"
+    },
+    {
+      "soru": "Ilan vermek istiyorum, gayrimenkulumu satmak istiyorum",
+      "cevap": "Gayrimenkulunuzu Turquoise AI ile hizli satabilirsiniz. Surecimiz: 1) Ucretsiz ekspertiz ve fiyat belirleme, 2) Profesyonel fotograf ve drone cekimi, 3) Tum platformlarda ilan yayini, 4) Alıcı gorusmelerinin yonetimi, 5) Pazarlik ve tapu takibi. Satis fiyatinin uzerine %10 komisyon ekleyerek calisir, gayrimenkulunuzu en yuksek degerden satariz. Ilan vermek icin tapu fotografinizla bize ulasin."
+    },
+    {
+      "soru": "Tesekkurler",
+      "cevap": "Rica ederim! Turquoise AI olarak size yardimci olabildiysek ne mutlu. Gayrimenkul yolculugunuzda her zaman yaninizdayiz. Baska sorunuz olursa cekinmeden sorun. Hayirli gunler dilerim!"
+    },
+    {
+      "soru": "Kac yillik tecrubeniz var?",
+      "cevap": "Turquoise AI, Turkiye genelinde gayrimenkul pazarinin onde gelen platformudur. Binlerce musterimizi arazi, tarla, villa ve arsa sahibi yaptik. Uzman kadromuz tapu, imar, degerleme ve yatirim danismanligi konularinda tam hizmet verir. Amacimiz: dogru gayrimenkulu, dogru fiyata, guvenle almanizi saglamak."
+    },
+    {
+      "soru": "Nasil guvenebilirim?",
+      "cevap": "Guveniniz bizim icin her seyden onemli: 1) Tum ilanlarimiz tapu ve imar kontrolludur, 2) Sozlesmelerimiz noter onaylidir, 3) Komisyon oranimiz (%10) seffaf ve onceden belirtilir, 4) Tapu devri gerceklesmeden odeme alinmaz, 5) Musteri yorumlarimizi inceleyebilirsiniz. Ayrica ilk gorusmede tum belgeleri sizinle acikca paylasiriz."
+    },
+    {
+      "soru": "Hangi sehirlerde hizmet veriyorsunuz?",
+      "cevap": "Turkiye genelinde hizmet veriyoruz! Ozellikle aktif oldugumuz bolgeler: Istanbul, Izmir, Mugla, Antalya, Aydin, Balikesir (Ege ve Akdeniz kiyilari), Edirne, Mersin, Trabzon, Rize, Artvin, Nevsehir ve Karabuk. Bu sehirlerin disindaki talepleriniz icin de genis portfoy agimizla yardimci olabiliriz. Hangi bolgeyle ilgileniyorsunuz?"
+    },
+    {
+      "soru": "INCOTERMS 2020 nedir?",
+      "cevap": "INCOTERMS 2020, uluslararasi ticarette alici ve satici arasindaki teslim sekillerini belirleyen 11 kuraldan olusan standarttir. Iki gruba ayrilir: 1) Her turlu tasima icin uygun olanlar: EXW (Is Yerinde Teslim), FCA (Tasiyiciya Teslim), CPT (Tasima Odenmis), CIP (Tasima ve Sigorta Odenmis), DAP (Yerinde Teslim), DPU (Bosaltilmis Olarak Yerinde Teslim), DDP (Gumruklu Olarak Teslim). 2) Deniz ve ic su yolu tasimalari icin: FAS (Gemi Dogrultusunda Teslim), FOB (Gemide Teslim), CFR (Navlun ve Masraflar), CIF (Navlun, Sigorta ve Masraflar). Has Ozel Akademi dersinde ogretildigi gibi: Dogru kural secimi risk ve maliyet dagilimini belirler."
+    },
+    {
+      "soru": "L/C nedir?",
+      "cevap": "L/C (Akreditif - Letter of Credit), bankanin alici adina saticiya belirli sartlarin yerine getirilmesi karsiliginda odeme yapmayi garanti ettigi bir odeme yontemidir. En guvenli uluslararasi odeme yontemidir. Turleri: 1) Teyitli akreditif, 2) Teyitsiz akreditif, 3) Doner akreditif, 4) Beklenen akreditif. L/C'de taraflar: amir banka, ihbar bankasi, teyit bankasi ve lehtar. Has Ozel Akademi 2. ders konusudur."
+    },
+    {
+      "soru": "D/P ve D/A nedir?",
+      "cevap": "D/P (Belge Karsiligi Odeme - Documents against Payment) ve D/A (Belge Karsiligi Kabul - Documents against Acceptance) akreditife gore daha basit ve dusuk maliyetli odeme yontemleridir. D/P'de belgeler odeme karsiligi teslim edilir. D/A'da belgeler kabul karsiligi teslim edilir (kabul kredisi). Pratikte D/P kullanimi daha guvence vermez. En riskli yontem T/T (hava ile havale - tele transfer) dir. Has Ozel Akademi dersinde detayli islenmektedir."
+    },
+    {
+      "soru": "Gumruk beyannamesi nasil hazirlanir?",
+      "cevap": "Gumruk beyannamesi esyanin gumruk rejimine girmesi icin verilen resmi beyandir. Hazirlama adimlari: 1) GTIP kodunun belirlenmesi, 2) Kiymet ve menge bilgilerinin girilmesi, 3) Fatura ve nakliye belgelerinin eklenmesi, 4) Beyanname programi uzerinden BILGE sistemine giris, 5) Risk analizi beklenmesi, 6) Muayene (kirmizi/sari hat) veya direkt cikis (yesil hat). Dogru beyan hizli gecis saglar, yanlis beyan cezaya yol acar. Has Ozel Akademi 3. ders konusudur."
+    },
+    {
+      "soru": "Muayene sekilleri nelerdir?",
+      "cevap": "Gumruk muayene sekilleri: 1) Yesil Hat: Evrak kontrolu yok, fiziki muayene yok, esya dogrudan cikis yapar. 2) Sari Hat: Sadece evrak kontrolu, fiziki muayene yok. 3) Kirmizi Hat: Hem evrak kontrolu hem fiziki muayene yapilir. 4) Mavi Hat: Sonradan kontrol (teslimattan sonra denetim). Risk analizi sistemi bu renkleri otomatik belirler. Has Ozel Akademi 3. ders konusu."
+    },
+    {
+      "soru": "ETGB nedir?",
+      "cevap": "ETGB (Elektronik Ticaret Gumruk Beyannamesi), bireysel e-ticaret gonderileri icin kullanilan basitlestirilmis gumruk beyannamesidir. 1500 Euro'ya kadar olan e-ticaret gonderilerinde kullanilir. Avantajlari: hizli islem, az evrak, dusuk maliyet. Bireysel ithalat ve ihracat icin uygundur. Has Ozel Akademi 4. ders konusu."
+    },
+    {
+      "soru": "De minimis kurali nedir?",
+      "cevap": "De minimis kurali, dusuk degerli gonderilerin gumruk vergisinden muaf tutulmasini saglayan duzenlemedir. 2024 itibariyle 30 Euro'ya kadar olan gonderiler gumruk vergisinden muaftir. 30-1500 Euro arasi ETGB ile islem gorur. 1500 Euro uzeri standart gumruk beyannamesine tabidir. Hediye ibaresi tek basina muafiyet saglamaz. Has Ozel Akademi 4. ders konusu."
+    },
+    {
+      "soru": "AEO nedir?",
+      "cevap": "AEO (Authorized Economic Operator - Yetkilendirilmis Yukumlu), gumruk islemlerinde guvenilir firmalara tani nan ozel statudur. AEO belgesi Ticaret Bakanligi tarafindan verilir. Avantajlari: 1) Azaltilmis fiziki muayene, 2) Oncelikli islem, 3) Dusuk teminat orani, 4) Karsilikli tanima (Turkiye-AB arasi). Basvuru icin firmanin belirli guvenlik ve ic kontrol kriterlerini karsilamasi gerekir. Has Ozel Akademi 5. ders konusu."
+    },
+    {
+      "soru": "Ihracat rejimi nedir?",
+      "cevap": "Ihracat rejimi, Turkiye menseli esyanin yurtdisina cikisini duzenleyen gumruk rejimidir. Ihracat sekilleri: 1) Kesin ihracat (standart), 2) E-ihracat (dijital platformlar uzerinden), 3) Mikro ihracat (dusuk degerli, basitlestirilmis), 4) Kapsam disi ihracat (ozel durumlar). Ihracat taahhutleri: ihracatcilar belirli sure icinde doviz getirme ve kapatma yukumlulugu vardir. Has Ozel Akademi 6. ders konusu."
+    },
+    {
+      "soru": "E-ihracat nedir?",
+      "cevap": "E-ihracat, dijital platformlar (Amazon, Etsy, Shopify vb.) uzerinden yapilan ihracattir. Mikro ihracat olarak da adlandirilir. Sinirlar: 300 Euro - 150.000 Euro arasi. Avantajlari: basitlestirilmis beyan, dusuk maliyet, hizli islem. E-ihracat icin ETGB kullanilir. Has Ozel Akademi 6. ders konusu."
+    },
+    {
+      "soru": "Dahilde isleme rejimi nedir?",
+      "cevap": "Dahilde isleme rejimi (DIR), ithal edilen girdilerin Turkiye'de islenip yeniden ihrac edilmesi durumunda vergi avantaji saglayan rejimdir. Nasil calisir: 1) Firmaya DIR izni verilir, 2) Ithal edilen hammadde vergisiz gelir, 3) Islenir ve ihrac edilir, 4) Taahhut hesabi kapatilir. Onemli kural: Ithal girdiler isleme tesisi disina cikarilamaz, satilamaz ve tuketilemez. Fire oranlari onceden belirlenir. Has Ozel Akademi 7. ders konusu."
+    },
+    {
+      "soru": "Haricte isleme rejimi nedir?",
+      "cevap": "Haricte isleme rejimi (HIR), Turkiye menseli esyanin yurtdisinda islenip geri ithal edilmesidir. Ornegin: Turkiye'de uretilen kumasin Italya'da boyanip geri getirilmesi. Avantaji: sadece katma deger uzerinden vergi alinir (islem maliyeti). Gecici ihracat ve serbest bolgeler bu rejimin onemli parcalaridir. Belge, fotograf ve fatura titizlikle saklanmalidir. Has Ozel Akademi 8. ders konusu."
+    },
+    {
+      "soru": "Gecici ithalat rejimi nedir?",
+      "cevap": "Gecici ithalat rejimi, esyanin belirli amacla ve sureyle yurticine getirilip geri ihrac edilmesi sartiyla vergi muafiyeti saglar. Kapsam: 1) Fuar ve sergi esyasi, 2) ATA Karnesi ile getirilen esya, 3) Yolcu esyasi (ornek dosya), 4) Mesleki ekipman, 5) Numuneler. Sure: genellikle 6-24 ay. Gecici ithalat kapsamindaki esya satilamaz, tuketilemez veya degistirilemez. Has Ozel Akademi 9. ders konusu."
+    },
+    {
+      "soru": "ATA Karnesi nedir?",
+      "cevap": "ATA Karnesi, gecici ithalat/ihracat icin kullanilan uluslararasi gumruk belgesidir. Avantaji: her ulkede ayri gumruk islemi gerektirmez, tek belgeyle sinir gecisi saglar. Gecerlilik suresi 1 yildir. Kullanildigi durumlar: ticari numuneler, fuar ve sergi esyasi, mesleki ekipman, bilimsel malzemeler. ATA Karnesi ile getirilen esya satilamaz veya tuketilemez. Has Ozel Akademi 9. ders konusu."
+    },
+    {
+      "soru": "Transit rejimi nedir?",
+      "cevap": "Transit rejimi, esyanin bir gumruk idaresinden digerine vergi odenmeden veya kontrol altinda tasinmasini saglar. Belge turleri: 1) T1 (Turkiye menşeli olmayan esya transit), 2) T2 (Gumruk Birligi esyasi transit). Sistem: NCTS (New Computerized Transit System) elektronik sistem uzerinden yurutulur. TIR Karnesi ve ATA Karnesi de transit icin kullanilir. Gumruk Birligi sayesinde AB ulkeleri arasi transitte gumruk islemi gerekmez. Has Ozel Akademi 10. ders konusu."
+    },
+    {
+      "soru": "NCTS nedir?",
+      "cevap": "NCTS (New Computerized Transit System), transit rejiminin elektronik ortamda yurutulmesini saglayan bilgisayar sistemidir. Avantajlari: 1) Kagit ortamdan kurtulma, 2) Hizli islem, 3) Gercek zamanli takip, 4) Hata oraninin dusmesi. NCTS uzerinden T1 ve T2 belgeleri duzenlenir, teminat yonetimi yapilir, varis bildirimi yapilir. Turkiye'de BILGE sistemi ile entegre calisir. Has Ozel Akademi 10. ders konusu."
+    },
+    {
+      "soru": "Gumruk Birligi nedir?",
+      "cevap": "Gumruk Birligi, Turkiye ile Avrupa Birligi arasinda 1995 yilinda yururluge giren, sanayi urunleri ve islenmis tarim urunlerinde gumruk vergilerinin kaldirilmasi ve ortak gumruk tarifesinin uygulanmasini iceren anlasmadir. Etkileri: 1) AB'ye ihracatta gumruk vergisi yok, 2) Ortak GTIP kullanimi, 3) Rekabet kurallarina uyum, 4) Fikri mulkiyet korumasi. Gumruk Birligi transit kolayligi da saglar (T2 belgesi). Has Ozel Akademi 10. ders konusu."
+    },
+    {
+      "soru": "Gumruk cezalari nelerdir?",
+      "cevap": "Gumruk Kanunu'na aykiri davranislar icin ceza turleri: 1) Vergi ziyai cezasi (eksik odenen verginin 3 kati), 2) Usulsuzluk cezalari (evrak eksikligi, suresinde bildirim vb.), 3) Ozel usulsuzluk cezalari (fatura duzenlememe vb.), 4) Kacakcilik cezalari (5607 sayili Kanun). Ceza miktarlari: vergi ziyaina 3 kat, usulsuzluge sabit tutar. Iyi haber: uzlasma ve pişmanlik kurallari ile cezalar indirilebilir. Has Ozel Akademi 11. ders konusu."
+    },
+    {
+      "soru": "Uzlasma nedir?",
+      "cevap": "Uzlasma, gumruk ve vergi cezalarinda yargiya gitmeden cozum mekanizmasidir. Iki turu var: 1) Idari uzlasma (ceza kesilmeden once), 2) Yargisal uzlasma (dava asamasinda). 5326 sayili Kabahatler Kanunu kapsaminda yurutulur. Uzlasma komisyonu cezada %50-80 indirim yapabilir. Sure ve sartlar kanunla duzenlenir, sure asimi hak kaybina yol acar. Has Ozel Akademi 12. ders konusu."
+    },
+    {
+      "soru": "5607 sayili Kanun nedir?",
+      "cevap": "5607 sayili Kacakcilikla Mucadele Kanunu, gumruk mevzuatina aykiri esya hareketini suc sayan duzenlemelerdir. Kacakcilik suc unsurlari: 1) Esyayi gumruk islemine tabi tutmadan ithal/ihrac etmek, 2) Yanlis beyanla vergi kaybina yol acmak, 3) Bandrol, etiket vb. taklit etmek, 4) Kacak esyayi satmak, nakletmek, saklamak. Cezalar: hapis (1-7 yil) ve adli para cezasi. Ihbar sistemi ile vatandaslar da ihbarda bulunabilir. Has Ozel Akademi 13. ders konusu."
+    },
+    {
+      "soru": "KOSGEB destekleri nelerdir?",
+      "cevap": "KOSGEB, Kucuk ve Orta Olcekli Isletmeleri Destekleme Idaresi Baskanligidir. Baslica destekler: 1) Geleneksel Girisimci Destegi (50.000 TL hibe + 100.000 TL faizsiz kredi), 2) KOBIGEL (KOBI Gelisim Destegi - %60 hibe), 3) Ar-Ge ve Inovasyon Destegi, 4) Yurtdisi Fuarlara Katilim Destegi, 5) Enerji Verimliligi Destegi. Basvuru KOSGEB e-sistem uzerinden yapilir. Geri odemesiz (hibe) ve geri odemeli destekler olarak ikiye ayrilir. Has Ozel Akademi 14. ders konusu."
+    },
+    {
+      "soru": "Ihracat tesvikleri nelerdir?",
+      "cevap": "Ihracat tesvikleri devlet tarafindan ihracatcilara saglanan desteklerdir: 1) Dahilde isleme rejimi (vergisiz ithalat), 2) Hariçte isleme rejimi (sadece katma deger vergilendirmesi), 3) Turkiye Ihracatcilari Meclisi (TIM) tesvikleri, 4) Eximbank kredileri (dusuk faizli ihracat kredisi), 5) Yurtdisi fuar katilim destegi, 6) Pazar arastirmasi destegi, 7) Marka ve tasarim destegi. Basvuru Ticaret Bakanligi ve KOSGEB uzerinden yapilir. Has Ozel Akademi 14. ders konusu."
+    },
+    {
+      "soru": "GTIP nedir?",
+      "cevap": "GTIP (Gumruk Tarife Istatistik Pozisyonu), esyalarin siniflandirilmasinda kullanilan 12 haneli uluslararasi kod sistemidir. Ilk 6 hane Dunya Gumruk Orgutu (WCO) sistemi, 8 hane AB ortak GTIP'si, 12 hane ise Turkiye'ye ozgu istatistik kodudur. GTIP belirlenirken: esyanin cinsi, hammaddesi, kullanim amaci ve uretim teknolojisi dikkate alinir. Dogru GTIP dogru vergi ve istatistik demektir. Has Ozel Akademi ders konusudur."
+    },
+    {
+      "soru": "Mense nedir?",
+      "cevap": "Mense (origin), bir esyanin ekonomik olarak tamamen uretildigi veya son esasli islemin yapildigi ulkeyi belirtir. Mense turleri: 1) Tamamen mense (bir ulkede tamamen uretilen urunler - tarim, maden), 2) Kismi mense (birden fazla ulkede islem goren). Mense tespiti icin: mense kurallari, mense sahadamasi ve mense islemleri uygulanir. Mense, tercihli (anlasmali) veya tercihli olmayan ticarette farkli vergi oranlari belirler. Has Ozel Akademi ders konusu."
+    },
+    {
+      "soru": "Serbest bolge nedir?",
+      "cevap": "Serbest bolge, gumruk hatti disinda sayilan, ticari ve sinai faaliyetler icin tesviklerin uygulandigi ozel alanlardir. Turkiye'de 20'ye yakin serbest bolge vardir (Mersin, Istanbul Ataturk Havalimani, Ege, Antalya, Trabzon, Kocaeli vb.). Avantajlari: 1) Gumruk vergisi muafiyeti, 2) Kurumlar vergisi istisnasi, 3) KDV istisnasi, 4) Islem kolayligi. Serbest bolgeden yapilan satislar ihracat sayilir. Has Ozel Akademi 8. ders konusu."
+    },
+    {
+      "soru": "Gumruk kıymeti nedir?",
+      "cevap": "Gumruk kıymeti, ithal esyanin gumruk vergisinin hesaplanmasina esas olan degeridir. Degerleme yontemleri: 1) Islem degeri (fiilen odenen fiyat - en yaygin), 2) Ayni esyanin islem degeri, 3) Benzer esyanin islem degeri, 4) Indirgeme yontemi, 5) Hesaplama yontemi, 6) Son yontem (esnek). Kıymet beyani: fatura, nakliye ve sigorta bedellerini icerir. Dusuk beyan cezaya yol acar. Has Ozel Akademi ders konusu."
+    },
+    {
+      "soru": "Has Ozel Akademi hakkinda bilgi alabilir miyim?",
+      "cevap": "Has Ozel Akademi, 15 haftalik Gumruk ve Dis Ticaret Uzmanlasma Programi sunan kisisel gelisim merkezidir. Her ders; video, ozet, detayli icerik, Turquoise AI destekli calisma alani ve sinav icerir. Dersler: A) Temel Gumruk Bilgisi (5 ders - mevzuat, teslim/odeme, beyan/muayene, kargo, AEO), B) Rejimler ve Uygulamalar (5 ders - ihracat, dahilde isleme, haricte isleme, gecici ithalat, transit), C) Hukuk, Cezalar ve Strateji (5 ders - cezalar, uzlasma, kacakcilik, tesvikler, pazar arastirmasi). Kayit hasinder.com uzerinden yapilir."
+    },
+    {
+      "soru": "Turquoise AI nedir?",
+      "cevap": "Turquoise AI, Has Ozel Akademi'nin yapay zeka destekli egitim asistanidir. Her ders sayfasinda ogrencilere anlik yanit verir, ders icerikleri hakkinda sorulari cevaplar, ornek sorular cozer ve ogrenmeyi kolaylastirir. Gumruk ve dis ticaret konularinda uzmanlasma programi boyunca ogrencilere rehberlik eder. web sitemizdeki ders sayfalarinda Turquoise AI sekmesine tiklayarak erisebilirsiniz."
+    },
+    {
+      "soru": "Gayrimenkul yatiriminda vergi avantajlari nelerdir?",
+      "cevap": "Gayrimenkul yatiriminda belli basli vergi avantajlari: 1) Kurumlar vergisi istisnasi (5 yil tutma sartiyla satis kazancinin %50'si), 2) Kira gelirinde istisna (2024'te 21.000 TL'ye kadar muaf), 3) GYO'da (Gayrimenkul Yatirim Ortakligi) kurumlar vergisi istisnasi, 4) Katma deger vergisi istisnasi (teslim ve kira gelirinde), 5) Veraset ve intikal vergisi istisnasi (miras/bagis). Dogru yapilandirma ile vergi yukunu minimize etmek mumkundur. Detayli bilgi icin mali musavirinize danisin."
+    },
+    {
+      "soru": "Insaat maliyeti nasil hesaplanir?",
+      "cevap": "Insaat maliyeti hesaplama: 1) Metrekare insaat maliyeti (2024-2025: 15.000-30.000 TL/m2 arasi, lüks: 35.000+ TL/m2), 2) Hafriyat ve temel maliyeti, 3) Insaat iscilik maliyeti (toplam maliyetin %30-40'i), 4) Malzeme maliyeti (demir, cimento, beton, yalitim, tesisat), 5) Proje ve mimari ucretler, 6) Belediye harclari ve ruhsat bedelleri, 7) Iscilik sigorta ve is guvenligi maliyetleri. Toplam maliyet = m2 birim maliyeti x toplam alan + arsa maliyeti + diger giderler."
+    },
+    {
+      "soru": "DASK nedir, zorunlu mu?",
+      "cevap": "DASK (Dogal Afet Sigortalari Kurumu), deprem sigortasidir. Kat mulkiyetli ve kat irtifakli tum bagimsiz bolumler icin ZORUNLUDUR. 2024 yili teminat tutari: konut basina 640.000 TL (daha yuksek teminat icin ozel sigorta eklenebilir). Prim: 500-2.000 TL arasi (il, kat, yapi turu ve yasina gore). DASK sadece deprem hasarini karsilar, yangin ve su baskini icin konut sigortasi (kasko) ayri yapilir. Iskansiz binalarda DASK yapilamaz."
+    },
+    {
+      "soru": "Kentsel donusum nasil isler?",
+      "cevap": "Kentsel donusum, riskli yapilarin yikilip modern binalar yapilmasidir. 6306 sayili Kanun kapsaminda yurutulur. Surec: 1) Riskli yapi tespiti (lisansli kurulusca), 2) Maliklerin en az 2/3'u ile anlasma, 3) Yikim ve bosaltma, 4) Yeni proje hazirligi, 5) Insaat, 6) Yeni dairelerin teslimi. Devlet destekleri: kira yardimi (18-36 ay, aylik 4.000-6.000 TL), faizsiz kredi, harclarda indirim. Kat mulkiyeti olmayan binalar da donusume girebilir."
+    },
+    {
+      "soru": "TOKI'den ev almak mantikli mi?",
+      "cevap": "TOKI (Toplu Konut Idaresi) konutlari genellikle piyasa fiyatinin %20-30 altinda sunulur. Avantajlari: uygun fiyat, uzun vade (10-20 yil), dusuk faiz, teslim garantisi. Dezavantajlari: yeri genellikle sehir disinda, alt yapi sorunlari olabilir, kalipte uretim (standart projeler), satis kisitlamalari (5 yil satamama). TOKI sosyal konut projeleri dar gelirli icin idealdir, yatirim amaciyla alinacaksa lokasyon ve teslim sureci dikkatlice degerlendirilmelidir."
+    },
+    {
+      "soru": "Kira geliri vergisi nasil hesaplanir?",
+      "cevap": "2024 yili kira geliri vergisi: 1) Istisna: 21.000 TL'ye kadar kira geliri vergi disi, 2) Gider yontemi: gercek gider (kiradan %15'i otomatik dusulur) veya goturu gider (%15), 3) Beyan: 21.000 TL ustu kira geliri icin Mart ayinda beyanname verilir, 4) Vergi dilimleri: %15'ten baslar %40'a kadar cikar. Ornek: 100.000 TL yillik kira - 21.000 TL istisna = 79.000 TL vergiye tabi. Stopaj (isveren tarafindan kesilen vergi) beyannameden mahsup edilir."
+    },
+    {
+      "soru": "GYO nedir?",
+      "cevap": "GYO (Gayrimenkul Yatirim Ortakligi), portfoyunde gayrimenkul, gayrimenkul projeleri ve gayrimenkul haklari bulunan, halka acik sermaye piyasasi kurumudur. Avantajlari: 1) Kucuk yatirimciya gayrimenkul yatirimi imkani, 2) Kurumlar vergisinden muaf, 3) Borsada islem gorur (likit), 4) Profesyonel yonetim. Turkiye'de 30+ GYO bulunur (Torunlar, Emlak Konut, Is GYO vb. en buyukleri). Temettu verimi yillik %3-8 arasindadir."
+    },
+    {
+      "soru": "Enerji kimlik belgesi (EKB) nedir?",
+      "cevap": "Enerji Kimlik Belgesi (EKB), binanin enerji performansini gosteren A'dan G'ye kadar siniflandirma yapan resmi belgedir. A (en verimli) ile G (en verimsiz) arasi. Zorunluluk: yeni binalar ve satilik/kiralik mevcut binalar icin gereklidir. 2024 itibariyle enerji kimlik belgesi olmayan binalar satilamaz ve kiralanamaz. Gecerlilik: 10 yil. EKB almak icin enerji kimlik belgesi uzmanina basvurulur, maliyeti 1.000-3.000 TL arasi."
+    },
+    {
+      "soru": "Rezerv alan nedir?",
+      "cevap": "Rezerv alan, kentsel donusum kapsaminda yeni yerlesim alani olarak belirlenen bolgelerdir. Cumhurbaskani veya belediye tarafindan ilan edilir. Ozellikleri: 1) Devlet tarafindan kamulastirilabilir, 2) Yeni konut projeleri icin kullanilir, 3) Riskli alanlardaki hak sahiplerine yeni konut uretilir, 4) Imar plani devlet tarafindan hazirlanir. Rezerv alan ilani mulk degerini etkiler, genellikle deger artisina yol acar."
+    },
+    {
+      "soru": "Sit alani nedir?",
+      "cevap": "Sit alani, tarihi, kulturel veya dogal degerler nedeniyle koruma altina alinan bolgelerdir. Turleri: 1) Arkeolojik sit (antik kent, oren yeri vb.), 2) Kentsel sit (tarihi sehir dokusu), 3) Dogal sit (orman, plaj, akarsu vb.), 4) Tarihi sit (savas alani, anit vb.). Sit alanlarinda insaat kisitlamalari vardir: 1. derece sitte hic yapi yapilamaz, 2. ve 3. derece sitte Tabiat Varliklari ve Koruma Bölge Müdürlüğü izni ile kismi yapilasma mumkundur."
+    },
+    {
+      "soru": "Jeolojik etut ve zemin etudu nedir?",
+      "cevap": "Jeolojik etut (zemin etudu), yapi yapilacak arazinin zemin ozelliklerini belirleyen bilimsel calismadir. Zorunluluk: 2018'den beri tum yeni binalar icin zemin etudu zorunludur. Icerdigi bilgiler: zemin turu, tasima kapasitesi, deprem riski, yeralti su seviyesi, sivilasma riski. Iki tur: 1) Jeolojik etut (genel arazi incelemesi), 2) Jeofizik etut (sondaj ve deneylerle detayli). Maliyeti 5.000-20.000 TL. Rapor olumlu ise insaat, olumsuz ise guclendirme gerekir."
+    },
+    {
+      "soru": "Hasinder nedir?",
+      "cevap": "Hasinder (Istanbul ve Hatay Sanayici ve Is Insanlari Yatirim ve Isbirligi Platformu), B2B ticaret ve isbirligi platformudur. 2026 yilinda kurulmus olup merkezi Istanbul Esenyurt'tadir. Emtia, gayrimenkul, hizmet, lojistik ve kurul bazli is basvurularini tek ekosistemde birlestirir. TIB Borsa Sistemi ile otonom ticaret agi sunar, akilli eslestirme algoritmasi ile alici-saticiyi bulusturur. Iletisim: +90 533 371 55 77, kurt.hakki@gmail.com. Web: hasinder.com"
+    },
+    {
+      "soru": "Hasinder'in misyonu nedir?",
+      "cevap": "Hasinder'in misyonu: Turk is dunyasinin dijital donusumune onculuk ederek, kucuk-orta olcekli isletmelerin buyuk sirketlerle esit sartlarda rekabet edebilecegi, guvenli ve seffaf bir ticaret ortami sunmaktir. Dijital ticaret altyapisiyla bolgesel ekonomik kalkinmayi hizlandirmayi hedefler."
+    },
+    {
+      "soru": "Hasinder'de hangi hizmetler var?",
+      "cevap": "Hasinder'de 8 ana hizmet bulunur: 1) B2B Ilan Platformu (emtia, gayrimenkul, hizmet, lojistik ilanlari), 2) TIB Borsa (gercek zamanli alim-satim, otonom ticaret agi), 3) Icra Kurullari (20 profesyonel komisyon), 4) Akilli Eslestirme (AI destekli alici-satici eslestirme), 5) Ekonomi Haberleri ve Piyasa Analizleri, 6) Is Basvurulari ve Kariyer, 7) Etkinlikler ve Networking, 8) Has Ozel Akademi (Gumruk ve Dis Ticaret Egitimi)."
+    },
+    {
+      "soru": "TIB Borsa nedir?",
+      "cevap": "TIB Borsa (Otonom Ticaret Agi), Hasinder platformunda gercek zamanli alim-satim yapilmasini saglayan sistemdir. Kullanici dostu arayuzle fiyat endeksleri, piyasa verileri ve anlik islem firsatlari sunar. Ticaret islemlerini dijitallestirerek alici ve saticiyi guvenli bir ortamda bulusturur."
+    },
+    {
+      "soru": "Hasinder'de kac icra kurulu var?",
+      "cevap": "Hasinder'de 20 icra kurulu (profesyonel komisyon) bulunur: 1) Hukuk - Av. Furkan Yarar, 2) Mali Musavirlik - Ibrahim Ozdogan, 3) Gumruk ve Dis Ticaret - Ibrahim Hakki Donmez, 4) Is Guvenligi ve Sagligi - Dr. Ayse Kaya, 5) Standart ve Sertifikasyon - Mehmet Kurt, 6) Ic Kontrol ve Denetim - Harun Alpa, 7) Teknoloji ve Siber Guvenlik - Emir Tasdemir, 8) Gida Tarim ve Hayvancilik - Murat Sahin, 9) Insan Kaynaklari - Elif Yildirim, 10) Lojistik ve Tasimacilik - Burak Kaya, 11) Hukuk ve Avukatlik - Selin Demirci, 12) Tedarik ve Satin Alma - Kemal Arslan, 13) Pazarlama ve Marka - Elif Arslan, 14) Ar-Ge ve Inovasyon - Emre Celik, 15) Sigorta ve Risk Yonetimi - Buse Korkmaz, 16) Yatirim ve Finansman - Oguz Yilmaz, 17) Imalat ve Uretim - Gizem Toprak, 18) Saglik ve Medikal - Canan Ozturk, 19) Insaat ve Gayrimenkul - Serkan Akin, 20) Enerji ve Madencilik - Deniz Kara."
+    },
+    {
+      "soru": "Hasinder'e nasil uye olunur?",
+      "cevap": "Hasinder'e uyelik tamamen ucretsizdir. hasinder.com adresinden Kayit Ol sayfasina giderek e-posta ve sifre ile hemen uye olabilirsiniz. Uyelik sonrasi ilan verebilir, TIB Borsa'yi kullanabilir, icra kurullarina basvurabilir ve akilli eslestirme hizmetinden faydalanabilirsiniz. KVKK uyumlu ve SSL guvenlik sertifikali altyapi ile bilgileriniz korunur."
+    },
+    {
+      "soru": "Akilli eslestirme nedir?",
+      "cevap": "Akilli Eslestirme, Hasinder'in yapay zeka destekli eslestirme sistemidir. Sektor, lokasyon ve is modeli baz alinarak alici ile saticiyi, isveren ile adayi en hizli sekilde bulusturur. Profil ve sektor bazli calisan bu sistem dogru is ortagini dogru firsatla karsilastirir."
+    },
+    {
+      "soru": "Hatay Yatirim Projesi nedir?",
+      "cevap": "Hatay Yatirim Projesi, Has Insan Dernegi tarafindan yurutulen tarim ve yasam koyu projesidir. Hatay'da tarimsal kalkinma ve yasam alani olusturmayi hedefler. Hasinder platformu uzerinden yatirimci ve girisimcileri bu projeye yonlendirir."
+    },
+    {
+      "soru": "Has Insan Dernegi nedir?",
+      "cevap": "Has Insan Dernegi, Hasinder B2B Platformu'nun arkasindaki sivil toplum kurulusudur. Dernek, Istanbul ve Hatay basta olmak uzere Turkiye'de sanayici ve is insanlari arasinda isbirligini tesvik eder, yatirim projeleri yurutur ve bolgesel kalkinmaya katkida bulunur."
+    },
+    {
+      "soru": "Hasinder'de hangi kategorilerde ilan verilebilir?",
+      "cevap": "Hasinder'de 60+ kategoride ilan verilebilir. Bascila sektorler: Otomotiv, Makine, Medikal, Kozmetik, Ambalaj, Metal, Madencilik, Turizm, Teknoloji, Guvenlik, Temizlik, Tekstil, Kimya, Gida, Insaat, Elektronik, Lojistik, Cam/Seramik, Deri, Hukuk, Mali Musavirlik, Gumruk, Is Guvenligi, Cevre, IK, Marka/Patent, Finans, Sigorta, Dijital Pazarlama, Enerji, Yapi Denetimi, Gayrimenkul, Tarim, Hayvancilik, Hammadde."
+    },
+    {
+      "soru": "Hasinder iletisim bilgileri nedir?",
+      "cevap": "Hasinder iletisim: Adres: Adile Nasit Caddesi, Olcay Sevalista Residence Kat 2, Esenyurt / Istanbul. Telefon: +90 533 371 55 77. E-posta: kurt.hakki@gmail.com. Web: hasinder.com. 7/24 WhatsApp destek hatti ile hizmet verir. Sosyal medya: Facebook (Has Insan), Instagram (siliconcampus), X (siliconcampus1), LinkedIn (hakkikurt)."
+    },
+    {
+      "soru": "Hasinder'in degerleri nelerdir?",
+      "cevap": "Hasinder'in 4 temel degeri: 1) Guven - Uyelerin bilgileri ve ticari verileri en ust guvenlik standartlariyla korunur. 2) Seffaflik - Tum ilanlar, komisyon oranlari ve islem surecleri acik ve izlenebilir. 3) Inovasyon - Akilli eslestirme, otonom borsa ve dijital altyapi ile surekli yenilik. 4) Profesyonellik - Is dunyasinin etik kurallarina uygun, kurumsal duzeyde hizmet anlayisi."
+    },
+    {
+      "soru": "B2B ticaret nedir?",
+      "cevap": "B2B (Business-to-Business), isletmeler arasi ticareti ifade eder. Sirketlerin birbirlerine urun veya hizmet sattigi ticaret modelidir. B2C'den (sirketten tuketiciye) farkli olarak daha buyuk hacimli, daha karmasik ve genellikle uzun vadeli is iliskilerine dayanir. Hasinder, Turkiye'de KOBI'lerin B2B ticaret yapmasini kolaylastiran dijital platformdur."
+    },
+    {
+      "soru": "Istanbul ve Hatay arasinda nasil bir isbirligi var?",
+      "cevap": "Hasinder platformu, Istanbul ve Hatay arasinda sanayici ve is insanlari arasinda kopru kurar. Istanbul'un ticaret ve finans hacmi ile Hatay'in tarim, sanayi ve stratejik konumu (Sinir kapisi, Iskenderun Limani) birlestirilir. Platform sayesinde Hatay'daki uretici Istanbul'daki aliciya, Istanbul'daki yatirimci Hatay'daki projelere ulasir. Bu model Bolgesel kalkinmayi destekler."
+    },
+    {
+      "soru": "Hasinder ekonomisi hakkinda detay verir misiniz?",
+      "cevap": "Hasinder ekonomisi, hasinder.com adresinde yayinlanan gunluk ekonomi ozetleri ile takip edilebilir. Platform 2026 yilinda kurulmus olup, 20 icra kurulu, 60+ sektor kategorisi ve aktif uye agiyla buyumektedir. 7/24 erisilebilir dijital ticaret altyapisi, ucretsiz uyelik ve dusuk komisyon oranlariyla KOBI'lerin ihracat ve yurt ici ticaretini destekler. Gunluk ekonomi haberleri ve piyasa analizleri hasinder.com'da yayinlanir."
+    },
+    {
+      "soru": "Hasinder Turkiye'nin kac sehrinde aktif?",
+      "cevap": "Hasinder, Istanbul ve Hatay merkezli olmakla birlikte Turkiye'nin tum illerine hizmet verir. Platform uzerinden 81 ilden uye kaydi, ilan ve basvuru yapilabilir. B2B ticaret agi Turkiye geneline yayilmis olup, ozellikle sanayi ve tarim bolgelerinde yogunlastirilmis calismalar yurutulmektedir."
+    }
+  ]
+}

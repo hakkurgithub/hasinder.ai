@@ -1,0 +1,144 @@
+{
+  "dataset": [
+    {
+      "soru": "4458 sayılı Gümrük Kanununun tam metnini verir misin?",
+      "cevap": "4458 sayılı Gümrük Kanunu'nun tam metni oldukça uzundur (5 kısım, 262 madde); bu nedenle sohbet penceresine sığdırmak yerine resmi ve güncel kaynaktan sunmak en doğrusudur. Resmi tam metin: https://www.mevzuat.gov.tr/mevzuatmetin/1.5.4458.pdf (Mevzuat Bilgi Sistemi).\n\n**Kanunun yapısı:**\n- Kısım 1: Başlangıç hükümleri (amaç, kapsam, tanımlar, Türkiye Gümrük Bölgesi)\n- Kısım 2: Eşya muamelesine ilişkin hükümler (eşyanın gümrüğe sunulması, rejimler, özet beyan, beyanname)\n- Kısım 3: Gümrük vergileri (verginin doğması, borçlu, hesaplanması, ödenmesi)\n- Kısım 4: Gümrük borcu (yükümlülüğün doğması, kapsam, itfa)\n- Kısım 5: Karar ve ihtilaflar (itiraz, dava, cezalar)\n\n**En çok sorulan maddeler:**\n- Madde 3: Tanımlar (bağlayıcı bilgi, beyan, eşya, rejim vb.)\n- Madde 8: Bağlayıcı tarife bilgisi (BTB) — 3 yıl geçerlidir\n- Madde 9: Bağlayıcı menşe bilgisi (BMB) — 3 yıl geçerlidir\n- Madde 16-19: Eşyanın gümrüğe sunulması ve özet beyan\n- Madde 40: Gümrük beyannamesi ve tescili\n- Madde 52-65: Serbest dolaşıma giriş rejimi\n- Madde 181: İthalatta gümrük yükümlülüğünün doğması (beyannamenin tescil edildiği anda)\n- Madde 202: Gümrük yükümlülüğü kapsamı\n- Madde 233-241: İdari para cezaları\n\nBelirli bir maddeyi veya konuyu sormak isterseniz o bölümü detaylıca açıklayabilirim.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "4458 sayılı Gümrük Kanunu kaç maddeden oluşur?",
+      "cevap": "4458 sayılı Gümrük Kanunu, 5 kısım ve toplam 262 maddeden oluşur. 27.10.1999 tarihinde kabul edilmiş, 04.11.1999 tarihli Resmi Gazete'de yayımlanmış ve 05.02.2000 tarihinde yürürlüğe girmiştir.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "4458 sayılı Gümrük Kanunu kaç kısımdan oluşur?",
+      "cevap": "4458 sayılı Gümrük Kanunu 5 kısımdan oluşur:\n1) Başlangıç hükümleri (amaç, kapsam, tanımlar)\n2) Eşya muamelesine ilişkin hükümler (rejimler, beyanname)\n3) Gümrük vergileri\n4) Gümrük borcu\n5) Karar ve ihtilaf durumları, cezalar",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "4458 sayılı Gümrük Kanunu ne zaman yürürlüğe girdi?",
+      "cevap": "4458 sayılı Gümrük Kanunu 27.10.1999'da kabul edilmiş, 04.11.1999 tarihli Resmi Gazete'de yayımlanmış ve 05.02.2000 tarihinde yürürlüğe girmiştir. Gümrük Birliği mevzuatıyla uyumludur.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "4458 sayılı Gümrük Kanunu'nun 181. maddesi nedir?",
+      "cevap": "4458 sayılı Gümrük Kanunu'nun 181. maddesi ithalatta gümrük yükümlülüğünün doğmasını düzenler. Buna göre ithalatta gümrük yükümlülüğü, serbest dolaşıma giriş rejimine tabi tutulan eşyaya ilişkin gümrük beyannamesinin tescil edildiği anda doğar.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "İthalatta gümrük yükümlülüğü ne zaman doğar?",
+      "cevap": "4458 sayılı Gümrük Kanunu'nun 181. maddesine göre ithalatta gümrük yükümlülüğü, serbest dolaşıma giriş rejimine tabi tutulan eşyaya ilişkin gümrük beyannamesinin tescil edildiği anda doğar. Bağlayıcı tarife bilgisi veya bağlayıcı menşe bilgisinin geçerliliği bu yükümlülüğün doğmasına engel değildir.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Bağlayıcı tarife bilgisi kaç yıl geçerlidir?",
+      "cevap": "4458 sayılı Gümrük Kanunu'nun 8. maddesine göre bağlayıcı tarife bilgisi (BTB) 3 yıl süreyle geçerlidir. Bağlayıcı menşe bilgisi (BMB) ise 9. madde uyarınca 3 yıl geçerlidir.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Bağlayıcı menşe bilgisi kaç yıl geçerlidir?",
+      "cevap": "4458 sayılı Gümrük Kanunu'nun 9. maddesine göre bağlayıcı menşe bilgisi (BMB) 3 yıl süreyle geçerlidir. Bağlayıcı tarife bilgisi (BTB) ise 8. madde uyarınca 3 yıl geçerlidir.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük Kanunu'na göre bağlayıcı tarife bilgisi hangi durumda geçerliliğini kaybeder?",
+      "cevap": "4458 sayılı Gümrük Kanunu'nun 8. maddesi uyarınca bağlayıcı tarife bilgisi (BTB) şu durumlarda geçerliliğini kaybeder:\n- Verildiği tarihteki mevzuata göre hatalı veya eksik bilgiye dayanması halinde\n- Mevzuat değişikliği sonucu verilen bilginin yeni hükümlere uymaması halinde\n- Verilen bilginin daha sonra değiştirilmesi veya iptali halinde\n\nBTB 3 yıl geçerli olup, bu süre içinde bilgi sahibi açısından bağlayıcıdır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük beyannamesi nedir?",
+      "cevap": "4458 sayılı Gümrük Kanunu'nun 3. ve 40. maddelerine göre gümrük beyannamesi, bir eşyanın gümrük rejimine tabi tutulması için gerekli bilgileri içeren ve gümrük idaresine sunulan resmi beyandır. Beyanname, eşyanın geldiği anda tescil edilir ve tescil tarihi esas alınır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük rejimleri nelerdir?",
+      "cevap": "4458 sayılı Gümrük Kanunu'na göre gümrük rejimleri şunlardır:\n1) Serbest dolaşıma giriş rejimi\n2) Transit rejimi\n3) Gümrük antrepo rejimi\n4) Dahilde işleme rejimi\n5) Gümrük kontrolü altında işleme rejimi\n6) Geçici ithalat rejimi\n7) Hariçte işleme rejimi\n8) İhracat rejimi\n9) Serbest bölgeler rejimi\n\nBunlar 4458 sayılı Kanun'un Kısım 2 bölümünde düzenlenmiştir.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "4458 sayılı Gümrük Kanunu'nun amacı nedir?",
+      "cevap": "4458 sayılı Gümrük Kanunu'nun amacı (Madde 1), Türkiye'nin uluslararası ticarette gümrük işlemlerini, gümrük vergilerinin tahsilini ve gümrük denetimini düzenlemektir. Kanun, Gümrük Birliği mevzuatıyla (Topluluk Gümrük Kodu) uyumlu olarak hazırlanmıştır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük vergileri nelerdir?",
+      "cevap": "4458 sayılı Gümrük Kanunu'nun 3. maddesi kapsamında gümrük vergileri: ithalat vergileri (gümrük vergisi, eş etkili vergiler, ticaret politikası önlemleri çerçevesinde alınan vergiler ve tarımsal ihracat iadeleri dışındaki ihracat vergileri) ve ihracat vergileridir. Ayrıca KDV ve ÖTV, gümrük işlemleri sırasında birlikte tahsil edilir.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "ÖTV Kanunu kaç sayılıdır?",
+      "cevap": "Özel Tüketim Vergisi Kanunu 4760 sayılıdır (06.06.2002, Resmi Gazete: 12.06.2002/24783). ÖTV, belirli mallar üzerinden tek aşamalı olarak alınan bir harcama vergisidir. Not: Sınav metinlerinde geçen \"39 sayılı ÖTV Kanunu\" ifadesi yanlıştır; doğrusu 4760 sayılı ÖTV Kanunu'dur.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "ÖTV Kanunu hangi durumda vergiyi doğurur?",
+      "cevap": "4760 sayılı Özel Tüketim Vergisi Kanunu'nun 2. maddesine göre ÖTV'de vergiyi doğuran olay; mal teslimi, ithalat ve müzayede yoluyla satıştır. İthalatta gümrük beyannamesinin tescil edildiği anda, yurt içinde ise malın teslim edildiği anda vergi yükümlülüğü doğar. Sınavlarda geçen \"39 sayılı ÖTV Kanunu\" ifadesi hatalıdır; doğrusu 4760 sayılı ÖTV Kanunu'dur.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "ÖTV'de vergiyi doğuran olay nedir?",
+      "cevap": "4760 sayılı Özel Tüketim Vergisi Kanunu'nun 2. maddesine göre ÖTV'de vergiyi doğuran olay; mal teslimi, ithalat, müzayede yoluyla satış ve belirlenmiş diğer işlemlerdir. Malın teslimi (veya ithalatta gümrük beyannamesinin tescili) ile vergi yükümlülüğü doğar. ÖTV; petrol ürünleri, motorlu taşıtlar, alkollü içkiler, tütün mamulleri ve lüks mallar üzerinden tek aşamada alınır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "39 sayılı ÖTV Kanunu var mı?",
+      "cevap": "Hayır. Özel Tüketim Vergisi Kanunu 4760 sayılıdır (2002). Sınav metinlerinde ve bazı eski kaynaklarda geçen \"39 sayılı ÖTV Kanunu\" ifadesi doğru değildir. ÖTV'nin düzenlendiği kanun 4760 sayılı ÖTV Kanunu'dur.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "5607 sayılı Kaçakçılıkla Mücadele Kanunu nedir?",
+      "cevap": "5607 sayılı Kaçakçılıkla Mücadele Kanunu, kaçakçılık fiillerini ve bunlara uygulanacak cezaları düzenler. Gümrük kaçakçılığı (eşyayı gümrük işlemlerine tabi tutmadan ticarete konu etmek), akaryakıt ve tütün kaçakçılığı gibi fiiller bu kanun kapsamındadır. Gümrük müşavirliği sınavlarında sıkça sorulur.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük müşaviri kimdir?",
+      "cevap": "Gümrük müşaviri, gümrük mevzuatı konusunda uzmanlaşmış ve gümrük işlemlerinde gerçek veya tüzel kişileri temsil eden, eşyanın gümrük işlemlerini yürüten serbest meslek mensubudur. Gümrük Müşavirliği ve Gümrük Müşavirliği Yardımcılığı Yönetmeliği'ne göre yetki belgesi alarak çalışır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Dahilde işleme rejimi nedir?",
+      "cevap": "Dahilde işleme rejimi, 4458 sayılı Gümrük Kanunu'nda düzenlenen bir rejimdir. İhracata yönelik işlem görecek eşyanın (hammadde, ara mamul) gümrük vergileri ve ticaret politikası önlemlerine tabi tutulmaksızın Türkiye Gümrük Bölgesine girmesi ve işlendikten sonra ihraç edilmesini sağlar. Amaç, ihracatçıların maliyetini azaltmaktır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Hariçte işleme rejimi nedir?",
+      "cevap": "Hariçte işleme rejimi, 4458 sayılı Gümrük Kanunu'nda düzenlenen bir rejimdir. Serbest dolaşımda bulunan eşyanın, işlenmek üzere geçici olarak Türkiye Gümrük Bölgesi dışına çıkarılmasını ve işlem görmüş ürünler olarak vergi muafiyeti veya indirimiyle geri getirilmesini sağlar.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük antrepo rejimi nedir?",
+      "cevap": "Gümrük antrepo rejimi, 4458 sayılı Gümrük Kanunu'nda düzenlenen bir rejimdir. Eşyanın ithalat vergileri ve ticaret politikası önlemlerine tabi tutulmaksızın bir gümrük antreposunda saklanmasına olanak tanır. Antrepo; özel antrepo, genel antrepo ve A tipi antrepo gibi türlere ayrılır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Serbest dolaşıma giriş rejimi nedir?",
+      "cevap": "Serbest dolaşıma giriş rejimi, 4458 sayılı Gümrük Kanunu'nun 52-65. maddelerinde düzenlenir. Üçüncü ülke menşeli eşyanın ithal vergilerinin ödenmesi kaydıyla Türkiye Gümrük Bölgesi'nde serbest dolaşıma girmesini sağlayan rejimdir. Rejime giren eşya, Türkiye menşeli eşyayla aynı hukuki statüyü kazanır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük tarife cetveli nedir?",
+      "cevap": "Türk Gümrük Tarife Cetveli, eşyayı sınıflandıran ve gümrük vergisi oranlarını belirleyen sistematik listedir. Harmonize Sistem (HS) 6 basamaklı pozisyonlar üzerine kuruludur; Türkiye'de 12 basamaklı GTİP kodları kullanılır. 4458 sayılı Gümrük Kanunu'nun 15. maddesi tarife cetvelini esas alır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "GTİP nedir?",
+      "cevap": "GTİP (Gümrük Tarife İstatistik Pozisyonu), Türk Gümrük Tarife Cetvelinde eşyanın sınıflandırıldığı 12 haneli sayısal koddur. İlk 6 hane Harmonize Sistem (HS) kodunu, sonraki haneler ulusal alt açılımları gösterir. İthalatta ve ihracatta beyannamede GTİP kodu kullanılır.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük mevzuatı nedir?",
+      "cevap": "Gümrük mevzuatı, gümrük işlemlerini düzenleyen tüm hukuki düzenlemelerdir: 4458 sayılı Gümrük Kanunu, Gümrük Yönetmeliği, Ticaret Bakanlığı tebliğleri, genelgeler ve uluslararası sözleşmeler (Gümrük Birliği, Dünya Gümrük Örgütü kararları). Hiyerarşi: Kanun > Yönetmelik > Tebliğ/Genelge.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük cezaları nelerdir?",
+      "cevap": "Gümrük idari para cezaları 4458 sayılı Gümrük Kanunu'nun 233-241. maddelerinde düzenlenir: Beyanname vermeme, eksik veya yanlış beyanda bulunma, belge ve bilgi eksikliği, yasak ve kısıtlamalara uymama durumlarında para cezası uygulanır. Kaçakçılık fiilleri ise 5607 sayılı Kanun'a göre adli ceza gerektirir.",
+      "kategori": "Mevzuat"
+    },
+    {
+      "soru": "Gümrük müşavirliği sınavı nedir?",
+      "cevap": "Gümrük müşavirliği sınavı, Gümrük Müşavirliği ve Gümrük Müşavirliği Yardımcılığı Yönetmeliği uyarınca gümrük müşaviri olmak isteyenlerin girdiği mesleki yeterlilik sınavıdır. Sınavda 4458 sayılı Gümrük Kanunu, Gümrük Yönetmeliği, ticaret politikası, tarife ve menşe konularından sorular yöneltilir. Ticaret Bakanlığı tarafından yapılır.",
+      "kategori": "Mevzuat"
+    }
+  ]
+}

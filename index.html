@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hasinder.ai - Merkezi Yapay Zeka Asistanı</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">
+          <h1>hasinder.ai</h1>
+          <span class="subtitle">Merkezi Yerel Yapay Zeka Ekosistemi</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="durum" class="durum">Yükleniyor...</span>
+      </div>
+    </header>
+
+    <main id="mesajlar" class="mesajlar" aria-live="polite"></main>
+
+    <footer class="giris-alani">
+      <input type="text" id="user-input" placeholder="hasinder.ai hafızasında ara..." autocomplete="off" maxlength="500">
+      <button id="send-btn" class="btn btn-birincil">Gönder</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+name: Otomatik JSON Listesi Guncelleme
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'hasinder-ai-data/*.json'
+
+jobs:
+  guncelle:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Repoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: JSON Listesini Python ile Olustur
+        run: |
+          python -c '
+          import os, json
+          directory = "hasinder-ai-data"
+          if os.path.exists(directory):
+              files = ["hasinder-ai-data/" + f for f in os.listdir(directory) if f.endswith(".json") and f != "file-list.json"]
+              with open(os.path.join(directory, "file-list.json"), "w") as f:
+                  json.dump(files, f, indent=4)
+          '
+
+      - name: Degisiklikleri GitHub'a Kaydet
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Turquoise AI: Yeni veri setleri otomatik olarak eklendi."
+          file_pattern: 'hasinder-ai-data/file-list.json'

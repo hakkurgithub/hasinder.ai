@@ -1,0 +1,33 @@
+name: Otonom AI Ajanı (Veri Avcısı)
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  ajan_calistir:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Repoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: Python Ortamını Kur
+        uses: actions/setup-python@v5
+
+      - name: Gerekli Kütüphaneleri Yükle
+        run: pip install requests
+
+      - name: AI Ajanını Çalıştır ve Yeni Verileri Üret
+        env:
+          OPENROUTER_API_KEY: ${{ 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 }}
+        run: python otonom-ajan.py
+
+      - name: Üretilen JSON Dosyasını GitHub'a Kaydet
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Turquoise AI Ajanı: İnternetten yeni bilgiler toplanıp sisteme eklendi."
+          file_pattern: 'hasinder-ai-data/*.json'
