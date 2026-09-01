@@ -1,0 +1,86 @@
+{
+    "olusturuldu": "otonom",
+    "kaynak": "https://www.hasinder.com/kurullar.php",
+    "dataset": [
+        {
+            "soru": "Hukuk Komisyonu İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Hukuk Komisyonu İcra Kurulu Platform üyeleri arasındaki ticari uyuşmazlıklarda arabuluculuk ve hakem heyeti kararlarının uygulanmasını sağlar. Sözleşme denetimi, icra işlemleri ve yasal uyum konularında uzmandır. Kurul Baskani Av. Furkan YARAR +90 533 371 55 77 hukuk@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Mali Müşavirlik İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Mali Müşavirlik İcra Kurulu Platformun mali işlemlerinin denetimi, üye firmaların muhasebe süreçlerinin kontrolü ve vergi danışmanlığı hizmetleri sunar. Kurul Baskani Ibrahim OZDOGAN +90 533 371 55 77 muhasebe@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Gümrük ve Dış Ticaret İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Gümrük ve Dış Ticaret İcra Kurulu İthalat ve ihracat işlemlerinde gümrükleme danışmanlığı, dış ticaret mevzuatı konusunda üyelere rehberlik eder. Serbest ticaret bölgesi işlemlerinde uzmandır. Kurul Baskani İbrahim Hakkı DÖNMEZ +90 533 371 55 77 gumruk@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "İş Güvenliği ve Sağlığı İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "İş Güvenliği ve Sağlığı İcra Kurulu Platformda faaliyet gösteren firmaların iş sağlığı ve güvenliği standartlarını denetler. OSGB hizmetleri ve risk değerlendirme konularında uzmandır. Kurul Baskani Dr. Ayse KAYA +90 533 371 55 77 isguvenligi@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Standart ve Sertifikasyon İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Standart ve Sertifikasyon İcra Kurulu ISO, CE, TSE gibi ulusal ve uluslararası belgelendirme süreçlerinde üyelere rehberlik eder. Kalite yönetimi ve süreç denetimi konularında uzmandır. Kurul Baskani Mehmet KURT +90 533 371 55 77 sertifikasyon@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "İç Kontrol ve Denetim İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "İç Kontrol ve Denetim İcra Kurulu Platform üyelerinin iç denetim, risk yönetimi ve kurumsal yönetim süreçlerini destekler. Mali tablolar ve operasyonel süreçlerin bağımsız denetimini yapar. Kurul Baskani Harun ALPA +90 533 371 55 77 ickontrol@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Teknoloji ve Siber Güvenlik İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Teknoloji ve Siber Güvenlik İcra Kurulu Platformun teknolojik altyapısının güvenliği, üye firmaların dijital dönüşümü ve siber güvenlik konularında uzman desteği sunar. Kurul Baskani Emir TAŞDEMİR +90 533 371 55 77 teknoloji@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Gıda Tarım ve Hayvancılık İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Gıda Tarım ve Hayvancılık İcra Kurulu Gıda ve tarım sektöründe faaliyet gösteren üyelerin hijyen, Tarım Bakanlığı izinleri ve gıda güvenliği standartları konusunda denetim yapar. Kurul Baskani Murat SAHIN +90 534 890 1234 gida@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "İnsan Kaynakları İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "İnsan Kaynakları İcra Kurulu Platform üyelerinin insan kaynakları süreçlerini destekler. İşe alım, eğitim ve performans yönetimi konularında danışmanlık sunar. Kurul Baskani Elif YILDIRIM +90 533 371 55 77 insankaynaklari@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Lojistik ve Taşımacılık İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Lojistik ve Taşımacılık İcra Kurulu Platform üyelerinin lojistik ve nakliye ihtiyaçlarını koordine eder. Depolama, kargo ve taşımacılık süreçlerinin optimizasyonunu sağlar. Kurul Baskani Burak KAYA +90 536 012 3456 cevre@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Hukuk ve Avukatlık İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Hukuk ve Avukatlık İcra Kurulu Platform üyelerine hukuki danışmanlık hizmeti sunar. Ticaret hukuku, iş hukuku ve sözleşmeler konularında uzman avukatlarla destek sağlar. Kurul Baskani Selin DEMIRCI +90 537 123 4567 egitim@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Tedarik ve Satın Alma İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Tedarik ve Satın Alma İcra Kurulu Platform üyelerinin tedarik ve satın alma süreçlerini optimize eder. Tedarikçi değerlendirme, ihale yönetimi ve sözleşme müzakerelerinde destek sağlar. Kurul Baskani Kemal ARSLAN +90 538 234 5678 satinalma@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Pazarlama ve Marka İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Pazarlama ve Marka İcra Kurulu Üyelerin pazarlama ve marka stratejilerini geliştirir. Dijital pazarlama, sosyal medya ve marka yönetimi konularında uzman destek sunar. Kurul Baskani Elif ARSLAN +90 533 371 55 77 pazarlama@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Ar-Ge ve İnovasyon İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Ar-Ge ve İnovasyon İcra Kurulu Ar-Ge ve inovasyon faaliyetlerini destekler. Üye firmaların Ar-Ge projeleri, patent başvuruları ve teknolojik gelişim süreçlerinde danışmanlık sunar. Kurul Baskani Emre CELIK +90 532 456 7890 arge@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Sigorta ve Risk Yönetimi İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Sigorta ve Risk Yönetimi İcra Kurulu Üyelerin sigorta ve risk yönetimi ihtiyaçlarını karşılar. Ticari sigorta ürünleri, işletme riskleri ve tazminat süreçlerinde rehberlik eder. Kurul Baskani Buse KORKMAZ +90 533 567 8901 sigorta@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Yatırım ve Finansman İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Yatırım ve Finansman İcra Kurulu Yatırım ve finansman konularında üyelere danışmanlık sunar. KOSGEB, banka kredileri, girişim sermayesi ve yatırım teşvikleri konularında uzmandır. Kurul Baskani Oguz YILMAZ +90 534 678 9012 yatirim@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "İmalat ve Üretim İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "İmalat ve Üretim İcra Kurulu İmalat sektöründe faaliyet gösteren üyelerin üretim süreçlerini, kalite kontrollerini ve kapasite planlamalarını denetler. Kurul Baskani Gizem TOPRAK +90 535 789 0123 imalat@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Sağlık ve Medikal İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Sağlık ve Medikal İcra Kurulu Sağlık ve medikal sektöründe faaliyet gösteren üyelerin TİTCK izinleri, CE belgelendirme ve sağlık turizmi standartlarını denetler. Kurul Baskani Canan OZTURK +90 536 890 1234 saglik@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "İnşaat ve Gayrimenkul İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "İnşaat ve Gayrimenkul İcra Kurulu İnşaat ve gayrimenkul sektöründe faaliyet gösteren üyelerin yapı ruhsatları, İmar Mevzuatı ve taşeron yönetimi konularında denetim yapar. Kurul Baskani Serkan AKIN +90 537 901 2345 insaat@hasinder.com Gizli Başvuru Aktif"
+        },
+        {
+            "soru": "Enerji ve Madencilik İcra Kurulu nedir ve görevleri nelerdir?",
+            "cevap": "Enerji ve Madencilik İcra Kurulu Enerji ve madencilik sektöründe faaliyet gösteren üyelerin EPDK lisansları, çevre etki değerlendirmesi ve enerji verimliliği konularında danışmanlık sunar. Kurul Baskani Deniz KARA +90 538 012 3456 enerji@hasinder.com Gizli Başvuru Aktif"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-name: Otonom Gunvenlik Suzgeci (JSON Guncelle)
+name: Otonom Bilgi Havuzu + Guvenlik Suzgeci
 
 on:
   push:
@@ -7,11 +7,12 @@ on:
     paths:
       - 'hasinder-ai-data/*.json'
   schedule:
+    # Gunluk otonom dongu: her gun 04:00 UTC (07:00 Turkiye saati)
     - cron: '0 4 * * *'
   workflow_dispatch:
 
 jobs:
-  suzgec:
+  veri-havuzu:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -23,14 +24,29 @@ jobs:
       - name: Python Ortamini Dogrula
         run: python --version
 
-      - name: Gunvenlik Suzgecini Calistir
+      - name: Tarayici Bagimliliklarini Kur
+        run: pip install --quiet requests beautifulsoup4
+
+      - name: Icra Kurullari Tarayicisi (hasinder.com/kurullar.php)
+        run: python scraper.py
+        # hasinder.com portalindaki icra kurullari / komisyon / yonetim bilgilerini
+        # tarar, script/zararli icerikleri ayiklar, hasinder-ai-data/icra-kurullari.json
+        # dosyasina yazar. Yalnizca disaridan veri ceker; sisteme ait veriyi gondermez.
+
+      - name: Otonom Veri Toplayici (acik JSON portallarindan veri cek)
+        run: python veri-toplayici.py
+        # Acik kaynakli JSON veri portallarindan (Dunya Bankasi, doviz API)
+        # guncel bilgileri ceker, hasinder-ai-data/otonom-veri.json'a yazar.
+
+      - name: Gunvenlik Suzgeci (zararli icerik + JSON/sema dogrulama)
         run: python otonom-ajan.py
-        # Suzgec güvensiz/bozuk JSON bulursa exit(1) ile adimi hata verir
-        # ve asagidaki commit adimi calismaz.
+        # Tum hasinder-ai-data/*.json dosyalarini tarar; HTML/script/enjeksiyon
+        # iceren veya {soru,cevap} semasına uymayan veri bulursa exit(1) yapar.
+        # Boylece asagidaki commit adimi calismaz ve bozuk/zararli veri repoya girmez.
 
       - name: Temiz Degisiklikleri GitHub'a Kaydet
         if: ${{ success() }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🤖 hasinder.ai: Otonom gunvenlik suzgeci calisti, temiz veriler guncellendi."
+          commit_message: "🤖 hasinder.ai: Otonom veri havuzu calisti, guvenlik suzgeci temiz verileri guncelledi."
           file_pattern: 'hasinder-ai-data/*.json'

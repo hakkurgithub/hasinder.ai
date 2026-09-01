@@ -55,6 +55,33 @@ def tehdit_iceriyor_mu(icerik):
     return None
 
 
+def qa_schema_hata(data):
+    """
+    Standart Q&A şemasını zorunlu kılar: { "soru": "...", "cevap": "..." }.
+    data beklenen yapı: { "dataset": [ {soru,cevap}, ... ] }.
+    Hata mesajı döner; sorunsuzsa None döner.
+    """
+    if not isinstance(data, dict) or "dataset" not in data:
+        return "Beklenen yapi { 'dataset': [...] } bulunamadi"
+    liste = data["dataset"] if isinstance(data["dataset"], list) else []
+    if not liste:
+        return "dataset bos"
+    for idx, oge in enumerate(liste):
+        if not isinstance(oge, dict):
+            return f"dataset[{idx}] sözlük degil"
+        soru = oge.get("soru")
+        cevap = oge.get("cevap")
+        if not isinstance(soru, str) or not soru.strip():
+            return f"dataset[{idx}]: 'soru' bos veya metin degil"
+        if not isinstance(cevap, str) or len(cevap.strip()) < 15:
+            return f"dataset[{idx}]: 'cevap' bos/sikisik (en az 15 karakter gerekli)"
+        for alan in (soru, cevap):
+            bulunan = tehdit_iceriyor_mu(alan)
+            if bulunan:
+                return f"dataset[{idx}]: zararli icerik ('{bulunan}')"
+    return None
+
+
 def validate_json_files():
     print("Otonom Güvenlik Süzgeci Calisiyor...")
     if not os.path.exists(DATA_DIR):
@@ -91,6 +118,15 @@ def validate_json_files():
                 print(f"UYARI: Gecersiz JSON yapisi (liste/sözlük degil): {ad}")
                 atlanan += 1
                 continue
+
+            # 4) Otonom veri toplayici / tarayici betiklerinin urettigi dosyalarda
+            #    standart Q&A semasi ({soru,cevap}) katı şekilde denetlenir.
+            if ad in ("otonom-veri.json", "icra-kurullari.json"):
+                schema = qa_schema_hata(data)
+                if schema:
+                    print(f"UYARI: Semaya uymayan veri: {ad} -> {schema}")
+                    atlanan += 1
+                    continue
 
             print(f"GUVENLI ve GECERLI: {ad}")
             temiz += 1
