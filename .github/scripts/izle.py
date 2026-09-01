@@ -18,8 +18,8 @@ import time
 import urllib.request
 import urllib.error
 
-TOKEN = os.environ.get("GITHUB_TOKEN", "")
-REPO = os.environ.get("GITHUB_REPOSITORY", "")
+TOKEN = os.environ.get("GH_TOKEN", "") or os.environ.get("GITHUB_TOKEN", "")
+REPO = os.environ.get("GH_REPO", "") or os.environ.get("GITHUB_REPOSITORY", "")
 API = os.environ.get("GITHUB_API_URL", "https://api.github.com").rstrip("/")
 
 ANA_AJAN_ISMI = "Otonom Veri Guncelleme Ajani"

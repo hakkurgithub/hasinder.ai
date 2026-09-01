@@ -17,4 +17,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Izle ve Gerekiyorsa Yenden Baslat
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          GITHUB_API_URL: ${{ github.api_url }}
         run: python .github/scripts/izle.py
