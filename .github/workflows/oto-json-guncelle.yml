@@ -1,52 +1,49 @@
-name: Otonom Bilgi Havuzu + Guvenlik Suzgeci
+name: Otonom Veri Guncelleme Ajani
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'hasinder-ai-data/*.json'
   schedule:
-    # Gunluk otonom dongu: her gun 04:00 UTC (07:00 Turkiye saati)
-    - cron: '0 4 * * *'
-  workflow_dispatch:
+    - cron: '0 0 * * *'   # Her gun otomatik calisir (00:00 UTC = 03:00 Turkiye saati)
+  workflow_dispatch:      # GitHub panelinden "Run workflow" ile aninda manuel test edilebilir
 
 jobs:
-  veri-havuzu:
+  update-data:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write      # Repoya yazma/commit atma izni
 
     steps:
-      - name: Repoyu Klonla
+      - name: Depoyu Kopyala (Checkout)
         uses: actions/checkout@v4
 
-      - name: Python Ortamini Dogrula
-        run: python --version
+      - name: Python Ortamini Kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-      - name: Tarayici Bagimliliklarini Kur
+      - name: Gerekli Kutukphaneleri Yukle
         run: pip install --quiet requests beautifulsoup4
 
-      - name: Icra Kurullari Tarayicisi (hasinder.com/kurullar.php)
+      - name: Scraper Ajanini Calistir (hasinder.com icra kurullari)
         run: python scraper.py
-        # hasinder.com portalindaki icra kurullari / komisyon / yonetim bilgilerini
-        # tarar, script/zararli icerikleri ayiklar, hasinder-ai-data/icra-kurullari.json
-        # dosyasina yazar. Yalnizca disaridan veri ceker; sisteme ait veriyi gondermez.
+        # hasinder.com/kurullar.php sayfasindaki icra kurullari / komisyon / yonetim
+        # bilgilerini tarar; script ve zararli icerikleri ayiklar; icra-kurullari.json'a yazar.
 
-      - name: Otonom Veri Toplayici (acik JSON portallarindan veri cek)
+      - name: Veri Toplayici Ajanini Calistir (dis ticaret / ekonomi)
         run: python veri-toplayici.py
-        # Acik kaynakli JSON veri portallarindan (Dunya Bankasi, doviz API)
-        # guncel bilgileri ceker, hasinder-ai-data/otonom-veri.json'a yazar.
+        # Acik JSON portallarindan (Dunya Bankasi, doviz API) Turkeye ait
+        # dis ticaret/ekonomi istatistiklerini ceker; otonom-veri.json'a yazar.
 
-      - name: Gunvenlik Suzgeci (zararli icerik + JSON/sema dogrulama)
+      - name: Guvenlik Suzgeci (zararli veri / sema denetimi)
         run: python otonom-ajan.py
-        # Tum hasinder-ai-data/*.json dosyalarini tarar; HTML/script/enjeksiyon
-        # iceren veya {soru,cevap} semasına uymayan veri bulursa exit(1) yapar.
-        # Boylece asagidaki commit adimi calismaz ve bozuk/zararli veri repoya girmez.
+        # Tum hasinder-ai-data/*.json dosyalarini tarar; HTML/script/enjeksiyon iceren
+        # veya {soru,cevap} semasına uymayan veri bulursa exit(1) yapar.
+        # Boylece asagidaki commit/push adimi calismaz ve zararli veri repoya girmez.
 
-      - name: Temiz Degisiklikleri GitHub'a Kaydet
-        if: ${{ success() }}
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "🤖 hasinder.ai: Otonom veri havuzu calisti, guvenlik suzgeci temiz verileri guncelledi."
-          file_pattern: 'hasinder-ai-data/*.json'
+      - name: Degisiklikleri GitHub Reposuna Otomatik Kaydet (Commit & Push)
+        run: |
+          git config --global user.name "hasinder-ai-bot"
+          git config --global user.email "bot@hasinder.ai"
+          git add hasinder-ai-data/
+          git status
+          # Yeni veri varsa commit atar, yoksa sessizce gecer
+          git diff --staged --quiet || (git commit -m "Otonom Veri Guncellemesi: Yeni Icra, Kurul ve Ekonomi Bilgileri [skip ci]" && git push)
