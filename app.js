@@ -34,7 +34,9 @@ const DATA_FILES = [
     "sehir-bilgileri.json",
     "sirket-is-hukuku-dataset.json",
     "soru-cevap-dataset.json",
-    "turkiye-ekonomi-dataset.json"
+    "turkiye-ekonomi-dataset.json",
+    "icra-kurullari.json",
+    "otonom-veri.json"
 ];
 
 // ---------- Türkçe Metin Normalizasyonu ----------
