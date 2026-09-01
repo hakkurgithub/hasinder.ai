@@ -45,7 +45,23 @@ const STOPWORDS = new Set([
 const SELAM_REGEX = /^(merhaba|selam|selamlar|hey|gunaydin|iyi gunler|iyi aksamlar|iyi bayramlar|hello|hi|naber|nasilsin|hosgeldin)\b/;
 
 function icerikKelimeleri(metin) {
-  return normalize(metin).split(' ').filter(k => k.length > 1 && !STOPWORDS.has(k));
+  return normalize(sorguyuTemizle(metin)).split(' ').filter(k => k.length > 1 && !STOPWORDS.has(k));
+}
+
+// Gelişmiş sorgu normalizasyonu: soru kalıplarını ayıklar (bkz. app.js).
+function sorguyuTemizle(girdi) {
+  return normalize(String(girdi))
+    .replace(/\bne anlama gelir\b/g, ' ')
+    .replace(/\bne demek\b/g, ' ')
+    .replace(/\bne demektir\b/g, ' ')
+    .replace(/\bneye yarar\b/g, ' ')
+    .replace(/\bne ise yarar\b/g, ' ')
+    .replace(/\bne icin\b/g, ' ')
+    .replace(/\bne kadar\b/g, ' ')
+    .replace(/\bnedir\b|\bnasil\b|\banlami nedir\b|\banlami\b|\banlama\b|\bacikla\b|\bkaç\b|\bkac\b|\bkactir\b|\bneredir\b/g, ' ')
+    .replace(/[?.,!]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function kelimeEslesir(a, b) {
@@ -129,7 +145,8 @@ function veriYukle() {
   qa.forEach(k => k.kelimeler = icerikKelimeleri(k.soru));
   return {
     qa,
-    terimler: JSON.parse(oku('emlak-terimleri.json')).terimler,
+    terimler: JSON.parse(oku('emlak-terimleri.json')).terimler
+      .concat(JSON.parse(oku('dis-ticaret-terimleri.json')).terimler),
     sehirler: JSON.parse(oku('sehir-bilgileri.json')).sehirler,
     prompt: oku('goodbuy-real-estate-prompt.md')
   };

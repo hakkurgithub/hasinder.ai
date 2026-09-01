@@ -2,8 +2,12 @@ name: Otonom Veri Guncelleme Ajani
 
 on:
   schedule:
-    - cron: '0 0 * * *'   # Her gun otomatik calisir (00:00 UTC = 03:00 Turkiye saati)
+    - cron: '0 0 * * *'   # Gunde 1 kez - kota dostu (00:00 UTC = 03:00 Turkiye saati)
   workflow_dispatch:      # GitHub panelinden "Run workflow" ile aninda manuel test edilebilir
+
+concurrency:
+  group: otonom-veri
+  cancel-in-progress: false
 
 jobs:
   update-data:

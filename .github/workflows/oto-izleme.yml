@@ -2,8 +2,12 @@ name: Otonom Veri Izleme (Bekci)
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # GitHub Actions'in en sik araligi (5 dakika)
+    - cron: '*/30 * * * *'   # 30 dakikada bir (kota dostu: ~1440 calisma/ay)
   workflow_dispatch:        # Manuel / cevrimici izleme
+
+concurrency:
+  group: otonom-izleme
+  cancel-in-progress: false
 
 permissions:
   contents: read

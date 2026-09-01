@@ -36,7 +36,9 @@ const DATA_FILES = [
     "soru-cevap-dataset.json",
     "turkiye-ekonomi-dataset.json",
     "icra-kurullari.json",
-    "otonom-veri.json"
+    "otonom-veri.json",
+    "b2b-ticaret-dataset.json",
+    "dis-ticaret-terimleri.json"
 ];
 
 // ---------- Türkçe Metin Normalizasyonu ----------
@@ -46,6 +48,26 @@ function normalize(metin) {
     return metin.toLocaleLowerCase('tr')
         .replace(/[ışğüöçâîû]/g, h => TR_HARF[h] || h)
         .replace(/[^a-z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+// Gelişmiş sorgu normalizasyonu (Ham girdiye uygulanır):
+// "gümrük nedir?" -> "gumruk"  |  "XYZ ne anlama gelir?" -> "xyz"
+// Önce Türkçe karakterler ASCII'ye çevrilir (için->icin, işe->ise, nasıl->nasil, kaç->kac),
+// ardından tüm soru kalıpları ve noktalama ayıklanır. Böylece anahtar kelime
+// GitHub Raw JSON havuzuyla hatasız eşleştirilir.
+function sorguyuTemizle(girdi) {
+    return normalize(String(girdi))
+        .replace(/\bne anlama gelir\b/g, ' ')
+        .replace(/\bne demek\b/g, ' ')
+        .replace(/\bne demektir\b/g, ' ')
+        .replace(/\bneye yarar\b/g, ' ')
+        .replace(/\bne ise yarar\b/g, ' ')
+        .replace(/\bne icin\b/g, ' ')
+        .replace(/\bne kadar\b/g, ' ')
+        .replace(/\bnedir\b|\bnasil\b|\banlami nedir\b|\banlami\b|\banlama\b|\bacikla\b|\bkaç\b|\bkac\b|\bkactir\b|\bneredir\b/g, ' ')
+        .replace(/[?.,!]/g, ' ')
         .replace(/\s+/g, ' ')
         .trim();
 }
@@ -64,7 +86,7 @@ const STOPWORDS = new Set([
 const SELAM_REGEX = /^(merhaba|selam|selamlar|hey|gunaydin|iyi gunler|iyi aksamlar|iyi bayramlar|hello|hi|naber|nasilsin|hosgeldin)\b/;
 
 function icerikKelimeleri(metin) {
-    return normalize(metin).split(' ').filter(k => k.length > 1 && !STOPWORDS.has(k));
+    return normalize(sorguyuTemizle(metin)).split(' ').filter(k => k.length > 1 && !STOPWORDS.has(k));
 }
 
 function kelimeEslesir(a, b) {
@@ -113,7 +135,7 @@ async function loadDatasets() {
                     veri.qa = veri.qa.concat(data);
                 } else if (data && typeof data === 'object') {
                     if (Array.isArray(data.dataset)) veri.qa = veri.qa.concat(data.dataset);
-                    if (Array.isArray(data.terimler)) veri.terimler = data.terimler;
+                    if (Array.isArray(data.terimler)) veri.terimler = veri.terimler.concat(data.terimler);
                     if (Array.isArray(data.sehirler)) veri.sehirler = data.sehirler;
                 }
                 yuklenen++;

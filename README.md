@@ -16,9 +16,11 @@ sorulan sorulara cevap verir. Bilmedigi sorulari WhatsApp uzerinden uzmana ileti
 - **Konsol arayuzu:** Python veya Node.js ile terminalde calisir.
 - **Acik kaynak veri:** Tum bilgi bankasi `hasinder-ai-data/` klasorundeki
   acik JSON/Markdown dosyalarindan gelir - kolayca genisletilebilir.
-- **Genisletilmis bilgi bankasi:** 3821 soru-cevap, 112 terim, 81 sehir bilgisi.
+- **Genisletilmis bilgi bankasi:** 4313 soru-cevap, 132 terim, 81 sehir bilgisi.
 - **WhatsApp yonlendirme:** Cevap bulunamayan sorular WhatsApp uzerinden
   uzmana iletilir (wa.me/905333715577).
+- **Evrensel Widget:** Harici sitelere Shadow DOM ile gomulen hafif asistan
+  (`widget.js`) - cPanel'e istek atmadan dogrudan GitHub Raw veri ceker.
 
 ## Klasor Yapisi
 
@@ -139,6 +141,32 @@ Ollama yoksa, kendi bulut API anahtarınızla LLM kullanilabilir:
 $env:OPENROUTER_API_KEY = "sk-or-v1-xxxxx..."
 node konsol.js
 ```
+
+## Evrensel Widget (Harici Siteler Icin)
+
+`widget.js` ile hasinder.ai asistanini herhangi bir HTML sayfaya gomun.
+Widget Shadow DOM kullanir, boylece hedef sitenin stili/JS'i ile cakismaz;
+verileri sunucunuzu (cPanel) yormadan **dogrudan GitHub Raw** `hasinder-ai-data/`
+havuzundan ceker. **HAS INSAN DER** felsefesine uygun olarak 7/24 erisilebilir.
+
+### Kurulum (3 adim)
+
+```html
+<!-- 1) Widget scriptini yukleyin -->
+<script src="https://raw.githubusercontent.com/hakkurgithub/hasinder.ai/main/widget.js"></script>
+
+<!-- 2) Gomulecegi yere kapsayici ekleyin -->
+<div data-hasinder data-hasinder-konum="gumruk" data-hasinder-baslik="Gumruk Sorulari"></div>
+```
+
+Isteg e bagli ozellikler:
+
+- `data-hasinder-konum` (opsiyonel): `gumruk`, `emlak`, `b2b`, `finans` -
+  yalnizca o sektor icin veri yukler. Bos birakilirsa tum havuz kullanilir.
+- `data-hasinder-baslik`: Ustte gorunen baslik.
+- Disaridan veri beslemek: `window.HasinderWidget.veri = [...]` tanimlayin.
+
+Canli ornek: `widget-ornek.html` dosyasini tarayicida acin.
 
 ## GitHub'a Yukleme ve GitHub Pages ile Yayinlama
 

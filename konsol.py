@@ -52,7 +52,25 @@ def normalize(metin):
 
 
 def icerik_kelimeleri(metin):
-    return [k for k in normalize(metin).split() if len(k) > 1 and k not in STOPWORDS]
+    return [k for k in normalize(sorguyu_temizle(metin)).split() if len(k) > 1 and k not in STOPWORDS]
+
+
+# Gelişmiş sorgu normalizasyonu: soru kalıplarını ayıklar (bkz. app.js).
+_SORU_KALIPLARI = [
+    r'\bne anlama gelir\b', r'\bne demek\b', r'\bne demektir\b',
+    r'\bneye yarar\b', r'\bne ise yarar\b', r'\bne icin\b', r'\bne kadar\b',
+    r'\bnedir\b', r'\bnasil\b', r'\banlami nedir\b', r'\banlami\b',
+    r'\banlama\b', r'\bacikla\b', r'\bkaç\b', r'\bkac\b', r'\bkactir\b',
+    r'\bneredir\b',
+]
+
+
+def sorguyu_temizle(girdi):
+    temiz = normalize(str(girdi))
+    for kalip in _SORU_KALIPLARI:
+        temiz = re.sub(kalip, ' ', temiz)
+    temiz = re.sub(r'[?.,!]', ' ', temiz)
+    return re.sub(r'\s+', ' ', temiz).strip()
 
 
 def kelime_eslesir(a, b):
@@ -135,7 +153,8 @@ def veri_yukle():
         kayit['kelimeler'] = icerik_kelimeleri(kayit['soru'])
     return {
         'qa': qa,
-        'terimler': json.loads(oku('emlak-terimleri.json'))['terimler'],
+        'terimler': json.loads(oku('emlak-terimleri.json'))['terimler'] +
+                    json.loads(oku('dis-ticaret-terimleri.json'))['terimler'],
         'sehirler': json.loads(oku('sehir-bilgileri.json'))['sehirler'],
         'prompt': oku('goodbuy-real-estate-prompt.md')
     }

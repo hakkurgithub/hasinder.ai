@@ -1,0 +1,104 @@
+{
+  "terimler": [
+    {
+      "terim": "Emtia",
+      "aciklama": "Alınıp satılan, ticarete konu olan her türlü mal veya eşya demektir. Gümrük ve dış ticaret dilinde 'emtia', bir firmanın ihraç veya ithal ettiği somut ürünleri ifade eder. Ticarette emtianın doğru tarife sınıflandırması, vergi ve gümrük işlemlerinin hatasız yürümesinin temelidir.",
+      "kategori": "Dış Ticaret"
+    },
+    {
+      "terim": "Kambiyo",
+      "aciklama": "Para, döviz ve kıymetli evrakın (çek, senet, tahvil) alım-satım ve takas işlemlerine verilen isimdir. Dış ticarette kambiyo işlemleri, ihracat bedellerinin yurda getirilmesi ve ithalat ödemelerinin yapılması aşamasında karşımıza çıkar.",
+      "kategori": "Dış Ticaret"
+    },
+    {
+      "terim": "Döviz Kuru",
+      "aciklama": "Bir ulusal paranın başka bir ülke parası cinsinden değeridir. Örneğin USD/TRY kuru, 1 Amerikan dolarının Türk lirası karşılığını gösterir. Döviz kuru; arz-talep, faiz, enflasyon ve ekonomik beklentilerden etkilenir ve dış ticaret maliyetlerini doğrudan belirler.",
+      "kategori": "Dış Ticaret"
+    },
+    {
+      "terim": "Tarife",
+      "aciklama": "İthalat ve ihracatta eşyanın tabi olduğu gümrük vergisi oranlarını, kodlarını ve sınıflandırmasını gösteren listeye tarife (gümrük tarife cetveli) denir. Doğru tarife sınıfı, ödenecek vergi miktarını ve gümrük işlem süresini doğrudan etkiler.",
+      "kategori": "Gümrük"
+    },
+    {
+      "terim": "Gümrük Beyannamesi",
+      "aciklama": "İthal veya ihraç edilen eşyanın cinsini, miktarını, kıymetini, menşeini ve tarife sınıfını gümrük idaresine bildirmek için düzenlenen resmi belgedir. Beyannamenin tescil edildiği an, birçok gümrük yükümlülüğünün doğduğu andır.",
+      "kategori": "Gümrük"
+    },
+    {
+      "terim": "BTB (Bağlayıcı Tarife Bilgisi)",
+      "aciklama": "Ticaret Bakanlığı'nın, eşyanın tarife sınıflandırmasını önceden ve bağlayıcı biçimde belirlediği resmi yazıdır. BTB sayesinde ithalatçı ve ihracatçı, eşyasının hangi gümrük tarife pozisyonuna girdiğini önceden kesin olarak bilir; 3 yıl geçerlidir.",
+      "kategori": "Gümrük"
+    },
+    {
+      "terim": "BMB (Bağlayıcı Menşe Bilgisi)",
+      "aciklama": "Eşyanın menşe ülkesinin (nerede üretildiğinin) idarece bağlayıcı biçimde belirlendiği resmi belgedir. Menşe, gümrük vergisi oranları ve ticaret anlaşmalarından doğan indirimler açısından belirleyicidir; 3 yıl geçerlidir.",
+      "kategori": "Gümrük"
+    },
+    {
+      "terim": "Menşe",
+      "aciklama": "Bir eşyanın ekonomik olarak üretildiği, işlendiği veya yetiştirildiği ülkeyi gösteren kavramdır. Menşe bilgisi, gümrük vergisi oranlarının, tercihli tarife uygulamalarının ve anti-damping önlemlerinin belirlenmesinde esas alınır.",
+      "kategori": "Gümrük"
+    },
+    {
+      "terim": "İthalat",
+      "aciklama": "Bir ülkenin sınırları dışındaki mal veya hizmetlerin, o ülkeye getirilmesi ve serbest dolaşıma sokulması işlemidir. İthalatta gümrük yükümlülüğü, beyannamenin tescil edildiği anda doğar.",
+      "kategori": "Dış Ticaret"
+    },
+    {
+      "terim": "İhracat",
+      "aciklama": "Bir ülkede üretilen mal veya hizmetlerin, yurt dışına satılmak üzere gönderilmesi işlemidir. İhracat, işletmeler için yeni pazarlara açılmanın ve ülke ekonomisi için döviz girdisinin en önemli yollarından biridir.",
+      "kategori": "Dış Ticaret"
+    },
+    {
+      "terim": "Gümrük Vergisi",
+      "aciklama": "İthal edilen eşyaya, tarife sınıflandırması ve menşeine göre uygulanan vergidir. İthalatçının ödediği gümrük vergisi, devlet bütçesine gelir sağlar ve yerli üreticiyi koruma amacı taşır.",
+      "kategori": "Gümrük"
+    },
+    {
+      "terim": "KDV (Katma Değer Vergisi)",
+      "aciklama": "Mal ve hizmet alım satımının her aşamasında yaratılan katma değer üzerinden alınan dolaylı vergidir. İthalatta KDV, gümrük vergisi üzerinden değil, eşyanın gümrük vergili kıymeti üzerinden hesaplanır.",
+      "kategori": "Vergi"
+    },
+    {
+      "terim": "ÖTV (Özel Tüketim Vergisi)",
+      "aciklama": "Akaryakıt, otomobil, alkol, tütün gibi belirli ürünler üzerinden tek aşamada alınan vergidir. İthalatta ÖTV, eşyanın cinsine göre maktu veya oransal olarak uygulanır ve gümrük işlemlerinin tamamlanması için ödenmelidir.",
+      "kategori": "Vergi"
+    },
+    {
+      "terim": "Serbest Dolaşıma Giriş",
+      "aciklama": "İthal edilen eşyanın gümrük vergileri ödenip gümrük rejiminden çıkarılarak Türkiye Gümrük Bölgesindeki diğer mallarla aynı statüye kavuşması işlemidir. Eşya bu işlemle 'serbest dolaşımda' sayılır.",
+      "kategori": "Gümrük"
+    },
+    {
+      "terim": "Gümrük Müşaviri",
+      "aciklama": "Gerçek ve tüzel kişilerin ithalat, ihracat ve gümrük işlemlerini, mevzuata uygun olarak ve yetki belgesi karşılığında onların adına yürüten meslek mensubudur. Gümrük müşaviri, firma ile gümrük idaresi arasında köprü görevi görür.",
+      "kategori": "Dış Ticaret"
+    },
+    {
+      "terim": "Lojistik",
+      "aciklama": "Ürünlerin üretim noktasından tüketim noktasına planlı, verimli ve izlenebilir biçimde taşınması, depolanması ve dağıtılması süreçlerinin tamamıdır. Dış ticarette lojistik; uluslararası taşıma, gümrük, sigorta ve depolama adımlarını kapsar.",
+      "kategori": "Lojistik"
+    },
+    {
+      "terim": "Konşimento",
+      "aciklama": "Deniz yoluyla taşınan malların, taşıyıcı tarafından yükleyiciye verilen taşıma ve tesellüm belgesidir. Konşimento aynı zamanda malın mülkiyetini temsil eden kıymetli bir evrak olduğundan, ticarette ödeme ve teslim işlemlerinde anahtar rol oynar.",
+      "kategori": "Lojistik"
+    },
+    {
+      "terim": "B2B (Business to Business)",
+      "aciklama": "Firmaların birbirleriyle yaptığı ticari işlemleri ifade eder. B2B ticarette taraflar son tüketici değil, işletmelerdir; alımlar daha büyük hacimli ve uzun vadeli ilişkilere dayalıdır.",
+      "kategori": "Ticaret"
+    },
+    {
+      "terim": "Akar Akçe",
+      "aciklama": "Canlılığını ve değerini en hızlı biçimde yitirebilen para, döviz ve kıymetli evrakı ifade eden eski bir ticaret terimidir. Bugün yaygın kullanımı, döviz ve kıymetli menkul kıymetlerin ticarileşme hızını vurgulamak içindir.",
+      "kategori": "Dış Ticaret"
+    },
+    {
+      "terim": "Sarih Müteakip",
+      "aciklama": "Dış ticarette, temel ticari işlemleri takip eden veya onlara eşlik eden ikincil işlemleri (navlun, sigorta, taşıma teyidi gibi) ifade eden mesleki terimdir. Doğru işlem takibi, maliyetlerin kontrolünde ve uyuşmazlıkların önlenmesinde belirleyicidir.",
+      "kategori": "Dış Ticaret"
+    }
+  ]
+}
