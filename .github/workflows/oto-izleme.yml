@@ -1,0 +1,88 @@
+name: Otonom Veri Izleme (Bekci)
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # Her 5 dakikada bir (GitHub Actions'in en sik araligi)
+  workflow_dispatch:        # Manuel izleme
+
+permissions:
+  contents: read
+  actions: write            # Basarisiz/duraklamissa ana ajani yeniden tetiklemek icin
+
+jobs:
+  izle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Depoyu Kopyala
+        uses: actions/checkout@v4
+
+      - name: Otonom Ajanin Son Calismasini ve Veri Durumunu Raporla
+        run: |
+          echo "=== SON OTONOM AJAN CALISMALARI ==="
+          curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs?per_page=5" \
+            | python -c "
+import sys, json
+d = json.load(sys.stdin)
+for r in d.get('workflow_runs', []):
+    print(r['id'], r.get('name'), '|', r.get('event'), '|', r.get('status'), '|', r.get('conclusion'), '|', r['created_at'])
+"
+
+          echo "=== VERI KAYIT SAYILARI ==="
+          for f in hasinder-ai-data/*.json; do
+            n=$(python -c "
+import json,sys
+try:
+    d=json.load(open('$f',encoding='utf-8'))
+    arr=d if isinstance(d,list) else d.get('dataset',d.get('qa',[]))
+    print(len(arr) if isinstance(arr,list) else 0)
+except Exception:
+    print('BOZUK')
+")
+            echo "$f : $n kayit"
+          done
+
+      - name: Otonom Ajanin Son Calismasini Dogrula (basarisizsa yeniden baslat)
+        run: |
+          LAST=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs?per_page=3" \
+            | python -c "
+import sys, json
+d = json.load(sys.stdin)
+target = None
+for r in d.get('workflow_runs', []):
+    # Veri ureten ana ajanin adiyla esles
+    if 'Otonom' in (r.get('name') or '') and r.get('event') != 'push':
+        target = r
+        break
+if target is None:
+    print('BULUNAMADI')
+else:
+    print(target['status'], '|', target.get('conclusion'))
+")
+
+          echo "Son ana-ajan calismasi: $LAST"
+          NEEDS_RESTART=0
+          if [[ "$LAST" == *"BULUNAMADI"* ]]; then
+            NEEDS_RESTART=1
+          elif [[ "$LAST" != *"completed"* ]]; then
+            # Hala calisiyor / kuyrukta -> mudahale gerekmez
+            NEEDS_RESTART=0
+          elif [[ "$LAST" == *"failure"* ]] || [[ "$LAST" == *"cancelled"* ]]; then
+            NEEDS_RESTART=1
+          fi
+
+          if [ "$NEEDS_RESTART" = "1" ]; then
+            echo "Ana otonom agani yeniden baslatiyorum (workflow_dispatch) ..."
+            curl -s -X POST \
+              -H "Authorization: Bearer $GITHUB_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -H "Content-Type: application/json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/oto-json-guncelle.yml/dispatches" \
+              -d '{"ref":"main"}'
+            echo "Restart tetiklendi."
+          else
+            echo "Otonom ajan saglikli, mudahale gerekmiyor."
+          fi
