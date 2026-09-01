@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 /* ============================================================
- * Turquoise AI - Konsol Surumu (Node.js, Hibrit)
+ * hasinder.ai - Konsol Surumu (Node.js, Hibrit)
  * 1. Once yerel veri setinde akilli eslestirme yapar
  * 2. Bulamazsa OpenRouter uzerinden acik kaynak LLM'e sorar (Llama 3.1)
  * 3. Cevap bulamazsa WhatsApp yonlendirmesi
@@ -319,7 +319,7 @@ Ollama (oncelikli, sinirsiz, bagimsiz):
 
 async function main() {
   console.log('='.repeat(60));
-  console.log('  Turquoise AI - Genel Yapay Zeka Asistani (Konsol)');
+  console.log('  hasinder.ai - Genel Yapay Zeka Asistani (Konsol)');
   console.log('='.repeat(60));
 
   let veri;
@@ -330,7 +330,7 @@ async function main() {
     process.exit(1);
   }
 
-  let apiKey = process.env.OPENROUTER_API_KEY || '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';
+  let apiKey = process.env.OPENROUTER_API_KEY || '';
   let model = process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-super-120b-a12b:free';
   const gecmis = [];
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Turquoise AI - Konsol Surumu (Hibrit)
+hasinder.ai - Konsol Surumu (Hibrit)
 1. Once yerel veri setinde akilli eslestirme yapar (ucretsiz, cevrimdisi)
 2. Bulamazsa OpenRouter uzerinden acik kaynak LLM'e sorar (Llama 3.1)
 3. Cevap bulamazsa WhatsApp yonlendirmesi
@@ -340,7 +340,7 @@ Ollama (oncelikli, sinirsiz, bagimsiz):
 
 def main():
     print('=' * 60)
-    print('  Turquoise AI - Genel Yapay Zeka Asistani (Konsol)')
+    print('  hasinder.ai - Genel Yapay Zeka Asistani (Konsol)')
     print('=' * 60)
 
     try:
@@ -349,7 +349,7 @@ def main():
         print(f'HATA: Veri dosyalari yuklenemedi: {e}')
         sys.exit(1)
 
-    api_key = os.environ.get('OPENROUTER_API_KEY', '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')
+    api_key = os.environ.get('OPENROUTER_API_KEY', '')
     model = os.environ.get('OPENROUTER_MODEL', 'nvidia/nemotron-3-super-120b-a12b:free')
     gecmis = []
 

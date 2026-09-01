@@ -4,6 +4,11 @@
 api-key.txt
 secrets.json
 
+# Sunucu (cPanel) ortamina ozel yapilandirmalar - repoya girmez
+.htaccess
+.user.ini
+php.ini
+
 # Python
 __pycache__/
 *.pyc

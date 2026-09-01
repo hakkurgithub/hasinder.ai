@@ -1,4 +1,4 @@
-name: Otomatik JSON Listesi Guncelleme
+name: Otonom Gunvenlik Suzgeci (JSON Guncelle)
 
 on:
   push:
@@ -6,9 +6,12 @@ on:
       - main
     paths:
       - 'hasinder-ai-data/*.json'
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
 
 jobs:
-  guncelle:
+  suzgec:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,19 +20,17 @@ jobs:
       - name: Repoyu Klonla
         uses: actions/checkout@v4
 
-      - name: JSON Listesini Python ile Olustur
-        run: |
-          python -c '
-          import os, json
-          directory = "hasinder-ai-data"
-          if os.path.exists(directory):
-              files = ["hasinder-ai-data/" + f for f in os.listdir(directory) if f.endswith(".json") and f != "file-list.json"]
-              with open(os.path.join(directory, "file-list.json"), "w") as f:
-                  json.dump(files, f, indent=4)
-          '
+      - name: Python Ortamini Dogrula
+        run: python --version
 
-      - name: Degisiklikleri GitHub'a Kaydet
+      - name: Gunvenlik Suzgecini Calistir
+        run: python otonom-ajan.py
+        # Suzgec güvensiz/bozuk JSON bulursa exit(1) ile adimi hata verir
+        # ve asagidaki commit adimi calismaz.
+
+      - name: Temiz Degisiklikleri GitHub'a Kaydet
+        if: ${{ success() }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🤖 Turquoise AI: Yeni veri setleri otomatik olarak eklendi."
-          file_pattern: 'hasinder-ai-data/file-list.json'
+          commit_message: "🤖 hasinder.ai: Otonom gunvenlik suzgeci calisti, temiz veriler guncellendi."
+          file_pattern: 'hasinder-ai-data/*.json'

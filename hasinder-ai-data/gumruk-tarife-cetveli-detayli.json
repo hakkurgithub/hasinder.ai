@@ -1102,7 +1102,7 @@
     },
     {
       "soru": "GTİP fasıl sorgu aracı nedir? Nasıl kullanılır?",
-      "cevap": "Turquoise AI bilgi hazinesi icin tasarlanmıs, Turk Gumruk Tarife Cetveli (TGTC) 99 fasıl eslestirme ve dogrulama veritabanına sahip Python tabanlı pratik sorgu aracı. Kullanım: python gtip_sorgu.py 84713000",
+      "cevap": "hasinder.ai AI bilgi hazinesi icin tasarlanmıs, Turk Gumruk Tarife Cetveli (TGTC) 99 fasıl eslestirme ve dogrulama veritabanına sahip Python tabanlı pratik sorgu aracı. Kullanım: python gtip_sorgu.py 84713000",
       "kategori": "Gumruk Araclari"
     },
     {

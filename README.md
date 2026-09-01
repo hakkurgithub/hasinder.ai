@@ -1,4 +1,4 @@
-# Turquoise AI - Genel Yapay Zeka Asistani
+# hasinder.ai - Genel Yapay Zeka Asistani
 
 hasinder.com, goodbuy.hasinder.com ve akademi.hasinder.com platformlarina hitap
 eden genel yapay zeka asistani. Gayrimenkul, gumruk ve dis ticaret, B2B ticaret,
@@ -8,7 +8,8 @@ sorulan sorulara cevap verir. Bilmedigi sorulari WhatsApp uzerinden uzmana ileti
 ## Ozellikler
 
 - **Hibrit beyin:** Once yerel veri setinde akilli eslestirme yapar (ucretsiz, cevrimdisi),
-  bulamazsa sirasiyla yerel Ollama'ya (sinirsiz, bagimsiz) ve Groq bulut LLM'e sorar.
+  bulamazsa sirasiyla yerel Ollama'ya (sinirsiz, bagimsiz) ve bulut LLM'e sorar
+  (web'de kullanici anahtari ile Gemini; konsolda `/key` ile OpenRouter).
 - **Tamamen bagimsiz ve sinirsiz:** Ollama ile calisirken internet, API anahtari
   veya herhangi bir limit OLMAZ. Kod ve veriler tamamen sizin.
 - **Web arayuzu:** Modern sohbet sayfasi - GitHub Pages'de sunucusuz calisir.
@@ -122,13 +123,17 @@ node konsol.js
 Ollama calisiyorsa asistan once Ollama'yi kullanir. Web surumunde de ayni
 sekilde `http://localhost:11434` adresinden otomatik baglanir.
 
-### 2. OpenRouter ile Bulut Mod (Opsiyonel Yedek)
+### 2. Bulut LLM (Opsiyonel Yedek)
 
-Ollama yoksa, ucretsiz OpenRouter API anahtari ile bulut LLM kullanilabilir:
+Ollama yoksa, kendi bulut API anahtarınızla LLM kullanilabilir:
 
+**Web'de (Google Gemini):**
+1. [aistudio.google.com](https://aistudio.google.com) adresinden ucretsiz Gemini API anahtari olusturun.
+2. Sitedaki **LLM** butonuna tiklayip anahtarinizi girin (tarayicida `localStorage`'da saklanir, koda gomulmez).
+
+**Konsolda (OpenRouter):**
 1. [openrouter.ai](https://openrouter.ai) adresinden ucretsiz hesap acip anahtar olusturun.
-2. **Web'de:** API anahtari `app.js` icine gomuludur, otomatik calisir.
-3. **Konsolda:** `/key sk-or-v1-xxxxx...` yazin veya ortam degiskeni kullanin:
+2. `/key sk-or-v1-xxxxx...` yazin veya ortam degiskeni kullanin:
 
 ```bash
 $env:OPENROUTER_API_KEY = "sk-or-v1-xxxxx..."
@@ -154,9 +159,10 @@ git push -u origin main
 4. Birkac dakika icinde siteniz yayinda olur:
    `https://KULLANICI_ADINIZ.github.io/DEPO_ADI/`
 
-> **Guvenlik notu:** Bu surumde OpenRouter API anahtari koda gomuludur (`app.js` icindeki
-> `OPENROUTER_API_ANAHTARI` sabiti), boylece tum ziyaretciler icin Hibrit Mod otomatik calisir.
-> GitHub Pages statik oldugundan anahtar herkesce gorunur; bu bilincli bir karardir.
+> **Guvenlik notu:** Koda HICBIR API anahtari gomulu degildir. Web surumunde Ollama
+> otomatik algilanir (siniirsiz ve ucretsiz); olmazsa kullanici kendi Google Gemini
+> anahtarini tarayicida (LLM butonu ile, localStorage'da) girer. Konsol surumu
+> `OPENROUTER_API_KEY` ortam degiskenini veya `/key` komutunu kullanir.
 
 ## Bilgi Bankasini Genisletme
 

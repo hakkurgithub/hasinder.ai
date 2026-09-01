@@ -1,104 +1,119 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Otonom Güvenlik Süzgeci (hasinder.ai)
+=====================================
+hasinder-ai-data/ klasöründeki tüm JSON dosyalarını tarar ve:
+1. Zararlı script / HTML / PHP enjeksiyon içeren verileri reddeder,
+2. Sadece geçerli ve temiz JSON yapılarını (liste veya sözlük) kabul eder,
+3. Dosyaları DEĞİŞTİRMEZ (sadece doğrular) — repo temiz kalır.
+
+Güvenlik davranışı:
+- Güvensiz veya bozuk bir dosya bulunursa skript exit(1) ile çıkar.
+- Böylece otonom workflow'un (oto-json-guncelle.yml) commit adımı çalışmaz
+  ve zararlı/bozuk veri hiçbir zaman repoya/canlı sisteme giremez.
+
+Kullanım:  python otonom-ajan.py
+"""
+
 import os
 import json
-import requests
-import datetime
+import glob
 import re
+import sys
 
-# 1. AYARLAR
-OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
-AI_MODEL = "meta-llama/llama-3-8b-instruct:free"
+# Betiğin bulunduğu dizine göre veri klasörünü belirle (çalışma dizininden bağımsız)
+SCRIPT_DIZINI = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(SCRIPT_DIZINI, "hasinder-ai-data")
 
-# Ajanın araştıracağı açık kaynaklı konular (Genişletilebilir)
-KONULAR = ["Türkiye Ekonomisi", "Gayrimenkul Değerleme", "Dış Ticaret", "Gümrük Mevzuatı", "E-Ticaret"]
+# Güvensiz içerik kalıpları (case-insensitive)
+TEHDIT_KALIPLARI = [
+    r"<script[\s>]",
+    r"javascript\s*:",
+    r"<\?php",
+    r"onload\s*=",
+    r"onerror\s*=",
+    r"onclick\s*=",
+    r"<iframe",
+    r"vbscript\s*:",
+    r"data\s*:\s*text/html",
+    r"eval\s*\(",
+    r"document\.cookie",
+    r"alert\s*\(",
+    r"<embed[\s>]",
+    r"<object[\s>]",
+    r"<svg[\s>]",
+]
+TEHDIT_DERLE = {re.compile(p, re.IGNORECASE): p for p in TEHDIT_KALIPLARI}
 
-def acik_kaynak_veri_cek(konu):
-    """Açık kaynaklardan (Vikipedi API) bilgi çeker."""
-    url = f"https://tr.wikipedia.org/api/rest_v1/page/summary/{konu.replace(' ', '_')}"
-    try:
-        response = requests.get(url)
-        if response.status_code == 200:
-            data = response.json()
-            return data.get("extract", "")
-        return ""
-    except Exception as e:
-        print(f"Veri çekme hatası ({konu}):", e)
-        return ""
 
-def yapay_zekaya_islet(ham_metin, konu):
-    """Çekilen ham bilgiyi OpenRouter ile JSON formatına çevirir."""
-    if not ham_metin:
-        return None
+def tehdit_iceriyor_mu(icerik):
+    """İçerikte zararlı/şüpheli desen var mı kontrol eder."""
+    for regex, desen in TEHDIT_DERLE.items():
+        if regex.search(icerik):
+            return desen
+    return None
 
-    prompt = f"""
-    Aşağıdaki ham metni incele ve 'HAS İNSAN DER' vizyonuna uygun, dürüst, açıklayıcı ve profesyonel bir üslupla soru-cevap formatında bir JSON veri setine dönüştür.
-    Sadece geçerli bir JSON dizisi (array) döndür. Başka hiçbir açıklama yazma.
-    
-    Örnek Format:
-    [
-      {{"etiket": "anahtar kelime 1", "bilgi": "Cevap metni"}},
-      {{"etiket": "anahtar kelime 2", "bilgi": "Cevap metni"}}
-    ]
 
-    Ham Metin (Konu: {konu}):
-    {ham_metin}
-    """
+def validate_json_files():
+    print("Otonom Güvenlik Süzgeci Calisiyor...")
+    if not os.path.exists(DATA_DIR):
+        print(f"UYARI: Veri klasoru bulunamadi: {DATA_DIR}")
+        sys.exit(1)
 
-    headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json"
-    }
-    
-    payload = {
-        "model": AI_MODEL,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.3
-    }
+    json_files = glob.glob(os.path.join(DATA_DIR, "*.json"))
+    if not json_files:
+        print("Dogrulanacak JSON dosyasi bulunamadi.")
+        sys.exit(1)
 
-    try:
-        response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload)
-        response.raise_for_status()
-        result_text = response.json()['choices'][0]['message']['content']
-        
-        # Sadece JSON kısmını ayıklama (Eğer model Markdown kod bloğu içinde gönderirse)
-        json_match = re.search(r'\[.*\]', result_text, re.DOTALL)
-        if json_match:
-            json_str = json_match.group(0)
-            return json.loads(json_str)
-        return json.loads(result_text)
-    except Exception as e:
-        print(f"Yapay zeka işleme hatası ({konu}):", e)
-        return None
+    temiz = 0
+    atlanan = 0
+    hatali = 0
 
-def main():
-    if not OPENROUTER_API_KEY:
-        print("HATA: OPENROUTER_API_KEY bulunamadı.")
-        return
+    for file_path in sorted(json_files):
+        ad = os.path.basename(file_path)
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                content = f.read()
 
-    yeni_veriler = []
-    
-    # Konuları tara ve işle
-    for konu in KONULAR:
-        print(f"Araştırılıyor: {konu}")
-        ham_veri = acik_kaynak_veri_cek(konu)
-        islenmis_json = yapay_zekaya_islet(ham_veri, konu)
-        
-        if islenmis_json:
-            yeni_veriler.extend(islenmis_json)
-            print(f"Başarılı: {konu} eklendi.")
+            # 1) Güvenlik kontrolü: zararlı script / enjeksiyon engelleme
+            bulunan = tehdit_iceriyor_mu(content)
+            if bulunan:
+                print(f"UYARI: Guvensiz icerik tespit edildi: {ad} (desen: {bulunan})")
+                atlanan += 1
+                continue
 
-    # Eğer yeni veri bulunduysa kaydet
-    if yeni_veriler:
-        tarih = datetime.datetime.now().strftime("%Y-%m-%d")
-        dosya_yolu = f"hasinder-ai-data/otonom-veri-{tarih}.json"
-        
-        # Klasör yoksa oluştur
-        os.makedirs("hasinder-ai-data", exist_ok=True)
-        
-        with open(dosya_yolu, "w", encoding="utf-8") as f:
-            json.dump(yeni_veriler, f, ensure_ascii=False, indent=4)
-        print(f"Veriler kaydedildi: {dosya_yolu}")
-    else:
-        print("Yeni veri oluşturulamadı.")
+            # 2) JSON geçerliliği
+            data = json.loads(content)
+
+            # 3) Yapısal tip denetimi (yalnızca liste veya sözlük kabul edilir)
+            if not isinstance(data, (list, dict)):
+                print(f"UYARI: Gecersiz JSON yapisi (liste/sözlük degil): {ad}")
+                atlanan += 1
+                continue
+
+            print(f"GUVENLI ve GECERLI: {ad}")
+            temiz += 1
+
+        except json.JSONDecodeError as e:
+            print(f"BOZUK JSON: {ad} -> {e}")
+            hatali += 1
+        except Exception as e:
+            print(f"HATA ({ad}): {e}")
+            hatali += 1
+
+    print("-" * 50)
+    print(f"Ozet: {temiz} temiz/gecerli, {atlanan} guvensiz/gecersiz, {hatali} bozuk.")
+
+    # Güvensiz veya bozuk dosya varsa hata koduyla çık.
+    # Workflow bu durumda commit yapmaz => zararlı veri repoya girmez.
+    if atlanan + hatali > 0:
+        print("SONUC: Güvensiz/bozuk veri bulundu. Commit engellendi.")
+        sys.exit(1)
+
+    print("SONUC: Tum veriler güvenli ve gecerli. Devam edebilirsiniz.")
+    sys.exit(0)
+
 
 if __name__ == "__main__":
-    main()
+    validate_json_files()
