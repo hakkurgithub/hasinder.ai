@@ -266,7 +266,7 @@ async function cevapUret(veri, gecmis, apiKey, model, girdi) {
   }
 
   const { skor, sayi, kayit } = enIyiEslesme(veri, girdi);
-  if (skor >= ESLESME_ESIGI && sayi >= 2) return { metin: kayit.cevap, kaynak: 'Veri Seti' };
+  if (skor >= ESLESME_ESIGI && sayi >= 1) return { metin: kayit.cevap, kaynak: 'Veri Seti' };
 
   const terimler = terimBul(veri, girdi);
   const sehir = sehirBul(veri, girdi);

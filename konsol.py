@@ -123,7 +123,8 @@ def veri_yukle():
                 'b2b-ticaret-dataset.json', 'lojistik-tasimacilik-dataset.json',
                 'finans-vergi-dataset.json', 'sirket-is-hukuku-dataset.json',
                 'turkiye-ekonomi-dataset.json', 'emlak-yatirim-dataset.json',
-                'mevzuat-dataset.json']
+                'mevzuat-dataset.json',
+                'icra-kurullari.json', 'otonom-veri.json']
     qa = []
     for dosya in dosyalar:
         qa.extend(json.loads(oku(dosya)).get('dataset', []))
@@ -284,7 +285,7 @@ def cevap_uret(veri, gecmis, api_key, model, girdi):
         return (selam['cevap'] if selam else 'Merhaba! Size nasil yardimci olabilirim?', 'Veri Seti')
 
     skor, sayi, kayit = en_iyi_eslesme(veri, girdi)
-    if skor >= ESLESME_ESIGI and sayi >= 2:
+    if skor >= ESLESME_ESIGI and sayi >= 1:
         return kayit['cevap'], 'Veri Seti'
 
     terimler = terim_bul(veri, girdi)

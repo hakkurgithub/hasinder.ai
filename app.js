@@ -34,7 +34,9 @@ const DATA_FILES = [
     "sehir-bilgileri.json",
     "sirket-is-hukuku-dataset.json",
     "soru-cevap-dataset.json",
-    "turkiye-ekonomi-dataset.json"
+    "turkiye-ekonomi-dataset.json",
+    "icra-kurullari.json",
+    "otonom-veri.json"
 ];
 
 // ---------- Türkçe Metin Normalizasyonu ----------
@@ -248,7 +250,7 @@ async function cevapUret(gecmis, girdi) {
     }
 
     const { skor, sayi, kayit } = enIyiEslesme(girdi);
-    if (skor >= 0.45 && sayi >= 2) return { metin: kayit.cevap, kaynak: 'Veri Seti' };
+    if (skor >= 0.45 && sayi >= 1) return { metin: kayit.cevap, kaynak: 'Veri Seti' };
 
     const terimler = terimBul(girdi);
     const sehir = sehirBul(girdi);
