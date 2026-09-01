@@ -100,7 +100,10 @@ async function jsonCek(url) {
 async function loadDatasets() {
     let yuklenen = 0;
     for (const fileName of DATA_FILES) {
-        const yollar = ["hasinder-ai-data/" + fileName, GITHUB_RAW_BASE + fileName];
+        // Decoupled mimari: Merkezi hafiza GitHub reposudur. Web arayuzu verileri
+        // GitHub Raw uzerinden dinamik ve salt-okunur ceker. Yerel hasinder-ai-data/
+        // yalnizca gelistirme/test icin son care yedek kaynak olarak kullanilir.
+        const yollar = [GITHUB_RAW_BASE + fileName, "hasinder-ai-data/" + fileName];
         for (const yol of yollar) {
             try {
                 const data = await jsonCek(yol);
@@ -117,7 +120,7 @@ async function loadDatasets() {
         }
     }
     try {
-        const r = await fetch("hasinder-ai-data/goodbuy-real-estate-prompt.md");
+        const r = await fetch(GITHUB_RAW_BASE + "goodbuy-real-estate-prompt.md");
         if (r.ok) veri.prompt = await r.text();
     } catch (e) { /* prompt yoksa varsayilan kullan */ }
 
