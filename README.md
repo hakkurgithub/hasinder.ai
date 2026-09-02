@@ -152,15 +152,18 @@ havuzundan ceker. **HAS INSAN DER** felsefesine uygun olarak 7/24 erisilebilir.
 ### Kurulum (3 adim)
 
 ```html
-<!-- 1) Widget scriptini yukleyin -->
-<script src="https://raw.githubusercontent.com/hakkurgithub/hasinder.ai/main/widget.js"></script>
+<!-- 1) Widget scriptini yukleyin (jsDelivr CDN - MIME dogru, raw.githubusercontent engellenir) -->
+<script src="https://cdn.jsdelivr.net/gh/hakkurgithub/hasinder.ai@main/widget.js"></script>
 
-<!-- 2) Gomulecegi yere kapsayici ekleyin -->
-<div data-hasinder data-hasinder-konum="gumruk" data-hasinder-baslik="Gumruk Sorulari"></div>
+<!-- 2) Gomulecegi yere kapsayici ekleyin (bos kalir; sabit modda sag-altta yuzer) -->
+<div data-hasinder data-hasinder-sabit data-hasinder-konum="gumruk"></div>
 ```
 
 Isteg e bagli ozellikler:
 
+- `data-hasinder-sabit`: Widget acilir kapanir panel olarak ekranin sag altina sabitlenir
+  (buton olarak gorunur, tiklaninca acilir). Bu ozellik verilmezse widget gomuldugu
+  yerde inline olarak cizilir.
 - `data-hasinder-konum` (opsiyonel): `gumruk`, `emlak`, `b2b`, `finans` -
   yalnizca o sektor icin veri yukler. Bos birakilirsa tum havuz kullanilir.
 - `data-hasinder-baslik`: Ustte gorunen baslik.

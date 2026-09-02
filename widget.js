@@ -8,8 +8,8 @@
 // - "HAS INSAN DER" felsefesi: toplumsal fayda odakli, insan onceci iletisim dili
 // --------------------------------------------------------------------------
 // Kullanim:
-//   <script src="https://raw.githubusercontent.com/hakkurgithub/hasinder.ai/main/widget.js"></script>
-//   <div data-hasinder data-hasinder-konum="gumruk" data-hasinder-baslik="Gumruk Sorular">
+//   <script src="https://cdn.jsdelivr.net/gh/hakkurgithub/hasinder.ai@main/widget.js"></script>
+//   <div data-hasinder data-hasinder-sabit data-hasinder-konum="gumruk" data-hasinder-baslik="Gumruk Sorular">
 //   </div>
 // Veri havuzunu disaridan beslemek icin: window.HasinderWidget.veri = [...]
 // ==========================================================================
@@ -200,17 +200,32 @@
       '.hi-durum{font-size:11px;color:#6b7280;padding:0 14px 8px}';
   }
 
+  function sabitCss() {
+    return '' +
+      '.hi-sabit{position:fixed;right:20px;bottom:20px;width:380px;max-width:calc(100vw - 40px);' +
+      'z-index:2147483000;display:none;box-shadow:0 8px 30px rgba(0,0,0,.18);border-radius:14px}' +
+      '.hi-sabit.hi-acik{display:block}' +
+      '.hi-ac{cursor:pointer;position:fixed;right:20px;bottom:20px;width:60px;height:60px;' +
+      'border-radius:50%;border:none;background:#0d9488;color:#fff;font-size:26px;font-weight:700;' +
+      'box-shadow:0 6px 22px rgba(13,148,136,.45);z-index:2147483001;line-height:1}' +
+      '.hi-sabit.hi-acik + .hi-ac{display:none}.hi-ac{display:block}' +
+      '.hi-sabit.hi-acik ~ .hi-ac{display:none}' +
+      '.hi-ac:hover{background:#0f766e}' +
+      '.hi-sabit .hi-kutu{max-height:46vh;min-height:140px}';
+  }
+
   function widgetOlustur(el) {
     var konum = el.getAttribute('data-hasinder-konum') || null;
     var baslik = el.getAttribute('data-hasinder-baslik') || 'hasinder.ai Asistan';
+    var sabit = el.hasAttribute('data-hasinder-sabit');
 
     var root = el.attachShadow ? el.attachShadow({ mode: 'open' }) : el;
     var st = document.createElement('style');
-    st.textContent = css();
+    st.textContent = css() + sabitCss();
     root.appendChild(st);
 
     var kap = document.createElement('div');
-    kap.className = 'hi-widget';
+    kap.className = 'hi-widget' + (sabit ? ' hi-sabit' : '');
     kap.innerHTML =
       '<div class="hi-baslik"><span>' + escapeHtml(baslik) + '</span><span class="hi-noktalar">' +
       '<span class="hi-nokta"></span><span class="hi-nokta"></span><span class="hi-nokta"></span></span></div>' +
@@ -220,13 +235,33 @@
       '<button class="hi-gonder">Sor</button></div>' +
       '<div class="hi-durum">V: 0 kayit</div>' +
       '<div class="hi-alt">HAS INSAN DER<span style="font-weight:700"> &bull; hasinder.ai</span> &bull; ' +
-      '<a href="https://hasinder.com" target="_blank" rel="noopener">hasinder.com</a></div>';
+      '<a href="https://hasinder.com" target="_blank" rel="noopener">hasinder.com</a>' +
+      (sabit ? ' &bull; <a href="#" class="hi-kapat">Kapat</a>' : '') + '</div>';
     root.appendChild(kap);
 
     var kutu = kap.querySelector('.hi-kutu');
     var durum = kap.querySelector('.hi-durum');
     var input = kap.querySelector('.hi-input');
     var gonder = kap.querySelector('.hi-gonder');
+    var kapat = kap.querySelector('.hi-kapat');
+
+    if (sabit) {
+      var ac = document.createElement('button');
+      ac.className = 'hi-ac';
+      ac.type = 'button';
+      ac.setAttribute('aria-label', 'hasinder.ai asistana sorun');
+      ac.textContent = '?';
+      root.appendChild(ac);
+      ac.addEventListener('click', function () {
+        kap.classList.toggle('hi-acik');
+        if (kap.classList.contains('hi-acik')) input.focus();
+      });
+      if (kapat) kapat.addEventListener('click', function (e) {
+        e.preventDefault();
+        kap.classList.remove('hi-acik');
+      });
+      setTimeout(function () { kap.classList.add('hi-acik'); }, 1200);
+    }
 
     var qa = [];
     var terimler = [];
