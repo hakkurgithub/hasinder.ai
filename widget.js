@@ -218,6 +218,7 @@
     var konum = el.getAttribute('data-hasinder-konum') || null;
     var baslik = el.getAttribute('data-hasinder-baslik') || 'hasinder.ai Asistan';
     var sabit = el.hasAttribute('data-hasinder-sabit');
+    var onSoruVar = el.getAttribute('data-hasinder-onsoru') !== 'kapat';
 
     var root = el.attachShadow ? el.attachShadow({ mode: 'open' }) : el;
     var st = document.createElement('style');
@@ -267,6 +268,13 @@
     var terimler = [];
 
     function soruGoster() {
+      if (!onSoruVar) {
+        kutu.innerHTML = '<div style="padding:14px;font-size:13px;line-height:1.6;color:#1f2937">' +
+          'Merhaba! Size nasil yardimci olabilirim? Asagidaki alandan sorunuzu yazin, ' +
+          '<a href="https://hasinder.com" target="_blank" rel="noopener">hasinder.com</a> ' +
+          'uzmanlarina ulasmaniz icin yardimci olalim.</div>';
+        return;
+      }
       if (!qa.length) {
         kutu.innerHTML = '<div class="hi-yukleniyor">Bu kategoriye ait kayit henuz yok.</div>';
         return;
