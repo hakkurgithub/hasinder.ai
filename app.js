@@ -249,6 +249,26 @@ async function ollamaSor(gecmis, soru) {
     return cevap;
 }
 
+// ---------- Groq Proxy (sınırsız LLM - anahtar sunucuda) ----------
+const GROQ_PROXY_URL = "https://hasinder.com/hasinder.ai/api/sor.php";
+async function groqSor(gecmis, soru) {
+    const sistem = veri.prompt + '\n\n## BILGI BANKASI (aşağıdaki açık kaynak verilerine dayanarak cevap ver):\n\n' + bilgiBankasiMetni(soru);
+    const r = await fetch(GROQ_PROXY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ soru, sistem, gecmis: gecmis.slice(-10) })
+    });
+    if (!r.ok) {
+        const e = await r.text();
+        throw new Error('Groq proxy hatası ' + r.status + ': ' + e.slice(0, 150));
+    }
+    const d = await r.json();
+    if (!d.cevap) throw new Error(d.hata || 'Groq boş yanıt');
+    gecmis.push({ role: 'user', content: soru });
+    gecmis.push({ role: 'assistant', content: d.cevap });
+    return d.cevap;
+}
+
 // ---------- Google Gemini (opsiyonel yedek - kullanıcı anahtarı) ----------
 async function geminiSor(apiKey, model, gecmis, soru) {
     const sistem = 'MODEL:hasinder.ai\n\n' + veri.prompt + '\n\n## BILGI BANKASI:\n\n' + bilgiBankasiMetni(soru);
@@ -290,6 +310,12 @@ async function cevapUret(gecmis, girdi) {
         try { return { metin: await ollamaSor(gecmis, girdi), kaynak: 'Yerel LLM (Ollama)' }; }
         catch (e) { console.warn('Ollama başarısız', e); }
     }
+
+    // Groq proxy (sınırsız, sunucudan çağrılır, tarayıcıda anahtar yok)
+    try {
+        const metin = await groqSor(gecmis, girdi);
+        return { metin, kaynak: 'Bulut LLM (Groq)' };
+    } catch (e) { console.warn('Groq başarısız', e); }
 
     const geminiKey = localStorage.getItem('hasinder_gemini_key');
     if (geminiKey) {

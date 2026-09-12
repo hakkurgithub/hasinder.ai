@@ -327,10 +327,31 @@
         kutu.appendChild(acB);
         return;
       }
-      kutu.innerHTML = '<div style="padding:14px;font-size:13px;line-height:1.6;color:#1f2937">' +
-        'Bu soruya yerel havuzda net bir karsilik bulamadim. ' +
-        'Detayli bilgi icin <a href="https://hasinder.com" target="_blank" rel="noopener">hasinder.com</a> ' +
-        'uzmanlarina ulasabilirsiniz.</div>';
+      // Yerel havuzda yok - Groq proxy'ye sor (sinirsiz LLM)
+      kutu.innerHTML = '<div style="padding:14px;font-size:13px;color:#6b7280">Dusunuyor...</div>';
+      var proxyUrl = 'https://hasinder.com/hasinder.ai/api/sor.php';
+      fetch(proxyUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ soru: soru })
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (d && d.cevap) {
+          kutu.innerHTML = '';
+          var sL = document.createElement('div'); sL.className = 'hi-soru'; sL.textContent = soru;
+          var cL = document.createElement('div'); cL.className = 'hi-cevap';
+          cL.textContent = d.cevap + '\n\n[Kaynak: ' + (d.kaynak || 'Bulut LLM') + ']';
+          kutu.appendChild(sL); kutu.appendChild(cL);
+        } else {
+          throw new Error(d && d.hata ? d.hata : 'Bos yanit');
+        }
+      }).catch(function () {
+        kutu.innerHTML = '<div style="padding:14px;font-size:13px;line-height:1.6;color:#1f2937">' +
+          'Bu soruya yerel havuzda net bir karsilik bulamadim. ' +
+          'Detayli bilgi icin <a href="https://hasinder.com" target="_blank" rel="noopener">hasinder.com</a> ' +
+          'uzmanlarina veya WhatsApp uzerinden ' +
+          '<a href="https://wa.me/905333715577" target="_blank" rel="noopener">0533 371 55 77</a> ' +
+          'numarasina ulasabilirsiniz.</div>';
+      });
     }
 
     gonder.addEventListener('click', cevapla);

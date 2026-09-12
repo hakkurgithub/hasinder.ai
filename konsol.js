@@ -275,6 +275,25 @@ async function ollamaSor(veri, gecmis, soru) {
   return cevap;
 }
 
+/* ---------- Groq Proxy (sinirsiz, anahtar sunucuda) ---------- */
+const GROQ_PROXY_URL = process.env.GROQ_PROXY_URL || 'https://hasinder.com/hasinder.ai/api/sor.php';
+async function groqSor(veri, gecmis, soru) {
+  const sistem = veri.prompt +
+    '\n\n## BILGI BANKASI (asagidaki acik kaynak verilerine dayanarak cevap ver):\n\n' +
+    bilgiBankasiMetni(veri, soru);
+  const r = await fetch(GROQ_PROXY_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Origin': 'https://hasinder.com' },
+    body: JSON.stringify({ soru, sistem, gecmis: gecmis.slice(-10) })
+  });
+  if (!r.ok) throw new Error(`Groq proxy hatasi (${r.status})`);
+  const d = await r.json();
+  if (!d.cevap) throw new Error(d.hata || 'Groq bos yanit');
+  gecmis.push({ role: 'user', content: soru });
+  gecmis.push({ role: 'assistant', content: d.cevap });
+  return d.cevap;
+}
+
 /* ---------- Ana Cevap Motoru (Hibrit) ---------- */
 async function cevapUret(veri, gecmis, apiKey, model, girdi) {
   if (SELAM_REGEX.test(normalize(girdi))) {
@@ -299,12 +318,17 @@ async function cevapUret(veri, gecmis, apiKey, model, girdi) {
     return { metin: terimler.slice(0, 3).map(t => `${t.terim} (${t.kategori})\n${t.aciklama}`).join('\n\n'), kaynak: 'Terim Sozlugu' };
   }
 
-  // LLM'e dus (hibrit adim): once yerel Ollama (sinirsiz), sonra Groq
+  // LLM'e dus (hibrit adim): once yerel Ollama (sinirsiz), sonra Groq proxy, sonra OpenRouter
   if (ollamaDurum) {
     try {
       return { metin: await ollamaSor(veri, gecmis, girdi), kaynak: 'Yerel LLM (Ollama)' };
-    } catch (e) { /* Ollama basarisiz, OpenRouter'a dus */ }
+    } catch (e) { /* Ollama basarisiz, Groq'a dus */ }
   }
+
+  // Groq proxy (sinirsiz, anahtar sunucuda saklanir)
+  try {
+    return { metin: await groqSor(veri, gecmis, girdi), kaynak: 'Bulut LLM (Groq)' };
+  } catch (e) { /* Groq basarisiz, OpenRouter'a dus */ }
 
   if (apiKey) {
     try {
