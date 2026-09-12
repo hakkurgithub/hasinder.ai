@@ -205,9 +205,10 @@
       '.hi-sabit{position:fixed;right:20px;bottom:20px;width:380px;max-width:calc(100vw - 40px);' +
       'z-index:2147483000;display:none;box-shadow:0 8px 30px rgba(0,0,0,.18);border-radius:14px}' +
       '.hi-sabit.hi-acik{display:block}' +
-      '.hi-ac{cursor:pointer;position:fixed;right:20px;bottom:20px;width:60px;height:60px;' +
-      'border-radius:50%;border:none;background:#0d9488;color:#fff;font-size:26px;font-weight:700;' +
-      'box-shadow:0 6px 22px rgba(13,148,136,.45);z-index:2147483001;line-height:1}' +
+      '.hi-ac{cursor:pointer;position:fixed;right:20px;bottom:20px;height:46px;padding:0 22px;' +
+      'border-radius:50px;border:none;background:#0d9488;color:#fff;font-size:13px;font-weight:700;' +
+      'letter-spacing:.3px;box-shadow:0 6px 22px rgba(13,148,136,.45);z-index:2147483001;' +
+      'line-height:46px;white-space:nowrap}' +
       '.hi-sabit.hi-acik + .hi-ac{display:none}.hi-ac{display:block}' +
       '.hi-sabit.hi-acik ~ .hi-ac{display:none}' +
       '.hi-ac:hover{background:#0f766e}' +
@@ -219,7 +220,7 @@
     var baslik = el.getAttribute('data-hasinder-baslik') || 'hasinder.ai Asistan';
     var sabit = el.hasAttribute('data-hasinder-sabit');
     var onSoruVar = el.getAttribute('data-hasinder-onsoru') !== 'kapat';
-    var otomatikAc = el.getAttribute('data-hasinder-otomatik') !== 'kapat';
+    var otomatikAc = el.getAttribute('data-hasinder-otomatik') === 'ac';
 
     var root = el.attachShadow ? el.attachShadow({ mode: 'open' }) : el;
     var st = document.createElement('style');
@@ -252,7 +253,7 @@
       ac.className = 'hi-ac';
       ac.type = 'button';
       ac.setAttribute('aria-label', 'hasinder.ai asistana sorun');
-      ac.textContent = '?';
+      ac.textContent = 'hasinder.ai';
       root.appendChild(ac);
       ac.addEventListener('click', function () {
         kap.classList.toggle('hi-acik');
