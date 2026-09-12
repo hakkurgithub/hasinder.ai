@@ -219,6 +219,7 @@
     var baslik = el.getAttribute('data-hasinder-baslik') || 'hasinder.ai Asistan';
     var sabit = el.hasAttribute('data-hasinder-sabit');
     var onSoruVar = el.getAttribute('data-hasinder-onsoru') !== 'kapat';
+    var otomatikAc = el.getAttribute('data-hasinder-otomatik') !== 'kapat';
 
     var root = el.attachShadow ? el.attachShadow({ mode: 'open' }) : el;
     var st = document.createElement('style');
@@ -261,7 +262,7 @@
         e.preventDefault();
         kap.classList.remove('hi-acik');
       });
-      setTimeout(function () { kap.classList.add('hi-acik'); }, 1200);
+      if (otomatikAc) setTimeout(function () { kap.classList.add('hi-acik'); }, 1200);
     }
 
     var qa = [];
