@@ -6,6 +6,54 @@
     ],
     "dataset": [
         {
+            "soru": "Türkiye'nin 2025 yılı mal ihracatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2025 yılı mal ihracatı (USD) 273.36 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2024 yılı mal ihracatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2024 yılı mal ihracatı (USD) 261.78 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2023 yılı mal ihracatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2023 yılı mal ihracatı (USD) 255.63 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2022 yılı mal ihracatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2022 yılı mal ihracatı (USD) 254.17 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2021 yılı mal ihracatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2021 yılı mal ihracatı (USD) 225.21 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2020 yılı mal ihracatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2020 yılı mal ihracatı (USD) 169.64 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2025 yılı mal ithalatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2025 yılı mal ithalatı (USD) 365.37 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2024 yılı mal ithalatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2024 yılı mal ithalatı (USD) 344.01 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2023 yılı mal ithalatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2023 yılı mal ithalatı (USD) 361.97 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2022 yılı mal ithalatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2022 yılı mal ithalatı (USD) 363.71 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2021 yılı mal ithalatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2021 yılı mal ithalatı (USD) 271.43 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2020 yılı mal ithalatı (USD) ne kadardı?",
+            "cevap": "Türkiye'nin 2020 yılı mal ithalatı (USD) 219.52 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
             "soru": "Türkiye'nin 2025 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) ne kadardı?",
             "cevap": "Türkiye'nin 2025 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) 1597.29 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
         },
