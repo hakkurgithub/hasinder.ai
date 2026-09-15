@@ -58,18 +58,49 @@ function normalize(metin) {
 // ardından tüm soru kalıpları ve noktalama ayıklanır. Böylece anahtar kelime
 // GitHub Raw JSON havuzuyla hatasız eşleştirilir.
 function sorguyuTemizle(girdi) {
-    return normalize(String(girdi))
-        .replace(/\bne anlama gelir\b/g, ' ')
-        .replace(/\bne demek\b/g, ' ')
-        .replace(/\bne demektir\b/g, ' ')
-        .replace(/\bneye yarar\b/g, ' ')
-        .replace(/\bne ise yarar\b/g, ' ')
-        .replace(/\bne icin\b/g, ' ')
-        .replace(/\bne kadar\b/g, ' ')
-        .replace(/\bnedir\b|\bnasil\b|\banlami nedir\b|\banlami\b|\banlama\b|\bacikla\b|\bkaç\b|\bkac\b|\bkactir\b|\bneredir\b/g, ' ')
-        .replace(/[?.,!]/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
+  if (typeof girdi !== "string") return "";
+
+  let s = girdi.toLocaleLowerCase("tr-TR").trim();
+
+  // Noktalama ve özel karakterler
+  s = s.replace(/[?!.,;:'"“”‘’()\[\]{}<>\/\\|@#$%^&*_+=~`]/g, " ");
+
+  // Çok kelimeli soru kalıpları (önce uzunlar)
+  const kaliplar = [
+    /\bne anlama gel(ir|iyor|mektedir)\b/g,
+    /\bne demek(tir)?\b/g,
+    /\bne(dir|ymiş|ymis)\b/g,
+    /\bkim(dir|di|miş|mis)?\b/g,
+    /\bnasıl(dır|dir)?\b/g,
+    /\bneden\b/g,
+    /\bniçin\b/g,
+    /\bniye\b/g,
+    /\bhangi(si|sidir)?\b/g,
+    /\bnerede(dir)?\b/g,
+    /\bne zaman\b/g,
+    /\bkaç(tır|tir)?\b/g,
+    /\bhakkında\b/g,
+    /\bhakkinda\b/g,
+    /\bbilgi ver(ir misin|ebilir misin)?\b/g,
+    /\banlat(ır mısın|abilir misin|sana)?\b/g,
+    /\baçıkla(r mısın|yabilir misin)?\b/g,
+    /\bsöyle(r misin|yebilir misin)?\b/g,
+    /\bacaba\b/g,
+    /\blütfen\b/g,
+    /\bbana\b/g,
+    /\bpeki\b/g,
+    /\bşey\b/g
+  ];
+  for (const k of kaliplar) s = s.replace(k, " ");
+
+  // Bağımsız ek/soru parçacıkları
+  s = s.replace(/\b(mi|mı|mu|mü|midir|mıdır|mudur|müdür|misin|mısın|musun|müsün)\b/g, " ");
+
+  // Kelime sonu iyelik/hâl ekleri (basit kök yaklaşımı)
+  s = s.replace(/\b([a-zçğıöşü]{3,}?)(nın|nin|nun|nün|ın|in|un|ün|dır|dir|dur|dür|tır|tir|tur|tür|ları|leri|lar|ler|dan|den|tan|ten|da|de|ta|te|ya|ye|yı|yi|yu|yü)\b/g, "$1");
+
+  // Boşluk normalizasyonu
+  return s.replace(/\s+/g, " ").trim();
 }
 
 const STOPWORDS = new Set([
@@ -115,10 +146,31 @@ function eslesmeDetay(kullaniciKelimeler, soruKelimeler) {
 // ---------- Veri Yükleme ----------
 let veri = { qa: [], terimler: [], sehirler: [], prompt: '' };
 
+// HAS İNSAN DER - GitHub Raw JSON güvenli çekme
+// GITHUB_RAW_BASE "hasinder-ai-data/" klasörünü hedefler; yalnız .json çekilir,
+// binary/boyut/dosya türü denetimleri ile güvenlendirilmiştir. Başarısızlıkta null.
 async function jsonCek(url) {
-    const r = await fetch(url);
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    return await r.json();
+  if (!/^[\w\-\/:\.]+\.json$/i.test(url)) return null;
+  try {
+    const controller = new AbortController();
+    const zamanAsimi = setTimeout(() => controller.abort(), 10000);
+    const response = await fetch(url, { cache: "no-store", headers: { "Accept": "application/json" }, signal: controller.signal });
+    clearTimeout(zamanAsimi);
+    if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+    const tip = (response.headers.get("content-type") || "").toLowerCase();
+    if (/(octet-stream|zip|x-git|image|video|audio|pdf)/.test(tip)) throw new Error(`Binary reddedildi: ${tip}`);
+    const ham = await response.text();
+    if (ham.length > 5 * 1024 * 1024) throw new Error("Boyut sınırı aşıldı");
+    if (/[\x00-\x08\x0E-\x1F]/.test(ham.slice(0, 2048))) throw new Error("Binary veri tespit edildi");
+    const ilk = ham.trimStart()[0];
+    if (ilk !== "{" && ilk !== "[") throw new Error("İçerik JSON ile başlamıyor");
+    const veri = JSON.parse(ham);
+    if (veri === null || typeof veri !== "object") throw new Error("Geçersiz JSON yapısı");
+    return veri;
+  } catch (hata) {
+    console.error("[HAS İNSAN DER] Veri çekme hatası:", url, hata.message);
+    return null;
+  }
 }
 
 async function loadDatasets() {

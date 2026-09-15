@@ -1,30 +1,58 @@
-# API anahtarlari ve gizli bilgiler - ASLA yukleme!
+# HAS İNSAN DER - hasinder.ai
+# Sürüm kontrolü / geçici dosyalar
+.git/
+.gitattributes.bak
+*.orig
+*.rej
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Arşivler ve binary paketler
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Gizli bilgiler / yapılandırma
 .env
+.env.*
 *.key
-api-key.txt
+*.pem
 secrets.json
+config.local.json
 
 # Sunucu (cPanel) ortamina ozel yapilandirmalar - repoya girmez
 .htaccess
 .user.ini
 php.ini
 
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/
+# Loglar ve geçici çıktılar
+*.log
+logs/
+tmp/
+temp/
+*.tmp
 
-# Node
-node_modules/
-
-# Kaynak veri arsivi (icerigi cikarildi)
-*.zip
-
-# Isletim sistemi
-Thumbs.db
-.DS_Store
-
-# Editor
+# Editör / OS
 .vscode/
 .idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (widget geliştirme için kullanılırsa)
+node_modules/
