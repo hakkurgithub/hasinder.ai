@@ -2,7 +2,7 @@
 // HASINDER.AI - HİBRİT BEYİN (WEB)
 // 1) Yerel açık kaynak veri tabanında akıllı eşleştirme
 // 2) Ollama yerel LLM (varsa - sınırsız, ücretsiz)
-// 3) Kullanıcı anahtarıyla Google Gemini (opsiyonel yedek)
+// 3) Groq sunucu proxy'si (sınırsız - anahtar tarayıcıya İNMEZ)
 // Not: Hiçbir API anahtarı koda gömülü DEĞİLDİR (güvenlik).
 // ==========================================
 
@@ -321,21 +321,6 @@ async function groqSor(gecmis, soru) {
     return d.cevap;
 }
 
-// ---------- Google Gemini (opsiyonel yedek - kullanıcı anahtarı) ----------
-async function geminiSor(apiKey, model, gecmis, soru) {
-    const sistem = 'MODEL:hasinder.ai\n\n' + veri.prompt + '\n\n## BILGI BANKASI:\n\n' + bilgiBankasiMetni(soru);
-    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: sistem + '\n\nKullanıcı sorusu:\n' + soru }] }], generationConfig: { temperature: 0.7, maxOutputTokens: 2000 } })
-    });
-    if (!r.ok) { const e = await r.text(); throw new Error('Gemini hatası ' + r.status + ': ' + e.slice(0, 150)); }
-    const d = await r.json();
-    const metin = d?.candidates?.[0]?.content?.parts?.map(p => p.text).join('') || '';
-    if (!metin) throw new Error('Gemini boş yanıt (API anahtarı geçersiz olabilir)');
-    return metin.trim();
-}
-
 // ---------- Ana Cevap Motoru ----------
 async function cevapUret(gecmis, girdi) {
     if (SELAM_REGEX.test(normalize(girdi))) {
@@ -369,19 +354,10 @@ async function cevapUret(gecmis, girdi) {
         return { metin, kaynak: 'Bulut LLM (Groq)' };
     } catch (e) { console.warn('Groq başarısız', e); }
 
-    const geminiKey = localStorage.getItem('hasinder_gemini_key');
-    if (geminiKey) {
-        const model = localStorage.getItem('hasinder_gemini_model') || 'gemini-2.0-flash';
-        try { return { metin: await geminiSor(geminiKey, model, gecmis, girdi), kaynak: 'Bulut LLM (Gemini)' }; }
-        catch (e) { return { metin: `Bulut LLM'ye ulaşılamadı: ${e.message}\n\nSorunuzu WhatsApp üzerinden uzmanımıza iletebilirsiniz:\nhttps://wa.me/905333715577?text=${encodeURIComponent('Merhaba, şu soruma cevap bulamadım: ' + girdi)}`, kaynak: 'Hata' }; }
-    }
-
     return {
-        metin: 'Bu soruya şu an yerel veri tabanında net bir karşılık bulamadım.\n\n' +
-            'Cevap kalitesini artırmak için:\n' +
-            '1) Ollama kurun (ollama.com) → otomatik algılanır, sınırsız ve ücretsiz çalışır.\n' +
-            '2) veya sağ üstteki "LLM" ikonundan Google Gemini API anahtarı girin (opsiyonel).\n\n' +
-            'Uzmanımıza şuradan WhatsApp ile ulaşabilirsiniz:\nhttps://wa.me/905333715577?text=' + encodeURIComponent('Merhaba, şu soruma cevap bulamadım: ' + girdi),
+        metin: 'Bu soruya şu an yerel veri tabanımızda net bir karşılık bulamadım.\n\n' +
+            'Sınırsız bulut LLM (Groq) şu an cevap veremedi. Tekrar denemek için soruyu yazın veya\n' +
+            'uzmanımıza WhatsApp ile ulaşabilirsiniz:\nhttps://wa.me/905333715577?text=' + encodeURIComponent('Merhaba, şu soruma cevap bulamadım: ' + girdi),
         kaynak: 'WhatsApp'
     };
 }
@@ -463,19 +439,8 @@ if (userInput) {
     });
 }
 
-// LLM ayar butonu (Gemini anahtarı) - header'a eklenebilir
-async function llmAyarMenu() {
-    const mevcut = localStorage.getItem('hasinder_gemini_key');
-    const anahtar = prompt(mevcut ? 'Google Gemini API anahtarı (değiştirmek için yazın, silmek için boş bırakın):' : 'Google Gemini API anahtarı girin (opsiyonel, yoksa sadece yerel + Ollama çalışır):', '');
-    if (anahtar === null) return;
-    if (anahtar === '') { localStorage.removeItem('hasinder_gemini_key'); alert('Gemini anahtarı kaldırıldı.'); }
-    else { localStorage.setItem('hasinder_gemini_key', anahtar.trim()); alert('Gemini anahtarı kaydedildi.'); }
-}
-
-const llmBtn = document.getElementById("llm-btn");
-if (llmBtn) llmBtn.addEventListener("click", llmAyarMenu);
-
-window.loadGeminiAyarlari = llmAyarMenu;
+// LLM ayar butonu kaldirildi - tam otonom mod
+// (Gemini fallback: anahtar set edilmedigi icin otomatik devre disi)
 
 window.onload = async () => {
     await loadDatasets();
