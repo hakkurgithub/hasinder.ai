@@ -329,7 +329,7 @@
       }
       // Yerel havuzda yok - Groq proxy'ye sor (sinirsiz LLM)
       kutu.innerHTML = '<div style="padding:14px;font-size:13px;color:#6b7280">Dusunuyor...</div>';
-      var proxyUrl = 'https://hasinder.com/hasinder.ai/api/sor.php';
+      var proxyUrl = 'https://hasinder.ai.hasinder.com/api/sor.php';
       fetch(proxyUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

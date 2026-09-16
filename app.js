@@ -302,7 +302,7 @@ async function ollamaSor(gecmis, soru) {
 }
 
 // ---------- Groq Proxy (sınırsız LLM - anahtar sunucuda) ----------
-const GROQ_PROXY_URL = "https://hasinder.com/hasinder.ai/api/sor.php";
+const GROQ_PROXY_URL = "https://hasinder.ai.hasinder.com/api/sor.php";
 async function groqSor(gecmis, soru) {
     const sistem = veri.prompt + '\n\n## BILGI BANKASI (aşağıdaki açık kaynak verilerine dayanarak cevap ver):\n\n' + bilgiBankasiMetni(soru);
     const r = await fetch(GROQ_PROXY_URL, {
