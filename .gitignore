@@ -56,3 +56,5 @@ desktop.ini
 
 # Node (widget geliştirme için kullanılırsa)
 node_modules/
+# cPanel'e yukleme icin hazirlanan yerel kopya - GitHub'a girmez
+/api/
