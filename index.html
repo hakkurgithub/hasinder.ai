@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hasinder.ai - Merkezi Yapay Zeka Asistanı</title>
+  <title>hasinder.ai — HAS İNSAN DER Yapay Zekâ Asistanı</title>
+  <meta name="description" content="HAS İNSAN DER'in toplumsal fayda odaklı açık kaynak yapay zekâ asistanı: gümrük, dış ticaret, gayrimenkul, B2B ticaret ve ekonomi.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-    <header class="header">
-      <div class="logo">
-        <div class="logo-icon">H</div>
-        <div class="logo-text">
+  <div id="hasinder-app" class="uygulama">
+    <header class="ust">
+      <div class="marka">
+        <div class="marka-simge" aria-hidden="true">h</div>
+        <div>
           <h1>hasinder.ai</h1>
-          <span class="subtitle">Merkezi Yerel Yapay Zeka Ekosistemi</span>
+          <p class="alt-baslik">HAS İNSAN DER · toplumsal fayda için yapay zekâ</p>
         </div>
       </div>
-      <div class="header-actions">
-        <span id="durum" class="durum">Yükleniyor...</span>
-      </div>
+      <span id="hasinder-durum" class="durum" role="status">Yükleniyor…</span>
     </header>
 
-    <main id="mesajlar" class="mesajlar" aria-live="polite"></main>
+    <main id="hasinder-mesajlar" class="mesajlar" aria-live="polite"></main>
+    <div id="hasinder-oneriler" class="oneriler" hidden></div>
 
-    <footer class="giris-alani">
-      <input type="text" id="user-input" placeholder="hasinder.ai hafızasında ara..." autocomplete="off" maxlength="500">
-      <button id="send-btn" class="btn btn-birincil">Gönder</button>
+    <footer class="giris">
+      <label for="hasinder-girdi" class="gizli">Sorunuz</label>
+      <input type="text" id="hasinder-girdi" placeholder="Sorunuzu yazın…" autocomplete="off" maxlength="1000">
+      <button id="hasinder-gonder" type="button">Gönder</button>
     </footer>
   </div>
 

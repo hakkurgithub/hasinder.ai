@@ -1,0 +1,12 @@
+name = "hasinder-ai-proxy"
+main = "llm-proxy.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+GROQ_MODEL = "openai/gpt-oss-120b"
+# IZINLI_ORIGINLER = "https://ornek.com,https://www.ornek.com"
+
+# Anahtarlar koda/dosyaya YAZILMAZ. Terminalde:
+#   npx wrangler secret put GROQ_API_KEY
+#   npx wrangler secret put GEMINI_API_KEY        (opsiyonel)
+#   npx wrangler secret put OPENROUTER_API_KEY    (opsiyonel)
