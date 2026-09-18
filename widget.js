@@ -33,7 +33,7 @@
     'dis-ticaret-terimleri.json'
   ];
 
-  var TR_HARF = { 'ı': 'i', 'ş': 's', 'ğ': 'g', 'ü': 'u', 'ö': 'o', 'ç': 'c', 'â': 'a', 'î': 'i', 'û': 'u', 'I': 'i' };
+  var TR_HARF = { 'Ã„Â±': 'i', 'Ã…Å¸': 's', 'Ã„Å¸': 'g', 'ÃƒÂ¼': 'u', 'ÃƒÂ¶': 'o', 'ÃƒÂ§': 'c', 'ÃƒÂ¢': 'a', 'ÃƒÂ®': 'i', 'ÃƒÂ»': 'u', 'I': 'i' };
   var STOPWORDS = new Set([
     'bir', 've', 'ile', 'icin', 'ne', 'nedir', 'nasil', 'mi', 'mu',
     'var', 'yok', 'ben', 'sen', 'o', 'bu', 'su', 'da', 'de', 'ki', 'en', 'cok',
@@ -47,7 +47,7 @@
 
   function normalize(m) {
     return String(m).toLocaleLowerCase('tr')
-      .replace(/[ışğüöçâîû]/g, function (h) { return TR_HARF[h] || h; })
+      .replace(/[Ã„Â±Ã…Å¸Ã„Å¸ÃƒÂ¼ÃƒÂ¶ÃƒÂ§ÃƒÂ¢ÃƒÂ®ÃƒÂ»]/g, function (h) { return TR_HARF[h] || h; })
       .replace(/[^a-z0-9\s]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
@@ -62,7 +62,7 @@
       .replace(/\bne ise yarar\b/g, ' ')
       .replace(/\bne icin\b/g, ' ')
       .replace(/\bne kadar\b/g, ' ')
-      .replace(/\bnedir\b|\bnasil\b|\banlami nedir\b|\banlami\b|\banlama\b|\bacikla\b|\bkaç\b|\bkac\b|\bkactir\b|\bneredir\b/g, ' ')
+      .replace(/\bnedir\b|\bnasil\b|\banlami nedir\b|\banlami\b|\banlama\b|\bacikla\b|\bkaÃƒÂ§\b|\bkac\b|\bkactir\b|\bneredir\b/g, ' ')
       .replace(/[?.,!]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
@@ -329,7 +329,7 @@
       }
       // Yerel havuzda yok - Groq proxy'ye sor (sinirsiz LLM)
       kutu.innerHTML = '<div style="padding:14px;font-size:13px;color:#6b7280">Dusunuyor...</div>';
-      var proxyUrl = 'https://hasinder.ai.hasinder.com/api/sor.php';
+      var proxyUrl = 'https://hasinder.ai.hasinder.com/api/sor-groq.php';
       fetch(proxyUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
