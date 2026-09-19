@@ -122,8 +122,32 @@
             "cevap": "Türkiye'nin 2020 yılı cari işlemler dengesi (USD) -30.98 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
         },
         {
+            "soru": "Türkiye'nin 2025 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
+            "cevap": "Türkiye'nin 2025 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 49.93  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2024 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
+            "cevap": "Türkiye'nin 2024 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 54.60  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2023 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
+            "cevap": "Türkiye'nin 2023 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 65.68  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2022 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
+            "cevap": "Türkiye'nin 2022 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 79.90  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2021 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
+            "cevap": "Türkiye'nin 2021 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 69.61  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
+            "soru": "Türkiye'nin 2020 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
+            "cevap": "Türkiye'nin 2020 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 60.39  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
+        },
+        {
             "soru": "1 Amerikan Doları kaç Türk Lirası?",
-            "cevap": "Güncel döviz verilerine göre 1 Amerikan Doları 48.67 Türk Lirası değerindedir (döviz kuru tarihi: 2026-09-17). Kaynak: açık döviz API'si Frankfurter App."
+            "cevap": "Güncel döviz verilerine göre 1 Amerikan Doları 48.78 Türk Lirası değerindedir (döviz kuru tarihi: 2026-09-18). Kaynak: açık döviz API'si Frankfurter App."
         }
     ]
 }
