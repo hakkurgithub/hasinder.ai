@@ -169,7 +169,7 @@ export default {
       if (url.pathname === '/saglik') {
         return json({ durum: 'ok', saglayicilar: saglayicilar(env).map(s => s[0]) }, 200, cors);
       }
-      return json({ hata: 'Sadece POST' }, 405, cors);
+      return json({ durum: 'hazir', bilgi: 'hasinder.ai LLM proxy (HAS İNSAN DER). Test: /saglik' }, 200, cors);
     }
     if (request.method !== 'POST') return json({ hata: 'Sadece POST' }, 405, cors);
     if (!izinli) return json({ hata: 'Bu alan adına izin verilmiyor' }, 403, cors);
