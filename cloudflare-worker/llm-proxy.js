@@ -11,6 +11,7 @@
 
 const VARSAYILAN_ORIGINLER = [
   'https://hasinder.ai.hasinder.com',
+  'https://hakkurgithub.github.io',
   'https://hasinder.com', 'https://www.hasinder.com',
   'https://reklam.hasinder.com', 'https://goodbuy.hasinder.com',
   'https://akademi.hasinder.com', 'https://incirgurusu.hasinder.com',
