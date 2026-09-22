@@ -1,131 +1,102 @@
 #!/usr/bin/env python3
-"""Otonom Veri Bekcsi - izleme ve canlandirma betigi.
+"""hasinder.ai Otonom Veri Bekcisi (HAS İNSAN DER).
 
-GitHub Actions icinde calisir. Gorevleri:
-  1. Son otonom ajan run'unu sorgular ve raporlar.
-  2. Veri dosyalarindaki kayit sayilarini raporlar.
-  3. Ajan durmus/basarisizsa workflow_dispatch ile yeniden baslatir.
-
-Ortam degiskenleri:
-  GITHUB_TOKEN      : Repo-scoped action token (actions: write + contents: read)
-  GITHUB_REPOSITORY : ornek: "hakkurgithub/hasinder.ai"
-  GITHUB_API_URL    : ornek: "https://api.github.com"
+- Ana ajan son 26 saatte hic calismadiysa -> yeniden baslatir.
+- Son calisma basarisizsa -> yeniden baslatir; ANCAK art arda 3 basarisizlikta
+  sonsuz donguye girmez, bekciyi kirmizi (exit 1) yapar ve GitHub e-posta ile uyarir.
 """
+import datetime as dt
 import json
 import os
 import sys
-import time
-import urllib.request
 import urllib.error
+import urllib.request
 
 TOKEN = os.environ.get("GH_TOKEN", "") or os.environ.get("GITHUB_TOKEN", "")
 REPO = os.environ.get("GH_REPO", "") or os.environ.get("GITHUB_REPOSITORY", "")
 API = os.environ.get("GITHUB_API_URL", "https://api.github.com").rstrip("/")
+WORKFLOW = "oto-json-guncelle.yml"
+VERI = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "hasinder-ai-data")
 
-ANA_AJAN_ISMI = "Otonom Veri Guncelleme Ajani"
-VERI_KLASORU = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "hasinder-ai-data")
 
-
-def api(path, method="GET", data=None):
-    body = json.dumps(data).encode() if data is not None else None
+def api(yol, method="GET", veri=None):
     req = urllib.request.Request(
-        API + path,
-        data=body,
-        method=method,
-        headers={
-            "Authorization": "Bearer " + TOKEN,
-            "Accept": "application/vnd.github+json",
-            "User-Agent": "otonom-bekci",
-            "Content-Type": "application/json",
-        },
-    )
+        API + yol, method=method,
+        data=json.dumps(veri).encode() if veri is not None else None,
+        headers={"Authorization": "Bearer " + TOKEN, "Accept": "application/vnd.github+json",
+                 "User-Agent": "hasinder-ai-bekci", "Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(req) as r:
-            raw = r.read()
-            return r.status, json.loads(raw) if raw else {}
+        with urllib.request.urlopen(req, timeout=20) as r:
+            ham = r.read()
+            return r.status, (json.loads(ham) if ham else {})
     except urllib.error.HTTPError as e:
         return e.code, {}
-    except Exception as e:
-        return -1, {"err": str(e)}
-
-
-def son_ajan_runu():
-    """Ana otonom ajanin en son acik/hedef run'unu bulur."""
-    st, data = api("/repos/%s/actions/runs?per_page=20" % REPO)
-    if st != 200 or not data.get("workflow_runs"):
-        return None
-    for r in data["workflow_runs"]:
-        # Yalniz veri ureten ana ajana odaklan; push tetikleyicisini da say.
-        if ANA_AJAN_ISMI in (r.get("name") or ""):
-            return r
-    return None
+    except Exception as e:  # ag hatasi
+        return -1, {"hata": str(e)}
 
 
 def veri_raporu():
-    print("=== VERI KAYIT SAYILARI ===")
-    top = 0
-    if os.path.isdir(VERI_KLASORU):
-        for f in sorted(os.listdir(VERI_KLASORU)):
-            if not f.endswith(".json"):
-                continue
-            p = os.path.join(VERI_KLASORU, f)
-            try:
-                with open(p, encoding="utf-8") as fh:
-                    d = json.load(fh)
-                arr = d if isinstance(d, list) else d.get("dataset", d.get("qa", []))
-                n = len(arr) if isinstance(arr, list) else 0
-                top += n
-                print("  %s : %d kayit" % (f, n))
-            except Exception:
-                print("  %s : BOZUK" % f)
-    print("TOPLAM KAYIT: %d" % top)
-    return top
+    toplam = 0
+    for f in sorted(os.listdir(VERI)) if os.path.isdir(VERI) else []:
+        if not f.endswith(".json") or f == "manifest.json":
+            continue
+        try:
+            with open(os.path.join(VERI, f), encoding="utf-8") as fh:
+                d = json.load(fh)
+            n = len(d.get("dataset", [])) if isinstance(d, dict) else len(d)
+        except Exception:
+            print(f"  {f}: BOZUK")
+            continue
+        toplam += n
+        print(f"  {f}: {n}")
+    print(f"TOPLAM: {toplam} kayit")
 
 
 def yeniden_baslat():
-    print("Ana otonom ajani yeniden baslatiyorum (workflow_dispatch) ...")
-    st, data = api(
-        "/repos/%s/actions/workflows/oto-json-guncelle.yml/dispatches" % REPO,
-        "POST",
-        {"ref": "main"},
-    )
-    if st == 204:
-        print("Restart tetiklendi (HTTP 204).")
-    else:
-        print("Restart BASARISIZ (HTTP %s): %s" % (st, data))
+    st, _ = api(f"/repos/{REPO}/actions/workflows/{WORKFLOW}/dispatches", "POST", {"ref": "main"})
+    print("Yeniden baslatma:", "OK" if st == 204 else f"BASARISIZ (HTTP {st})")
 
 
 def main():
     if not TOKEN or not REPO:
-        print("GITHUB_TOKEN / GITHUB_REPOSITORY eksik; izleme atlaniyor.")
-        return
-
-    run = son_ajan_runu()
-    print("=== SON OTONOM AJAN CALISMASI ===")
-    if not run:
-        print("  BULUNAMADI (hic run yok).")
-    else:
-        print("  id %s | event %s | status %s | conclusion %s | %s" % (
-            run["id"], run.get("event"), run.get("status"),
-            run.get("conclusion"), run.get("created_at")))
-
+        print("Token/repo yok; izleme atlandi.")
+        return 0
     veri_raporu()
-
-    if not run:
-        print("Sonuc: ilk tetikleme gerekiyor -> yeniden baslat.")
+    st, d = api(f"/repos/{REPO}/actions/workflows/{WORKFLOW}/runs?per_page=5")
+    runs = d.get("workflow_runs", []) if st == 200 else []
+    if not runs:
+        print("Hic calisma yok -> ilk tetikleme.")
         yeniden_baslat()
-        return
+        return 0
 
-    status = run.get("status")
-    conclusion = run.get("conclusion")
-    if status == "completed" and conclusion in ("success",):
-        print("Sonuc: Ajan saglikli, mudahale gerekmiyor.")
-    elif status == "completed" and conclusion in ("failure", "cancelled", "timed_out"):
-        print("Sonuc: Ajan basarisiz (%s) -> yeniden baslat." % conclusion)
+    son = runs[0]
+    print(f"Son calisma: {son.get('status')}/{son.get('conclusion')} @ {son.get('created_at')}")
+    if son.get("status") != "completed":
+        print("Ajan calisiyor/kuyrukta -> mudahale yok.")
+        return 0
+
+    ardisik_hata = 0
+    for r in runs:
+        if r.get("status") == "completed" and r.get("conclusion") in ("failure", "timed_out", "cancelled"):
+            ardisik_hata += 1
+        else:
+            break
+    if ardisik_hata >= 3:
+        print(f"UYARI: Ajan art arda {ardisik_hata} kez basarisiz. Sonsuz dongu engellendi; loglari inceleyin.")
+        return 1
+    if ardisik_hata:
+        print("Son calisma basarisiz -> yeniden baslatiliyor.")
+        yeniden_baslat()
+        return 0
+
+    zaman = dt.datetime.fromisoformat(son["created_at"].replace("Z", "+00:00"))
+    if dt.datetime.now(dt.timezone.utc) - zaman > dt.timedelta(hours=26):
+        print("26 saattir calisma yok -> yeniden baslatiliyor.")
         yeniden_baslat()
     else:
-        print("Sonuc: Ajan hala calisiyor/kuyrukta (%s) -> mudahale yok." % status)
+        print("Ajan saglikli.")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

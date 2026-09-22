@@ -2,25 +2,24 @@ name: Otonom Veri Izleme (Bekci)
 
 on:
   schedule:
-    - cron: '*/30 * * * *'   # 30 dakikada bir (kota dostu: ~1440 calisma/ay)
-  workflow_dispatch:        # Manuel / cevrimici izleme
+    - cron: '17 */2 * * *'   # 2 saatte bir
+  workflow_dispatch:
 
 concurrency:
   group: otonom-izleme
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: read
-  actions: write            # Basarisiz/duraklamissa ana ajani yeniden tetiklemek icin
+  actions: write
 
 jobs:
   izle:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: Depoyu Kopyala
-        uses: actions/checkout@v4
-
-      - name: Izle ve Gerekiyorsa Yenden Baslat
+      - uses: actions/checkout@v4
+      - name: Izle / gerekirse yeniden baslat
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}

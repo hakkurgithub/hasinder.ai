@@ -1,50 +1,55 @@
-# HAS İNSAN DER - hasinder.ai
-# Sürüm kontrolü / geçici dosyalar
-.git/
-.gitattributes.bak
-*.orig
-*.rej
+# hasinder.ai — HAS İNSAN DER
+# Yerel arşiv / yükleme paketleri
+_arsiv/
+_cpanel/
+_cpanel.zip
+/api/
+cgi-bin/
+
+# Sunucu (cPanel) yapılandırma kopyaları — şablon: deploy/cpanel.htaccess
+/.htaccess
+.user.ini
+php.ini
+*.php
+
+# Gizli bilgiler
+.env
+.env.*
+.dev.vars
+*.key
+*.pem
+secrets.json
+config.local.json
 
 # Python
 __pycache__/
 *.py[cod]
-*.pyc
-*.pyo
-*.pyd
 *.egg-info/
 .venv/
 venv/
-env/
 .pytest_cache/
-.mypy_cache/
 
-# Arşivler ve binary paketler
+# Arşiv / binary
 *.zip
 *.tar
 *.tar.gz
 *.tgz
 *.rar
 *.7z
+*.traineddata
 
-# Gizli bilgiler / yapılandırma
-.env
-.env.*
-*.key
-*.pem
-secrets.json
-config.local.json
+# Node / Wrangler
+node_modules/
+.wrangler/
 
-# Sunucu (cPanel) ortamina ozel yapilandirmalar - repoya girmez
-.htaccess
-.user.ini
-php.ini
-
-# Loglar ve geçici çıktılar
+# Loglar / geçici
 *.log
 logs/
 tmp/
 temp/
 *.tmp
+*.orig
+*.rej
 
 # Editör / OS
 .vscode/
@@ -53,8 +58,4 @@ temp/
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# Node (widget geliştirme için kullanılırsa)
-node_modules/
-# cPanel'e yukleme icin hazirlanan yerel kopya - GitHub'a girmez
-/api/
+.ftp-deploy-sync-state.json
