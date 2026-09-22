@@ -49,6 +49,11 @@ Veri, `.git`, `.py`, `.pyc`, `.env` asla yüklenmez.
 Push sonrası Actions otomatik çalışır. cPanel otomatik yayını için repo → Settings → Secrets → Actions:
 `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`, `FTP_SERVER_DIR` (ör. `hasinder.ai.hasinder.com/` — sonu `/`).
 
+### 2b. Repo temizliği (tek komut)
+Zip `D:\hasinder.ai` üzerine çıkarıldıktan sonra:
+`powershell -ExecutionPolicy Bypass -File deploy\github-temizle.ps1`
+(eski kök dosyaları siler, manifest + güvenlik süzgecini çalıştırır, commit + push yapar)
+
 ### 3. cPanel (elle)
 `powershell -ExecutionPolicy Bypass -File deploy\cpanel-paketle.ps1` → `_cpanel.zip` dosyasını
 subdomain kök klasörüne yükleyip çıkarın.

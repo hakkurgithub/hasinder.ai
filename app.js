@@ -19,7 +19,7 @@
   var DIS = window.hasinderAiAyar || {};
   var AYAR = Object.freeze({
     // Cloudflare Worker adresi (cloudflare-worker/llm-proxy.js yayınlandıktan sonra doldurun)
-    LLM_PROXY_URL: DIS.llmProxyUrl || '',
+    LLM_PROXY_URL: DIS.llmProxyUrl || 'https://hasinder-ai-proxy.kurt-hakki.workers.dev',
     RAW_TABAN: 'https://raw.githubusercontent.com/hakkurgithub/hasinder.ai/main/hasinder-ai-data/',
     YEDEK_TABAN: 'https://cdn.jsdelivr.net/gh/hakkurgithub/hasinder.ai@main/hasinder-ai-data/',
     OLLAMA_URL: DIS.ollamaUrl || 'http://localhost:11434',

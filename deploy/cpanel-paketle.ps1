@@ -1,4 +1,4 @@
-# hasinder.ai — cPanel yükleme paketi (HAS İNSAN DER)
+﻿# hasinder.ai — cPanel yükleme paketi (HAS İNSAN DER)
 # Kullanım:  cd D:\hasinder.ai ;  powershell -ExecutionPolicy Bypass -File deploy\cpanel-paketle.ps1
 # Çıktı:     D:\hasinder.ai\_cpanel\  ve  D:\hasinder.ai\_cpanel.zip  (yalnız frontend)
 $ErrorActionPreference = "Stop"
