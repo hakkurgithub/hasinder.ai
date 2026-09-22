@@ -61,10 +61,6 @@
       "cevap": "Evet, tarim ve konut kredisi secenekleri mevcut: 1) Ziraat Bankasi: Tarimsal kredi (dusuk faizli), 2) Halkbank: Esnaf ve tarim kredisi, 3) Ozel bankalar: ipotekli gayrimenkul kredisi. Genellikle tapu degerinin %50-70'i kadar kredi verilir. hasinder.ai AI olarak banka kredi surecinde de sizin yaninizdayiz."
     },
     {
-      "soru": "Emlak komisyonu ne kadar?",
-      "cevap": "hasinder.ai AI olarak satis fiyatinin uzerine %10 komisyon ekliyoruz. Bu komisyon pazarlik, tapu takibi, dokumantasyon ve danismanlik hizmetlerini kapsar. Ornegin 500.000 TL'lik araziyi sizden 500.000 TL'ye alip, 550.000 TL'ye musteriye sunuyoruz. Bu sekilde tum taraflar icin adil ve seffaf bir sistem sagliyoruz."
-    },
-    {
       "soru": "Tarim arazisi icin elektrik ve su nasil olur?",
       "cevap": "Tarim arazilerinde elektrik ve su: 1) Elektrik: TEDAS'a basvuru ile trafo baglanti bedeli odenerek alinir (15-50 bin TL), 2) Su: DSI'dan tarimsal su izni veya yeralti suyu (kuyu) acilabilir. Kuyu maliyeti 20-80 bin TL arasindadir. Bazi ilanlarimizda elektrik ve su hazir, bu tur ilanlari oncelikli olarak sunuyoruz."
     },
@@ -174,7 +170,7 @@
     },
     {
       "soru": "Ilan vermek istiyorum, gayrimenkulumu satmak istiyorum",
-      "cevap": "Gayrimenkulunuzu hasinder.ai AI ile hizli satabilirsiniz. Surecimiz: 1) Ucretsiz ekspertiz ve fiyat belirleme, 2) Profesyonel fotograf ve drone cekimi, 3) Tum platformlarda ilan yayini, 4) Alıcı gorusmelerinin yonetimi, 5) Pazarlik ve tapu takibi. Satis fiyatinin uzerine %10 komisyon ekleyerek calisir, gayrimenkulunuzu en yuksek degerden satariz. Ilan vermek icin tapu fotografinizla bize ulasin."
+      "cevap": "Gayrimenkulunuzu hasinder.ai AI ile hizli satabilirsiniz. Surecimiz: 1) Ucretsiz ekspertiz ve fiyat belirleme, 2) Profesyonel fotograf ve drone cekimi, 3) Tum platformlarda ilan yayini, 4) Alıcı gorusmelerinin yonetimi, 5) Pazarlik ve tapu takibi. Komisyon kosullarimiz onceden acikca belirtilir ve sozlesmeyle netlestirilir; gayrimenkulunuzu en yuksek degerden degerlendirip satariz. Ilan vermek icin tapu fotografinizla bize ulasin."
     },
     {
       "soru": "Tesekkurler",
@@ -186,7 +182,7 @@
     },
     {
       "soru": "Nasil guvenebilirim?",
-      "cevap": "Guveniniz bizim icin her seyden onemli: 1) Tum ilanlarimiz tapu ve imar kontrolludur, 2) Sozlesmelerimiz noter onaylidir, 3) Komisyon oranimiz (%10) seffaf ve onceden belirtilir, 4) Tapu devri gerceklesmeden odeme alinmaz, 5) Musteri yorumlarimizi inceleyebilirsiniz. Ayrica ilk gorusmede tum belgeleri sizinle acikca paylasiriz."
+      "cevap": "Guveniniz bizim icin her seyden onemli: 1) Tum ilanlarimiz tapu ve imar kontrolludur, 2) Sozlesmelerimiz noter onaylidir, 3) Komisyon kosullarimiz seffaf ve onceden sozlesmeyle belirtilir, 4) Tapu devri gerceklesmeden odeme alinmaz, 5) Musteri yorumlarimizi inceleyebilirsiniz. Ayrica ilk gorusmede tum belgeleri sizinle acikca paylasiriz."
     },
     {
       "soru": "Hangi sehirlerde hizmet veriyorsunuz?",
