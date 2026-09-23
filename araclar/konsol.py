@@ -297,6 +297,42 @@ def ollama_sor(veri, gecmis, soru):
     return cevap
 
 
+# ---------- Groq (Cloudflare Worker proxy; anahtar Worker Secret'ta) ----------
+LLM_PROXY_URL = os.environ.get('HASINDER_LLM_PROXY', 'https://hasinder-ai-proxy.kurt-hakki.workers.dev').rstrip('/')
+
+
+def groq_sor(veri, gecmis, soru):
+    baglam = bilgi_bankasi_metni(veri, soru)[:7800]
+    temiz = [{'role': m['role'], 'content': m['content'][:2000]} for m in gecmis[-8:]
+             if isinstance(m, dict) and m.get('role') in ('user', 'assistant') and isinstance(m.get('content'), str)]
+    govde = json.dumps({'soru': soru[:1000], 'baglam': baglam, 'gecmis': temiz}).encode('utf-8')
+    istek = urllib.request.Request(LLM_PROXY_URL + '/', data=govde, method='POST', headers={
+        'Content-Type': 'application/json',
+        'Origin': 'http://localhost',
+        'User-Agent': 'hasinder-ai-konsol/2.1'
+    })
+    try:
+        with urllib.request.urlopen(istek, timeout=45) as yanit:
+            tip = (yanit.headers.get('Content-Type') or '').lower()
+            ham = yanit.read().decode('utf-8')
+    except urllib.error.HTTPError as e:
+        try:
+            hata = json.loads(e.read().decode('utf-8')).get('hata', '')
+        except Exception:
+            hata = ''
+        raise RuntimeError(f'Groq proxy HTTP {e.code} {hata}'.strip())
+    if 'application/json' not in tip:
+        raise RuntimeError('Worker JSON dondurmedi')
+    sonuc = json.loads(ham)
+    cevap = sonuc.get('cevap') if isinstance(sonuc, dict) else None
+    if not isinstance(cevap, str) or not cevap.strip():
+        raise RuntimeError('Groq bos yanit')
+    cevap = re.sub(r'(^|[^A-Za-z0-9./@])HAS[İI]NDER(?![A-Za-z0-9.])', r'\1HAS İNSAN DER', cevap.strip())
+    gecmis.append({'role': 'user', 'content': soru})
+    gecmis.append({'role': 'assistant', 'content': cevap})
+    return cevap, sonuc.get('kaynak') or 'Bulut LLM (Groq)'
+
+
 # ---------- Ana Cevap Motoru (Hibrit) ----------
 def cevap_uret(veri, gecmis, api_key, model, girdi):
     if SELAM_REGEX.match(normalize(girdi)):
@@ -329,9 +365,14 @@ def cevap_uret(veri, gecmis, api_key, model, girdi):
         except Exception:
             pass
 
+    try:
+        return groq_sor(veri, gecmis, girdi)
+    except Exception as e:
+        print(f'  [Groq] {e}', file=sys.stderr)
+
     if api_key:
         try:
-            return llm_sor(veri, gecmis, api_key, model, girdi), 'Bulut LLM (Groq)'
+            return llm_sor(veri, gecmis, api_key, model, girdi), 'Bulut LLM (OpenRouter)'
         except Exception as e:
             import urllib.parse
             whatsapp_link = 'https://wa.me/905333715577?text=' + urllib.parse.quote('Merhaba, su soruma cevap bulamadim: ' + girdi)
@@ -353,9 +394,10 @@ YARDIM = """Komutlar:
 
 Ollama (oncelikli, sinirsiz, bagimsiz):
   Bilgisayariniza ollama kurun (ollama.com), sonra "ollama pull llama3.1" yapin.
-  Asistan otomatik algilar ve once Ollama'yi, bulamazsa OpenRouter'i kullanir.
+  Sira: Ollama -> Groq (Cloudflare Worker) -> OpenRouter (/key varsa) -> WhatsApp
   OLLAMA_URL=http://localhost:11434  (ortam degiskeni ile ozellestirilebilir)
-  OLLAMA_MODEL=llama3.1"""
+  OLLAMA_MODEL=llama3.1
+  HASINDER_LLM_PROXY=https://hasinder-ai-proxy.kurt-hakki.workers.dev"""
 
 
 def main():
@@ -375,12 +417,7 @@ def main():
 
     global ollama_durum
     ollama_durum = ollama_aktif_mi()
-    if ollama_durum:
-        mod = 'Bagimsiz (Ollama yerel LLM aktif - sinirsiz)'
-    elif api_key:
-        mod = 'Hibrit (OpenRouter bulut LLM aktif)'
-    else:
-        mod = 'Yerel (LLM icin Ollama kurun veya /key kullanin)'
+    mod = 'Ollama yerel LLM aktif (Groq yedekte)' if ollama_durum else 'Hibrit (Groq bulut LLM - Cloudflare Worker)'
     print(f'Mod: {mod}')
     print(YARDIM)
     print('-' * 60)

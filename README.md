@@ -68,6 +68,11 @@ Yerelde veri önce `hasinder-ai-data/` klasöründen okunur, Ollama otomatik den
 Ollama'yı `OLLAMA_ORIGINS=https://hasinder.ai.hasinder.com` ile başlatın.
 
 Konsol: `python araclar\konsol.py` veya `node araclar\konsol.js`
+(Sıra: Ollama → Groq [Cloudflare Worker] → OpenRouter → WhatsApp. Anahtar gerekmez; farklı Worker için `HASINDER_LLM_PROXY` ortam değişkeni.)
+
+### 5. Groq testi (GitHub Actions)
+
+Actions → **LLM Proxy Testi (Groq)** → *Run workflow*. Worker sağlığını ve cPanel + GitHub Pages origin'lerinden Groq cevabını doğrular; her gün 06:17 UTC'de otomatik çalışır.
 
 ## Widget (harici siteler)
 

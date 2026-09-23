@@ -1,0 +1,47 @@
+name: LLM Proxy Testi (Groq)
+
+# Worker'in Groq uzerinden cevap verdigini GitHub tarafindan dogrular.
+# Anahtar gerekmez: Worker Secret'taki GROQ_API_KEY kullanilir.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'cloudflare-worker/**'
+      - '.github/workflows/llm-test.yml'
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PROXY: https://hasinder-ai-proxy.kurt-hakki.workers.dev
+    steps:
+      - name: Saglik (/saglik)
+        run: |
+          set -euo pipefail
+          yanit=$(curl -fsS -m 20 -H "Origin: https://hakkurgithub.github.io" "$PROXY/saglik")
+          echo "$yanit"
+          echo "$yanit" | jq -e '.durum == "ok" and (.saglayicilar | index("groq"))' > /dev/null \
+            || { echo "::error::Worker'da GROQ_API_KEY tanimli degil veya Worker eski surum"; exit 1; }
+
+      - name: Groq cevap testi (cPanel + GitHub Pages origin)
+        run: |
+          set -uo pipefail
+          hata=0
+          for origin in https://hasinder.ai.hasinder.com https://hakkurgithub.github.io; do
+            kod=$(curl -sS -m 60 -o cevap.json -w '%{http_code}' -X POST "$PROXY/" \
+              -H "Content-Type: application/json" -H "Origin: $origin" \
+              --data '{"soru":"Tek cumleyle: toplum nedir?","baglam":"","gecmis":[]}')
+            echo "[$origin] HTTP $kod"; cat cevap.json; echo
+            if [ "$kod" != "200" ] || ! jq -e '.cevap | length > 0' cevap.json > /dev/null; then
+              echo "::error::$origin icin Groq cevabi alinamadi (HTTP $kod)"; hata=1
+            fi
+            sleep 2
+          done
+          exit $hata

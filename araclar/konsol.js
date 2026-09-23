@@ -275,23 +275,33 @@ async function ollamaSor(veri, gecmis, soru) {
   return cevap;
 }
 
-/* ---------- Groq Proxy (sinirsiz, anahtar sunucuda) ---------- */
-const GROQ_PROXY_URL = process.env.GROQ_PROXY_URL || 'https://hasinder.ai.hasinder.com/api/sor.php';
+/* ---------- Groq (Cloudflare Worker proxy; anahtar Worker Secret'ta) ---------- */
+const LLM_PROXY_URL = (process.env.HASINDER_LLM_PROXY || 'https://hasinder-ai-proxy.kurt-hakki.workers.dev').replace(/\/+$/, '');
 async function groqSor(veri, gecmis, soru) {
-  const sistem = veri.prompt +
-    '\n\n## BILGI BANKASI (asagidaki acik kaynak verilerine dayanarak cevap ver):\n\n' +
-    bilgiBankasiMetni(veri, soru);
-  const r = await fetch(GROQ_PROXY_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Origin': 'https://hasinder.com' },
-    body: JSON.stringify({ soru, sistem, gecmis: gecmis.slice(-10) })
-  });
-  if (!r.ok) throw new Error(`Groq proxy hatasi (${r.status})`);
-  const d = await r.json();
-  if (!d.cevap) throw new Error(d.hata || 'Groq bos yanit');
-  gecmis.push({ role: 'user', content: soru });
-  gecmis.push({ role: 'assistant', content: d.cevap });
-  return d.cevap;
+  const baglam = bilgiBankasiMetni(veri, soru).slice(0, 7800);
+  const temizGecmis = gecmis.slice(-8)
+    .filter(m => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
+    .map(m => ({ role: m.role, content: m.content.slice(0, 2000) }));
+  const d = new AbortController();
+  const z = setTimeout(() => d.abort(), 45000);
+  try {
+    const r = await fetch(LLM_PROXY_URL + '/', {
+      method: 'POST', signal: d.signal,
+      headers: { 'Content-Type': 'application/json', 'Origin': 'http://localhost' },
+      body: JSON.stringify({ soru: soru.slice(0, 1000), baglam, gecmis: temizGecmis })
+    });
+    const tip = (r.headers.get('content-type') || '').toLowerCase();
+    if (!tip.includes('application/json')) throw new Error(`Worker JSON dondurmedi (HTTP ${r.status})`);
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.hata || `HTTP ${r.status}`);
+    if (!j || typeof j.cevap !== 'string' || !j.cevap.trim()) throw new Error('Groq bos yanit');
+    const cevap = j.cevap.trim().replace(/(^|[^A-Za-z0-9.\/@])HAS[İI]NDER(?![A-Za-z0-9.])/g, '$1HAS İNSAN DER');
+    gecmis.push({ role: 'user', content: soru }, { role: 'assistant', content: cevap });
+    return { metin: cevap, kaynak: j.kaynak || 'Bulut LLM (Groq)' };
+  } catch (e) {
+    if (e.name === 'AbortError') throw new Error('Groq zaman asimi');
+    throw e;
+  } finally { clearTimeout(z); }
 }
 
 /* ---------- Ana Cevap Motoru (Hibrit) ---------- */
@@ -325,10 +335,10 @@ async function cevapUret(veri, gecmis, apiKey, model, girdi) {
     } catch (e) { /* Ollama basarisiz, Groq'a dus */ }
   }
 
-  // Groq proxy (sinirsiz, anahtar sunucuda saklanir)
+  // Groq (Cloudflare Worker; anahtar Worker Secret'ta saklanir)
   try {
-    return { metin: await groqSor(veri, gecmis, girdi), kaynak: 'Bulut LLM (Groq)' };
-  } catch (e) { /* Groq basarisiz, OpenRouter'a dus */ }
+    return await groqSor(veri, gecmis, girdi);
+  } catch (e) { console.error(`  [Groq] ${e.message}`); }
 
   if (apiKey) {
     try {
@@ -354,9 +364,10 @@ const YARDIM = `Komutlar:
 
 Ollama (oncelikli, sinirsiz, bagimsiz):
   Bilgisayariniza ollama kurun (ollama.com), sonra "ollama pull llama3.1" yapin.
-  Asistan otomatik algilar ve once Ollama'yi, bulamazsa OpenRouter'i kullanir.
+  Sira: Ollama -> Groq (Cloudflare Worker) -> OpenRouter (/key varsa) -> WhatsApp
   OLLAMA_URL=http://localhost:11434  (ortam degiskeni ile ozellestirilebilir)
-  OLLAMA_MODEL=llama3.1`;
+  OLLAMA_MODEL=llama3.1
+  HASINDER_LLM_PROXY=https://hasinder-ai-proxy.kurt-hakki.workers.dev`;
 
 async function main() {
   console.log('='.repeat(60));
@@ -376,9 +387,7 @@ async function main() {
   const gecmis = [];
 
   ollamaDurum = await ollamaAktifMi();
-  const modMetin = ollamaDurum
-    ? 'Bagimsiz (Ollama yerel LLM aktif - sinirsiz)'
-    : apiKey ? 'Hibrit (OpenRouter bulut LLM aktif)' : 'Yerel (LLM icin Ollama kurun veya /key kullanin)';
+  const modMetin = ollamaDurum ? 'Ollama yerel LLM aktif (Groq yedekte)' : 'Hibrit (Groq bulut LLM - Cloudflare Worker)';
   console.log(`Mod: ${modMetin}`);
   console.log(YARDIM);
   console.log('-'.repeat(60));
