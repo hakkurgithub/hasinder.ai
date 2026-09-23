@@ -168,7 +168,7 @@ export default {
 
     if (request.method === 'GET') {
       if (url.pathname === '/saglik') {
-        return json({ durum: 'ok', saglayicilar: saglayicilar(env).map(s => s[0]) }, 200, cors);
+        return json({ durum: 'ok', saglayicilar: saglayicilar(env).map(s => s[0]), origin: origin || null, origin_izinli: izinli }, 200, cors);
       }
       return json({ durum: 'hazir', bilgi: 'hasinder.ai LLM proxy (HAS İNSAN DER). Test: /saglik' }, 200, cors);
     }
