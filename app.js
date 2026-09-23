@@ -365,6 +365,32 @@
 
   // ---------------------------------------------------------------- LLM KATMANI
   var ollamaDurumu = null;
+  var sonLlmHatasi = '';
+  var llmSaglik = null;
+
+  // Worker /saglik uç noktası: { durum:'ok', saglayicilar:[...] } bekler
+  async function llmSaglikKontrol() {
+    if (llmSaglik) return llmSaglik;
+    if (!/^https:\/\/[^\s]+$/.test(AYAR.LLM_PROXY_URL)) return (llmSaglik = { ok: false, hata: 'LLM_PROXY_URL tanımlı değil' });
+    var d = new AbortController(), z = setTimeout(function () { d.abort(); }, 8000);
+    try {
+      var response = await fetch(AYAR.LLM_PROXY_URL.replace(/\/+$/, '') + '/saglik', { method: 'GET', credentials: 'omit', cache: 'no-store', signal: d.signal });
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      var tip = (response.headers.get('content-type') || '').toLowerCase();
+      if (tip.indexOf('application/json') === -1) throw new Error('JSON değil (' + (tip || 'tip yok') + ')');
+      var j = await response.json();
+      if (!j || j.durum !== 'ok') throw new Error('Geçersiz sağlık yanıtı');
+      var liste = Array.isArray(j.saglayicilar) ? j.saglayicilar.filter(function (x) { return typeof x === 'string'; }) : [];
+      if (!liste.length) throw new Error('Worker\'da API anahtarı (GROQ_API_KEY) tanımlı değil');
+      llmSaglik = { ok: true, saglayicilar: liste };
+    } catch (e) {
+      var m = e && e.name === 'AbortError' ? 'zaman aşımı' : (e && e.message) || 'bilinmeyen hata';
+      if (/Failed to fetch|NetworkError|Load failed/i.test(m)) m = 'Worker\'a ulaşılamadı (yayında değil veya CORS)';
+      llmSaglik = { ok: false, hata: m };
+      console.warn('[hasinder.ai] LLM sağlık:', m);
+    } finally { clearTimeout(z); }
+    return llmSaglik;
+  }
   function ollamaIzinliMi() {
     try {
       if (yerelGelistirmeMi()) return true;
@@ -413,7 +439,7 @@
     if (!/^https:\/\/[^\s]+$/.test(AYAR.LLM_PROXY_URL)) throw new Error('LLM proxy tanımlı değil');
     var d = new AbortController(), z = setTimeout(function () { d.abort(); }, AYAR.LLM_ZAMAN_ASIMI_MS);
     try {
-      var r = await fetch(AYAR.LLM_PROXY_URL, {
+      var r = await fetch(AYAR.LLM_PROXY_URL.replace(/\/+$/, '') + '/', {
         method: 'POST', credentials: 'omit', signal: d.signal,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ soru: soru.slice(0, 1000), baglam: baglam, gecmis: gecmisTemizle(gecmis) })
@@ -424,6 +450,10 @@
       if (!r.ok) throw new Error((j && j.hata) || ('HTTP ' + r.status));
       if (!j || typeof j.cevap !== 'string' || !j.cevap.trim()) throw new Error('Boş yanıt');
       return { metin: j.cevap.trim(), kaynak: j.kaynak || 'Bulut LLM' };
+    } catch (e) {
+      if (e && e.name === 'AbortError') throw new Error('LLM zaman aşımı (' + AYAR.LLM_ZAMAN_ASIMI_MS / 1000 + ' sn)');
+      if (e && /Failed to fetch|NetworkError|Load failed/i.test(e.message)) throw new Error('Worker\'a ulaşılamadı (CORS/ağ)');
+      throw e;
     } finally { clearTimeout(z); }
   }
 
@@ -490,7 +520,7 @@
       try {
         var b = await bulutSor(girdi, baglam, gecmis);
         return { metin: kurumAdiDuzelt(b.metin), kaynak: b.kaynak };
-      } catch (e2) { console.warn('[hasinder.ai] Bulut LLM:', e2.message); }
+      } catch (e2) { sonLlmHatasi = e2.message; console.warn('[hasinder.ai] Bulut LLM:', e2.message); }
     }
 
     // 6) LLM yoksa: makul eşleşme / WhatsApp
@@ -498,7 +528,8 @@
     if (en && en.guven >= AYAR.ESIK_YAKIN && en.kapsam >= 0.5 && en.kayitKapsam >= (sinavCevabi ? 0.6 : 0.3)) {
       return { metin: en.kayit.cevap + '\n\n(En yakın kayıt: "' + en.kayit.soru.slice(0, 160) + '")', kaynak: 'Bilgi Bankası (yakın eşleşme)', guven: en.guven };
     }
-    return { metin: whatsappCevabi(girdi), kaynak: 'Uzman Yönlendirme' };
+    var not = (sonLlmHatasi && /[?&]tani=1\b/.test(location.search)) ? '\n\n[Tanı] LLM hatası: ' + sonLlmHatasi : '';
+    return { metin: whatsappCevabi(girdi) + not, kaynak: 'Uzman Yönlendirme' };
   }
 
   function ornekSorular(konum, adet) {
@@ -515,7 +546,9 @@
   }
 
   window.HasinderMotor = Object.freeze({
-    surum: '2.0.0',
+    surum: '2.1.0',
+    llmSaglikKontrol: llmSaglikKontrol,
+    tani: function () { return { llm: llmSaglik, sonLlmHatasi: sonLlmHatasi, kayit: bb.N, dosya: bb.dosyaSayisi, hatali: bb.hataliDosya, proxy: AYAR.LLM_PROXY_URL }; },
     ayar: AYAR,
     hazirla: hazirla,
     cevapla: cevapla,
@@ -596,8 +629,9 @@
 
     durum.textContent = 'Bilgi bankası yükleniyor…';
     hazirla().then(async function (ist) {
-      var ollama = await ollamaAktifMi();
-      var llm = ollama ? ' · Ollama aktif' : (AYAR.LLM_PROXY_URL ? ' · Bulut LLM aktif' : '');
+      var sonuclar = await Promise.all([ollamaAktifMi(), llmSaglikKontrol()]);
+      var ollama = sonuclar[0], saglik = sonuclar[1];
+      var llm = ollama ? ' · Ollama aktif' : (saglik.ok ? ' · Bulut LLM aktif (' + saglik.saglayicilar.join(', ') + ')' : ' · Bulut LLM kapalı: ' + saglik.hata);
       if (!ist.kayit) {
         durum.textContent = 'Veri yüklenemedi';
         durum.className = 'durum durum-hata';
@@ -605,7 +639,8 @@
         return;
       }
       durum.textContent = ist.kayit + ' kayıt' + llm;
-      durum.className = 'durum durum-hazir';
+      durum.className = 'durum ' + (ollama || saglik.ok ? 'durum-hazir' : 'durum-uyari');
+      durum.title = durum.textContent;
       mesajEkle('ai', 'Merhaba! Ben hasinder.ai. Gümrük, dış ticaret, gayrimenkul, B2B ticaret ve ekonomi hakkında sorunuzu yazın.', '');
       if (oneriler) {
         var ornek = ['Gümrük beyannamesi nedir?', 'Tapu harcı ne kadar?', 'INCOTERMS nedir?', 'Muğla arazi fiyatları'];
@@ -617,6 +652,10 @@
         });
         oneriler.hidden = false;
       }
+    }).catch(function (e) {
+      console.error('[hasinder.ai] Başlatma hatası:', e);
+      durum.textContent = 'Başlatma hatası: ' + ((e && e.message) || 'bilinmiyor');
+      durum.className = 'durum durum-hata';
     });
   }
 

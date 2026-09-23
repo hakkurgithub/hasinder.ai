@@ -45,6 +45,7 @@ body {
 }
 .durum-hazir { background: var(--deniz-acik); color: var(--deniz-koyu); }
 .durum-hata { background: #fee2e2; color: #991b1b; }
+.durum-uyari { background: #fef3c7; color: #92400e; max-width: 60vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .mesajlar {
   flex: 1; overflow-y: auto; padding: 20px;
