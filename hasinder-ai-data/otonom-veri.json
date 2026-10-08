@@ -54,30 +54,6 @@
             "cevap": "Türkiye'nin 2020 yılı mal ithalatı (USD) 219.52 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
         },
         {
-            "soru": "Türkiye'nin 2025 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2025 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) 1597.29 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2024 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2024 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) 1359.12 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2023 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2023 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) 1141.24 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2022 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2022 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) 926.10 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2021 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2021 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) 839.94 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2020 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2020 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) 733.63 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
             "soru": "Türkiye'nin 2025 yılı yıllık tüketici fiyat enflasyonu (%) ne kadardı?",
             "cevap": "Türkiye'nin 2025 yılı yıllık tüketici fiyat enflasyonu (%) 34.88  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
         },
@@ -147,7 +123,7 @@
         },
         {
             "soru": "1 Amerikan Doları kaç Türk Lirası?",
-            "cevap": "Güncel döviz verilerine göre 1 Amerikan Doları 49.18 Türk Lirası değerindedir (döviz kuru tarihi: 2026-10-06). Kaynak: açık döviz API'si Frankfurter App."
+            "cevap": "Güncel döviz verilerine göre 1 Amerikan Doları 49.19 Türk Lirası değerindedir (döviz kuru tarihi: 2026-10-07). Kaynak: açık döviz API'si Frankfurter App."
         }
     ]
 }
