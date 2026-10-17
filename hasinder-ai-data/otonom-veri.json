@@ -6,30 +6,6 @@
     ],
     "dataset": [
         {
-            "soru": "Türkiye'nin 2025 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2025 yılı mal ihracatı (USD) 273.36 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2024 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2024 yılı mal ihracatı (USD) 261.78 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2023 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2023 yılı mal ihracatı (USD) 255.63 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2022 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2022 yılı mal ihracatı (USD) 254.17 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2021 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2021 yılı mal ihracatı (USD) 225.21 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2020 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2020 yılı mal ihracatı (USD) 169.64 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
             "soru": "Türkiye'nin 2025 yılı mal ithalatı (USD) ne kadardı?",
             "cevap": "Türkiye'nin 2025 yılı mal ithalatı (USD) 365.37 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
         },
@@ -151,7 +127,7 @@
         },
         {
             "soru": "1 Amerikan Doları kaç Türk Lirası?",
-            "cevap": "Güncel döviz verilerine göre 1 Amerikan Doları 49.42 Türk Lirası değerindedir (döviz kuru tarihi: 2026-10-15). Kaynak: açık döviz API'si Frankfurter App."
+            "cevap": "Güncel döviz verilerine göre 1 Amerikan Doları 49.53 Türk Lirası değerindedir (döviz kuru tarihi: 2026-10-16). Kaynak: açık döviz API'si Frankfurter App."
         }
     ]
 }
