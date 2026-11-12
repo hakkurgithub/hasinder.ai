@@ -6,30 +6,6 @@
     ],
     "dataset": [
         {
-            "soru": "Türkiye'nin 2025 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2025 yılı mal ihracatı (USD) 273.36 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2024 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2024 yılı mal ihracatı (USD) 261.78 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2023 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2023 yılı mal ihracatı (USD) 255.63 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2022 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2022 yılı mal ihracatı (USD) 254.17 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2021 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2021 yılı mal ihracatı (USD) 225.21 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2020 yılı mal ihracatı (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2020 yılı mal ihracatı (USD) 169.64 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
             "soru": "Türkiye'nin 2025 yılı mal ithalatı (USD) ne kadardı?",
             "cevap": "Türkiye'nin 2025 yılı mal ithalatı (USD) 365.37 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
         },
@@ -78,80 +54,8 @@
             "cevap": "Türkiye'nin 2020 yılı Gayri Safi Yurt İçi Hasıla (GSYİH, USD) 733.63 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
         },
         {
-            "soru": "Türkiye'nin 2025 yılı yıllık tüketici fiyat enflasyonu (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2025 yılı yıllık tüketici fiyat enflasyonu (%) 34.88  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2024 yılı yıllık tüketici fiyat enflasyonu (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2024 yılı yıllık tüketici fiyat enflasyonu (%) 58.51  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2023 yılı yıllık tüketici fiyat enflasyonu (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2023 yılı yıllık tüketici fiyat enflasyonu (%) 53.86  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2022 yılı yıllık tüketici fiyat enflasyonu (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2022 yılı yıllık tüketici fiyat enflasyonu (%) 72.31  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2021 yılı yıllık tüketici fiyat enflasyonu (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2021 yılı yıllık tüketici fiyat enflasyonu (%) 19.60  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2020 yılı yıllık tüketici fiyat enflasyonu (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2020 yılı yıllık tüketici fiyat enflasyonu (%) 12.28  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2025 yılı cari işlemler dengesi (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2025 yılı cari işlemler dengesi (USD) -30.34 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2024 yılı cari işlemler dengesi (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2024 yılı cari işlemler dengesi (USD) -13.03 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2023 yılı cari işlemler dengesi (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2023 yılı cari işlemler dengesi (USD) -41.82 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2022 yılı cari işlemler dengesi (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2022 yılı cari işlemler dengesi (USD) -46.67 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2021 yılı cari işlemler dengesi (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2021 yılı cari işlemler dengesi (USD) -7.07 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2020 yılı cari işlemler dengesi (USD) ne kadardı?",
-            "cevap": "Türkiye'nin 2020 yılı cari işlemler dengesi (USD) -31.02 milyar USD olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2025 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2025 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 49.93  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2024 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2024 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 54.60  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2023 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2023 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 65.68  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2022 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2022 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 79.90  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2021 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2021 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 69.61  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
-            "soru": "Türkiye'nin 2020 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) ne kadardı?",
-            "cevap": "Türkiye'nin 2020 yılı mal ve hizmet ticaretinin GSYİH içindeki payı (%) 60.39  olarak kaydedilmiştir. Değer, resmî veri portalı Dünya Bankası açık API'sinden (World Bank Open Data) alınmıştır."
-        },
-        {
             "soru": "1 Amerikan Doları kaç Türk Lirası?",
-            "cevap": "Güncel döviz verilerine göre 1 Amerikan Doları 50.22 Türk Lirası değerindedir (döviz kuru tarihi: 2026-11-10). Kaynak: açık döviz API'si Frankfurter App."
+            "cevap": "Güncel döviz verilerine göre 1 Amerikan Doları 50.23 Türk Lirası değerindedir (döviz kuru tarihi: 2026-11-11). Kaynak: açık döviz API'si Frankfurter App."
         }
     ]
 }
